@@ -2,6 +2,9 @@
   "id": "modern-tiger",
   "title": "The Modern Tiger",
   "author": "Tiger Hillarp Persson",
+  "year": 2015,
+  "description": "Panduan lengkap sistem.Modern Defence dalam catur — setups, strategi middlegame, dan game terpilih.",
+  "cover": "/covers/modern-tiger.svg",
   "source": {
     "file": "the-modern-tiger.pdf",
     "pageOffset": 1
@@ -76,6 +79,271 @@
             }
           ],
           "pgn": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. f4 a6 5. Nf3 b5 6. Bd3 Nd7 { Kini lebih popular daripada 6...Bb7. Knight keluar dulu supaya ...c5 boleh dimainkan cepat. } ( 6... Bb7 ) 7. e5 { Set-up paling berprinsip dan tajam: kingside siap, sekarang serang terus di tengah. } ( 7. O-O c5 8. dxc5 Nxc5 9. Be3 Nxd3 { Cuba hukum susunan langkah White. } ( 9... Bb7 { Transpose ke Game 10. } ) 10. Qxd3 ( 10. cxd3 Nf6 ) 10... Nf6 { Seimbang — White sedikit lebih maju, Black ada pasangan bishop. } ) 7... c5 { Lebih menyeronokkan daripada 7...Bb7. } ( 7... Bb7 8. Ng5 { Langsung dan kuat. 8.Qe2 transpose ke Game 5. } ) ( 7... e6 { Jangan main ...e6 melainkan White sudah buat langkah perlahan. } ) 8. Ng5 { 'Aku datang!' — White mahu paksa e5-e6. } ( 8. e6 fxe6 9. Ng5 Bxd4 10. Nxe6 ( 10. Be4 Rb8 ) ( 10. Nxh7 Bxc3+ 11. bxc3 Nf8 12. Nxf8 Kxf8 13. Qf3 Rb8 14. Qg3 Nf6 { Sangat tidak jelas. } ) 10... Bxc3+ 11. bxc3 Qb6 12. Qf3 d5 { Penambahbaikan penulis. } 13. Qxd5 Bb7 14. Ng7+ Kd8 15. Qf7 Ngf6 16. c4 Bxg2 { Black menang dalam Van Apeldoorn – Hillarp Persson, 2007. } ) 8... cxd4 { Laluan paling tajam Black. } ( 8... Nh6 { Lebih selamat — Game 2. } ) 9. e6 f5 { Korbankan knight d7 demi kawalan pusat. } 10. Nd5 ( 10. Qf3 dxc3 11. b3 Nb6 12. Qc6+ Kf8 13. Nf7 Bd7 14. Nxd8 Bxc6 15. Nxc6 Nf6 { Black jelas lebih baik. } ) ( 10. Bxf5 Ndf6 11. Be4 ( 11. Bxg6+ hxg6 12. Qd3 Kf8 13. Qxg6 Qe8 { Cemerlang untuk Black. } ) 11... d5 12. Nf7 Qa5 13. Qxd4 dxe4 { Black selesa. } ) ( 10. exd7+ Bxd7 11. Nb1 e5 12. O-O Ne7 13. a4 h6 14. Nh3 e4 15. Be2 Qb6 16. Kh1 O-O { Black ada pampasan yang sangat baik. } ) 10... Nc5 11. Nf7 { Fork queen dan rook. } ( 11. Bxf5 Bb7 ( 11... Nh6 12. Bg4 ) 12. Nf7 Qb8 13. Nxh8 ( 13. Nb6 Bxg2 14. Rg1 Nh6 ) 13... Bxd5 14. Nxg6 hxg6 15. Bxg6+ Kd8 { Black lebih baik. } ) 11... Bxe6 12. Nxd8 Bxd5 { Dua minor piece + dua pawn untuk queen. Black kawal pusat; White perlu cari pelan seperti a2-a4. } 13. O-O ( 13. a4 bxa4 14. Qe2 Nf6 15. O-O Rxd8 16. Bxa6 Nxa6 17. Qxa6 Kf7 { Counterplay di fail c. } ) ( 13. Be2 Bxg2 14. Rg1 Bd5 { Tidak jelas. } ) ( 13. b4 { Pelan paling mencabar untuk White. } Nxd3+ ( 13... Na4 14. c4 ) 14. cxd3 Rxd8 15. O-O Nh6 16. a4 { Paling langsung: buka queenside untuk Ra5, Bb2, Qa1. } O-O 17. axb5 axb5 18. Ra5 Rb8 19. Re1 Rfe8 { Enjin beri White kira-kira +1, tapi Black ada counterplay dengan ...Nf7/...Ng4 dan ...e5-e4. } ) 13... Rxd8 14. b3 ( 14. Be2 e6 15. Bf3 Ne7 { Tidak jelas. } ) 14... Nh6 ( 14... Nf6 15. Bb2 e5 16. a4 bxa4 17. b4 Nxd3 18. Qxd3 O-O 19. Qxa6 Ng4 20. Qxa4 Ne3 21. Rf2 Rb8 { Kucar-kacir yang menarik. } ) 15. Qe1 { Selepas ini penulis lebih suka posisi Black. } ( 15. Re1 Bf6 16. a4 bxa4 17. b4 Nxd3 18. Qxd3 Rc8 19. Bb2 Rc4 20. Rxa4 O-O 21. c3 Rfc8 22. cxd4 Rc2 23. Re2 Rc1+ 24. Kf2 Ng4+ 25. Kg3 Rh1 { Ancaman mat ...Rxh2 dan ...h5 — White runtuh. } ) 15... O-O ( 15... Bf6 ) ( 15... Rc8 ) 16. a4 ( 16. Qxe7 Ng4 17. Re1 ( 17. Rb1 Rfe8 18. Qc7 Rc8 19. Qxd6 Ba8 ) 17... Ne3 18. Bxe3 Bf6 19. Bxd4 Bxe7 20. Rxe7 Rf7 21. Rxf7 Kxf7 22. Bf1 Be4 { Material sama, White kelebihan kecil. } ) 16... bxa4 17. Bc4 ( 17. bxa4 Ng4 18. Rb1 Rfe8 { Pampasan penuh untuk Black. } ) 17... Bxc4 18. bxc4 Ng4 ( 18... Rfe8 { Diikuti ...Rc8 dan ...Ne4 — sangat baik untuk Black. } ) 19. h3 Nf6 20. Qxe7 Nfe4 21. Bb2 Rd7 22. Qh4 Rb7 23. Ra2 Rfb8 24. Ba3 Rb1 25. Bxc5 Rxf1+ ( 25... Bf6 26. Qxf6 Nxf6 27. Bxd4 Nh5 28. Rxa4 Nxf4 29. Rxb1 Rxb1+ 30. Kh2 Ne6 { Lebih selamat — pawn tambahan dalam endgame. } ) 26. Kxf1 dxc5 27. g4 Bf6 28. Qe1 { Blunder dalam time trouble. } ( 28. g5 Rb1+ 29. Kg2 Bd8 30. Rxa4 a5 31. Ra3 Rc1 32. Rb3 Rxc2+ 33. Kg1 Rc1+ 34. Kg2 h5 { Korbankan lagi material untuk 'penjarakan' queen White. } 35. Rb8 a4 36. Rxd8+ Kf7 37. Rd7+ Kf8 38. Rd8+ Ke7 39. Rg8 Kf7 40. Rd8 a3 41. Ra8 { Penulis tidak jumpa kemenangan untuk Black. } ) 28... Rb1 { Menang queen. } 29. Rxa4 Rxe1+ 30. Kxe1 Bh4+ 31. Kf1 Bg3 0-1"
+        },
+        {
+          "id": "ch1-g2",
+          "number": 2,
+          "pages": [
+            18,
+            22
+          ],
+          "white": "Vasily Yemelin",
+          "black": "Genrikh Chepukaitis",
+          "result": "0-1",
+          "event": "St Petersburg",
+          "year": 2001,
+          "summary": "Dalam Modern dengan 4.f4 a6, Black memilih 8...Nh6 yang lebih stabil daripada 8...cxd4. White menolak pawn ke e6 dan permainan menjadi tajam, tetapi Black bertindak balas dengan ...c5 dan buah yang aktif. Selepas 11...Qc7? White patut lebih baik, namun dalam endgame yang rumit White membuat beberapa kesilapan (24.h4, 27.g4, 28.Rg1) dan Black akhirnya menang.",
+          "keyPoints": [
+            {
+              "at": "8...Nh6",
+              "text": "Pilihan yang lebih selamat daripada 8...cxd4. Knight h6 menekan pawn e5/f5 dan permainan masih hidup tanpa perlu korban material."
+            },
+            {
+              "at": "9.e6",
+              "text": "White menolak pawn untuk mengganggu struktur Black. Alternatif 9.Qf3 membawa dua pilihan untuk Black: 9...Rb8 (tegang) atau 9...cxd4 (korban pawn demi inisiatif)."
+            },
+            {
+              "at": "10...dxc5",
+              "text": "Black menerima pawn dan bergantung pada aktiviti buah untuk menebus pasangan bishop White. 10...Bxe6 juga boleh dimainkan."
+            },
+            {
+              "at": "11...Qc7",
+              "text": "Kesilapan taktikal. 11...Bxe6 diikuti ...Nd5 memberi Black posisi lebih baik kerana koordinasi buah yang unggul."
+            },
+            {
+              "at": "12.Qf3",
+              "text": "Ancaman exf7+ dan Ne6 menekan Black. Dia masih boleh bertahan selepas 12...Rb8."
+            },
+            {
+              "at": "13.f5",
+              "text": "White membuka permainan dan masuk ke endgame dengan pasangan pawn g6/h7 yang berpotensi, tetapi Black aktif di sayap queen."
+            },
+            {
+              "at": "24.h4",
+              "text": "White terlalu ghairah menyelamatkan pawn g6. Lebih baik 24.Re1 dan memusatkan buah untuk mengekalkan kelebihan."
+            },
+            {
+              "at": "28.Rg1",
+              "text": "Kesilapan lanjutan. 28.Nb6 hampir mengekalkan keseimbangan. Selepas 28...e5 Black mengambil inisiatif dan White tumbang."
+            }
+          ],
+          "pgn": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. f4 a6 5. Nf3 b5 6. Bd3 Nd7 7. e5 c5 8. Ng5 Nh6 {Lebih boleh dipercayai berbanding 8...cxd4, walaupun permainan masih tajam.} 9. e6 ( 9. Be4 Rb8 {9.Be4 jarang tetapi boleh dimainkan; ...Rb8 bertukar ke variasi dalam nota permainan seterusnya.} ) ( 9. Qf3 Rb8 {Pilihan a): kedudukan tegang dan tidak jelas.} 10. e6 Nf6 11. dxc5 {Gerakan kritikal.} ( 11. exf7+ {Kurang mencabar.} 11... Nxf7 12. dxc5 O-O 13. Nxf7 ( 13. a4 b4 14. Nd5 Nxg5 15. fxg5 Ng4 ( 15... Nd7 {Juga baik.} ) 16. c6 Rxf3 17. c7 Qxc7 18. Nxc7 Rf7 {Black sedikit lebih baik.} ) 13... Rxf7 14. cxd6 Bb7 15. Qh3 Qb6 {Black mempunyai pampasan yang sangat baik.} ) 11... fxe6 12. a4 ( 12. c6 Nf5 {Black baik-baik sahaja.} 13. a4 ( 13. Ne2 Qb6 ) 13... Qa5 ) ( 12. cxd6 exd6 13. O-O O-O 14. Nce4 Nxe4 15. Qxe4 Nf5 {Cadangan baru; Black mempunyai sedikit inisiatif, lebih baik daripada ...e5 dalam permainan Yemelin-Mehmedovic.} ) 12... Qa5 {Ada lebih daripada satu jawapan yang boleh dimainkan.} ( 12... b4 13. Ne2 dxc5 14. Bxa6 O-O 15. Bc4 Nf5 {Kekeliruan besar tetapi belum tentu buruk untuk Black.} ( 15... Nd5 16. h4 {White mendapat inisiatif berbahaya.} ) ) 13. c6 ( 13. cxd6 exd6 14. Qc6+ Ke7 {Tidak jelas.} ) ( 13. O-O b4 {Baik untuk Black.} ) 13... O-O 14. c7 Qxc7 15. axb5 axb5 16. Qe2 Nd5 {Kedudukan masih tidak jelas dan lebih kurang seimbang.} ) ( 9. Qf3 cxd4 {Pilihan b): korban pawn kecil untuk merebut inisiatif.} 10. Nxb5 ( 10. Qxa8 dxc3 11. Qc6 dxe5 12. Qxc3 O-O {Black ada pawn untuk exchange dan banyak aktiviti.} ) 10... Rb8 11. Nxd4 Bb7 12. Be4 Qc8 ( 12... Bxe4 13. Qxe4 Nc5 14. Qc6+ {White lebih baik.} ) 13. Nc6 ( 13. Bxb7 Rxb7 ) 13... Bxc6 14. Bxc6 O-O 15. exd6 exd6 16. O-O Nf5 17. c3 h6 ( 17... Nh4 {Juga boleh dimainkan.} ) 18. Bxd7 Qxd7 19. Ne4 d5 {Black ada pampasan yang sangat baik untuk pawn.} ) 9... Nf6 10. dxc5 ( 10. Qf3 Bxe6 11. Nxe6 fxe6 12. dxc5 O-O ) ( 10. exf7+ Nxf7 11. Nxf7 Kxf7 ) 10... dxc5 ( 10... Bxe6 11. Nxe6 fxe6 {Juga boleh dimainkan; buah Black yang cair menebus pasangan bishop White.} ) 11. Be3 ( 11. Qf3 Bxe6 12. Nxe6 fxe6 13. Qc6+ Kf7 14. Qxc5 Rc8 15. Qa7 Qd6 {Memihak Black.} ) ( 11. exf7+ Nxf7 12. Qf3 Bg4 ( 12... Bd7 13. Nxf7 Kxf7 14. f5 gxf5 15. Bxf5 Bxf5 16. Qxf5 Qd4 {Tidak jelas.} ) 13. Qc6+ Bd7 14. Qxc5 Rc8 15. Qa7 O-O {Black mempunyai pampasan penuh untuk pawn.} ) ( 11. f5 gxf5 12. exf7+ Nxf7 13. Qf3 Ra7 14. Bxf5 e6 {Rook terbukti berguna di rank ketujuh; Black mendapat posisi dinamik yang baik.} ) 11... Qc7 {Kesilapan taktikal.} ( 11... Bxe6 12. Nxe6 fxe6 13. Bxc5 Nd5 {Black lebih baik kerana koordinasi buah yang unggul.} ) 12. Qf3 Rb8 ( 12... Bb7 13. exf7+ Nxf7 14. Ne6 {Mungkin inilah yang terlepas pandang oleh Black.} ) 13. f5 {Black di bawah tekanan tetapi boleh bertahan.} fxe6 14. fxg6 O-O 15. Nxh7 Nxh7 16. Qh3 Nf6 17. Bxh6 c4 18. O-O Bxh6 19. Qxh6 Qc5+ 20. Kh1 Qh5 21. Qxh5 Nxh5 22. Rxf8+ Kxf8 23. Be2 Nf6 {White lebih baik secara objektif, tetapi tidak mudah mengawal posisi.} 24. h4 {Lebih baik 24.Re1 dan memusatkan buah.} ( 24. Re1 ) 24... Kg7 25. h5 b4 26. Na4 ( 26. Nd1 Rb5 27. g4 Bb7+ 28. Kg1 Re5 29. Kf1 Ne4 30. Ne3 Ng3+ 31. Kf2 Ne4+ 32. Ke1 Ng3 ) 26... Rb5 27. g4 {Tidak menghalang keruntuhan sayap raja; 27.a3 lebih sesuai.} ( 27. a3 ) 27... Rg5 28. Rg1 {Kesilapan lanjut.} ( 28. Nb6 Bb7+ 29. Kh2 {Hampir seimbang.} ) 28... e5 29. Rg3 {Terlalu bekerjasama; 29.Nb6 juga sukar untuk White.} ( 29. Nb6 Bxg4 30. Bxg4 Nxg4 {diikuti ...Rxh5+.} ) 29... Nxh5 30. Re3 Nf6 31. Nc5 a5 32. Kh2 e4 33. Nxe4 Re5 34. Bf3 Bxg4 35. Nxf6 {Mungkin White kehabisan masa, atau dia nampak 35...Rxe3 36.Ne8+ Kxg6 37.Bxg4 c3 38.b3 Rd3 yang tiada harapan untuk White.} 0-1"
+        },
+        {
+          "id": "ch1-g3",
+          "number": 3,
+          "pages": [
+            22,
+            28
+          ],
+          "white": "Richard Forster",
+          "black": "Etienne Bacrot",
+          "result": "0-1",
+          "event": "Bermuda",
+          "year": 1999,
+          "summary": "Modern Defence lawan Austrian Attack: White bina pusat dengan 7.e5 dan 8.Be4, kemudian pilih 9.Be3 yang lebih tenang daripada 9.O-O. Black menghalau knight dari c3 dengan ...b4 dan dapat counterplay di sayap queen. White main terlalu perlahan (Ng5, Qc2) sehingga knight Black masuk ke f5 dan kedudukan White merosot. Pengorbanan terdesak 34.Bxh5 ditolak dengan serangan balas tepat oleh Bacrot.",
+          "keyPoints": [
+            {
+              "at": "8.Be4",
+              "text": "White main 7.e5 dan 8.Be4 untuk dapat tempo ke atas rook di a8. Ini set-up yang masih berbahaya, tapi kurang melulu agresif berbanding 8.Ng5."
+            },
+            {
+              "at": "9...b4",
+              "text": "Idea Black ialah tendang knight dari c3 supaya kawalan d5 hilang, lalu queen boleh ke c7. Kemudian ...Nh6 dan ...Bb7 untuk main di petak cerah."
+            },
+            {
+              "at": "10...Nh6",
+              "text": "Forster sendiri cadang 10...Qc7 dulu supaya dapat elak 11.dxc5! yang menyukarkan Black. Dalam game ini langkah Nh6 terus agak kurang tepat."
+            },
+            {
+              "at": "13.Bf2",
+              "text": "Bishop ke f2 kurang meyakinkan; selepas ...bxc3 bxc3 ...Nc4 Black dapat kubu kukuh di c4 dan posisi cukup baik."
+            },
+            {
+              "at": "20.Ng5",
+              "text": "White buang masa; 20.dxc5 dengan pawn c lulus dan piece aktif lebih tepat. Selepas ini Black dapat ...Nf5 dan menguasai petak cerah."
+            },
+            {
+              "at": "20...Nf5",
+              "text": "Knight pasif di h6 akhirnya masuk game. Black pegang petak cerah, White perlu bertindak cepat tetapi tiada pelan jelas."
+            },
+            {
+              "at": "28.Qd1",
+              "text": "Dengan ...cxd4, ...d5 dan ...Nb2-d3, Black menekan sehingga White rugi secara posisi. White cuba pengorbanan terdesak."
+            },
+            {
+              "at": "34...gxh5",
+              "text": "Selepas 34.Bxh5 Bacrot ambil bishop dan balas dengan ...Qxd4+ serta ...Qg1+. King White terdedah."
+            },
+            {
+              "at": "39...Nf2",
+              "text": "Pukulan penamat: Nf2+ memaksa Bxf2 lalu ...Qxg2+ mate-attack menang."
+            }
+          ],
+          "pgn": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. f4 a6 5. Nf3 b5 6. Bd3 { Langkah utama dalam game ini. } ( 6. a3 { Langkah kedua paling popular, tetapi pasif dan membazir tempo menurut Forster. } 6... Nd7 7. Be2 { Satu-satunya cubaan yang masuk akal; dengan bishop di e2 White lebih ada sebab untuk menghalang ...b4. } ( 7. Be3 Bb7 8. Be2 Rc8 ( 8... c5 { Juga baik. } ) 9. O-O c5 10. dxc5 Nxc5 11. Bd4 { Dimain dalam Nolsoe - Hillarp Persson, Kepulauan Faroe 1996. } 11... Nf6 { Cadangan baru Forster: Black dapat posisi cemerlang. } ) 7... c5 { Rancangan White nampak selepas ...Bb7, O-O, ...c5 dan d5, di mana dia berharap bishop b7 salah tempat. } ( 7... Bb7 8. O-O c5 9. d5 Qc7 ( 9... Ngf6 10. e5 { Boleh dimain tanpa kehilangan pawn d kerana bishop di e2. } ) 10. Kh1 Ngf6 11. e5 { Sangat tidak jelas, Berelovich - Svidler, Azov 1996. } ) 8. Be3 { 8.d5 kurang menarik sebelum bishop Black ke b7. } ( 8. d5 Nb6 { Black diikuti ...Nf6, ...O-O dan ...e6 dengan posisi lebih baik. } ) 8... Bb7 { Sekarang selepas bishop White ke e3, keputusan ini wajar. } 9. d5 Ngf6 { Black membangun lancar; e4-e5 boleh dibalas ...Ng4. } 10. Nd2 O-O 11. O-O e6 12. dxe6 fxe6 { Black lebih menjanjikan dalam Bouteville - Hamilton, Lugano 1968. } ) 6... Nd7 7. e5 c5 8. Be4 { Kurang komited daripada 8.Ng5 tetapi masih set-up berbahaya; bishop ambil petak aktif dan dapat tempo ke atas rook. } 8... Rb8 9. Be3 { 9.O-O ialah langkah paling popular dan berbahaya (game seterusnya). } ( 9. Ng5 Nh6 10. e6 ( 10. Nxf7 Nxf7 11. e6 cxd4 12. exf7+ Kxf7 13. Nd5 Nc5 { Jelas lebih baik untuk Black dalam P. Hansen - Hillarp Persson, Gibraltar 2008. } ) 10... Nf6 11. exf7+ Nxf7 12. Bc6+ Kf8 { Nampak janggal untuk Black, tetapi piece Black sangat aktif dan dia tiada masalah. } 13. dxc5 Bf5 { Satu lagi game Forster. } ( 13... dxc5 { Forster pilih ini jika sampai posisi sama; 14.Qe2 Nd6 dengan idea ...Nf5-d4 membawa permainan kacau yang dia suka. } 14. Qe2 Nd6 ) 14. cxd6 { Mengambil pawn umpan adalah berisiko; 14.Qe2 lebih baik untuk White, jadi 13...dxc5 ialah penambahbaikan. } 14... Rb6 15. Qf3 ( 15. Nd5 Nxd5 16. Qxd5 Nxd6 17. a4 h6 18. Qxf5+ Nxf5 19. Ne6+ Kf7 20. Nxd8+ Rxd8 21. axb5 axb5 22. Ra8 { Endgame seimbang. } ) 15... Nxd6 { Kurang tepat. } ( 15... Qxd6 16. Bd5 Nxg5 17. fxg5 Qe5+ 18. Qe3 Nxd5 19. Qxe5 Bxe5 20. Nxd5 Re6 21. O-O Kg7 { Endgame secara objektif seimbang, tetapi lebih sukar untuk White. } ) 16. Bd5 b4 17. Na4 Nxd5 18. Qxd5 Rb5 19. Nc5 Qc8 20. Be3 { Tersilap. } ( 20. Ngxe6+ Bxe6 21. Nxe6+ Kf7 22. Ng5+ Ke8 23. Qb3 { Berfaedah untuk White. } ) 20... Bxb2 { Kembali kepada keadaan kucar-kacir tidak jelas; Forster akhirnya menang dalam Furhoff - Hillarp Persson, Stockholm 2007. } ) 9... b4 { Black mahu letak queen di c7, jadi knight mesti ditendang dari d5 dahulu. } ( 9... Nh6 10. dxc5 b4 11. Ne2 ( 11. Nd5 Nxc5 12. Bxc5 dxc5 13. Qe2 { Bishop g7 Black terkurung dan ada lubang di c4 untuk knight White. } ) 11... Ng4 12. Bg1 dxe5 { Posisi tidak jelas, Hoffman - Ree, Belanda 2001. } ) 10. Ne2 { Knight ke e2 ialah jalan paling biasa. } ( 10. Na4 Qc7 { Penting supaya Black sentiasa boleh jawab dxc5 dengan ...dxe5. } ( 10... Nh6 11. dxc5 dxe5 12. c6 Ndf6 13. Qxd8+ Kxd8 14. Ba7 Ra8 { Kalah. } ( 14... Rb5 15. Bd3 { Kelebihan jelas untuk White. } ) 15. c7+ ) 11. Ng5 { Dengan queen Black selamat daripada pertukaran. } ( 11. dxc5 dxe5 12. fxe5 ( 12. c6 Ndf6 { Menguntungkan Black. } ) 12... Nxe5 13. O-O Ng4 14. Bf4 e5 { Kacau tetapi baik untuk Black. } ) ( 11. c3 Nh6 12. O-O bxc3 { Penambahbaikan yang betul. } ( 12... Bb7 13. Bxb7 Rxb7 14. exd6 exd6 15. dxc5 { Boleh berakhir buruk untuk Black; game Mekhitarian - Ahmadinia, Zurich 2010 sampai sini. } ) 13. Nxc3 ( 13. bxc3 O-O { Tiada masalah. } ) 13... Ng4 14. Nd5 Qa7 15. Bc1 cxd4 16. Qxd4 Qxd4+ 17. Nxd4 Bb7 { Black baik. } ) 11... Nh6 { Reaksi standard terhadap knight di g5, bersedia jawab e6 dengan ...Nf6. } 12. dxc5 { Meragukan; White patut elak pusat runtuh sepenuhnya. } ( 12. e6 Nf6 13. dxc5 fxe6 { Lebih baik untuk Black. } ) 12... dxe5 13. O-O ( 13. fxe5 Nxe5 14. Nb6 Nhg4 15. Bd4 O-O { Kelebihan jelas untuk Black. } ) 13... O-O 14. Kh1 { Meragukan. } ( 14. Qf3 Nf6 15. fxe5 Nhg4 16. Bf4 Nxe5 { Cadangan komputer, tetapi Forster masih pilih Black. } ) 14... Nf6 15. Bf3 exf4 16. Bg1 Nf5 { Black posisi menyeluruh lebih baik dalam Sadvakasov - Nyback, Bled (ol) 2002. } ) 10... Nh6 { Kurang tepat. } ( 10... Qc7 { Lebih tepat; Black akan sambung ...Nh6 sambil elak penambahbaikan White pada langkah 11. } 11. c3 { Black mengancam ...cxd4 diikuti ...dxe5. } 11... Nh6 12. h3 { Meragukan. } ( 12. dxc5 Nxc5 { Elak struktur simetri; Forster cadang jangan ke sana. } ) ( 12. O-O Ng4 13. Bc1 O-O { White masih boleh bertahan; buku sambung dengan ...Bb7 yang baik untuk Black. } ) 12... Bb7 { Lebih penting berebut petak cerah tengah daripada castle. } 13. Ng3 ( 13. Bxb7 Qxb7 14. O-O Nf5 15. Bf2 bxc3 16. bxc3 O-O { Forster pilih Black, lebih soal selera. } ) 13... bxc3 14. bxc3 Bxe4 15. Nxe4 Qc6 { Black mengambil kawalan petak cerah. } 16. Qd3 ( 16. d5 Qb5 17. Qe2 Nf5 18. exd6 Nf6 { Black lebih baik. } ) ( 16. Ng3 O-O 17. O-O Nb6 { Kira-kira seimbang. } ) 16... Nf5 17. Bf2 Rb2 18. Nfd2 ( 18. d5 Qa4 19. g4 dxe5 20. gxf5 gxf5 21. Nxc5 Nxc5 22. Bxc5 e4 23. Qe3 Qc2 { Black lebih daripada cukup pampasan untuk piece. } ) 18... cxd4 { Penambahbaikan. } ( 18... Bh6 19. Nc4 { White ambil inisiatif dalam Van Beers - Hillarp Persson, Bled (ol) 2002. } ) 19. cxd4 Bh6 20. d5 Qa4 21. g4 ( 21. Rc1 O-O 22. g4 Bxf4 23. gxf5 Nxe5 24. Qc3 Qb5 { Posisi White berantakan. } ) 21... Bxf4 22. gxf5 Nxe5 23. Qc3 Rc2 24. Qb3 Qxb3 25. axb3 Nd3+ 26. Ke2 Nxf2 27. Kxf2 gxf5 { Black menang. } ) 11. h3 { Meragukan. } ( 11. dxc5 { White boleh dapat kelebihan di sini. } dxc5 ( 11... dxe5 12. Nxe5 Nxe5 13. Qxd8+ Kxd8 14. fxe5 Ng4 15. Bf4 Bxe5 16. Bf3 { Agak lebih baik untuk White. } ) 12. h3 Qc7 13. O-O O-O 14. Qe1 ( 14. c4 { Diikuti Qc2 dengan sedikit kelebihan. } ) 14... f6 { Nampak baik untuk Black. } ) 11... O-O 12. c3 ( 12. O-O Qc7 13. c3 bxc3 14. bxc3 Nb6 15. dxc5 dxc5 ( 15... Nc4 16. cxd6 exd6 17. Bd4 Nf5 { Permainan menjanjikan; Forster lebih suka ini. } ) 16. Ng3 Be6 ( 16... f5 { Patut dimain di sini atau langkah seterusnya. } ) 17. Qc2 Bc4 18. Rfd1 Rfd8 19. Nd2 Bb5 20. a4 { White jelas lebih baik dalam V. Gurevich - Shchekachev, Cappelle la Grande 1997; Black main terlalu pasif. } ) 12... Nb6 { Lebih selamat 12...Qc7 yang bertukar ke game Van Beers - Hillarp Persson. } 13. Bf2 { Meragukan. } ( 13. dxc5 Nc4 14. Bc1 ( 14. Qd4 d5 15. Bb1 f6 ) 14... bxc3 15. b3 Nd2 16. Bxd2 cxd2+ 17. Qxd2 dxc5 18. Qxd8 Rxd8 19. Kf2 { Black sukar; Forster tak jumpa apa-apa meyakinkan. } ) 13... bxc3 14. bxc3 Nc4 { Black dapat kubu di c4; tugas seterusnya ialah selesaikan masalah knight pasif di h6. } 15. O-O Qc7 ( 15... Nf5 16. Qc1 Bb7 17. Bxb7 Rxb7 18. g4 ( 18. Rb1 { White harap seimbang. } ) 18... Rb2 { Black lebih baik. } ) 16. Rb1 Bd7 { Manuver ini kurang meyakinkan; terlalu perlahan dan Black lupa knight di h6. } 17. Rxb8 Rxb8 18. Qd3 Bb5 19. Qc2 Qd7 20. Ng5 { Tersilap. } ( 20. dxc5 dxe5 21. fxe5 Nxe5 22. Nxe5 Bxe5 23. Rd1 Qc7 24. Nd4 { Piece aktif dan pawn c lulus beri pampasan untuk struktur pawn aneh. } ) 20... Nf5 { Akhirnya knight masuk game; Black pegang petak cerah. } 21. Re1 e6 22. Bf3 cxd4 23. cxd4 Rc8 24. Rc1 d5 25. h4 h6 26. Nh3 h5 27. Ng5 Bf8 { Kemerosotan White lengkap; kalah secara posisi. } 28. Qd1 Nb2 29. Qd2 Nd3 30. Rxc8 Qxc8 31. Ng3 Nxg3 32. Bxg3 Qc4 33. Qe3 Ba3 34. Bxh5 { Pengorbanan terdesak; Bacrot menolaknya dengan serangan balas tepat. } 34... gxh5 35. Qf3 Qxd4+ 36. Kh2 Bc5 37. Qxh5 Qg1+ 38. Kh3 Qh1+ 39. Kg4 Nf2+ 40. Bxf2 Qxg2+ 0-1"
+        },
+        {
+          "id": "ch1-g5",
+          "number": 5,
+          "pages": [
+            36,
+            42
+          ],
+          "white": "Nick De Firmian",
+          "black": "Tiger Hillarp Persson",
+          "result": "0-1",
+          "event": "Copenhagen",
+          "year": 1996,
+          "summary": "Game ini menunjukkan sistem 4.f4 a6 Moden Tiger dengan susunan langkah 6...Bb7 yang kurang tepat, tetapi tetap menghasilkan permainan tengah yang sangat tajam. Selepas 9.Ng5 cxd4 10.e6 f5 kedua-dua pihak mesti bermain tepat; De Firmian memilih pelan agresif dengan membuka sayap queen dan mengorbankan struktur. Hillarp Persson tersalah langkah 21...O-O dan 23...Rfe8, lalu mendapat posisi sukar. Namun tekanan masa dan keputusan De Firmian mengelak ulangan langkah membawa kepada kesilapan 43.Kh2 yang kalah.",
+          "keyPoints": [
+            {
+              "at": "6...Bb7",
+              "text": "Susunan langkah ini kurang baik. Hillarp Persson sendiri kemudian lebih suka 6...Nd7 kerana ...c5 mesti dimainkan secepat mungkin."
+            },
+            {
+              "at": "9.Ng5",
+              "text": "Langkah paling kuat bagi White. Alternatif 9.e6, 9.exd6 dan 9.Be4 semuanya boleh diatasi atau memberi Black permainan yang baik."
+            },
+            {
+              "at": "11.exd7+",
+              "text": "Selepas 10.e6 f5, 11.exd7+ ialah satu-satunya langkah yang merisaukan Black. 11.Bxf5 dan 11.Nf7 gagal."
+            },
+            {
+              "at": "12.Nd1",
+              "text": "Langkah terbaik White. Koordinasi buah Black bagus tetapi struktur pawn White buruk, jadi posisi sangat tidak jelas."
+            },
+            {
+              "at": "14.a4",
+              "text": "Idea tipikal White: buka sayap queen supaya bishop mendapat ruang. 14.O-O terlalu berbahaya, seperti berdiri di kawasan 'avalanche'."
+            },
+            {
+              "at": "21.Nf2",
+              "text": "Komputer mencadangkan 21.O-O diikuti 22.c4 dengan tekanan ke atas Black. Pilihan permainan White tidak tepat."
+            },
+            {
+              "at": "21...O-O",
+              "text": "Kesilapan. 21...Kf7 lebih baik kerana raja White bermasalah dan dua sayapnya sukar diselaraskan."
+            },
+            {
+              "at": "23...Rfe8",
+              "text": "Black jelas lebih teruk selepas langkah ini. 23...Rf7 lebih tahan lasak."
+            },
+            {
+              "at": "26.Nf4+",
+              "text": "Garpu raja dan queen selepas 25.Qxg6+ Kxg6 menang material, tetapi Black mendapat pawn dan beberapa helah."
+            },
+            {
+              "at": "43.Kh2",
+              "text": "White menolak ulangan langkah dan kalah dengan kesilapan ini. 43...Nf3+ diikuti 45...Rh2+ dan 46.Kxf3 Rf2 mate."
+            }
+          ],
+          "pgn": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. f4 a6 5. Nf3 b5 6. Bd3 Bb7 {Susunan langkah ini kurang tepat; 6...Nd7 lebih baik kerana ...c5 perlu dimainkan secepat mungkin.} 7. Qe2 {Apabila bishop sudah ke b7, White mampu meluangkan masa untuk langkah ini, walaupun belum tentu terbaik.} ( 7. O-O Nd7 8. e5 c5 9. Be4 {Versi White yang lebih baik, tetapi Black patut mengelak keseluruhan variasi dengan ...Bb7 awal.} ) 7... Nd7 8. e5 ( 8. Be3 {Transposisi ke permainan lain.} ) 8... c5 ( 8... Nh6 9. Ne4 O-O 10. c3 c5 11. e6 f5 12. exd7 c4 13. Bc2 fxe4 14. Bxe4 Bxe4 15. Qxe4 Qxd7 {Black mengejar seri dalam satu permainan, tetapi White ada beberapa cara memperbaiki.} ) 9. Ng5 ( 9. e6 fxe6 10. Ng5 Ndf8 ( 10... Bxd4 {Pilihan bagi yang berani mengambil risiko.} ) 11. dxc5 Qc7 {Tidak jelas.} ) ( 9. exd6 Ngf6 10. dxe7 ( 10. O-O e6 {Selamat untuk Black.} ) 10... Qxe7 11. Qxe7+ Kxe7 12. O-O Rhe8 {Buah aktif Black menggantikan pawn yang hilang.} ) ( 9. exd6 cxd4 10. Ne4 e6 11. Ne5 Bd5 12. a4 Ngf6 13. Nxf6+ Qxf6 14. O-O Nxe5 15. fxe5 Qxe5 16. d7+ Ke7 17. Qf2 f5 {Sangat bercelaru.} ) ( 9. Be4 Bxe4 10. Nxe4 cxd4 11. exd6 Nh6 ( 11... e6 12. Ne5 Nxe5 13. fxe5 Bxe5 14. O-O {White ada pampasan yang mencukupi.} ) 12. a4 O-O 13. axb5 exd6 14. O-O ) 9... cxd4 {Sekarang tiada jalan balik.} ( 9... Nh6 10. e6 Nf6 11. exf7+ Nxf7 12. Ne6 {White menang.} ) 10. e6 f5 ( 10... f6 11. exd7+ Qxd7 12. Ne6 dxc3 13. f5 cxb2 14. Bxb2 Kf7 15. O-O Nh6 16. Rae1 {Sangat buruk bagi Black.} ) 11. exd7+ ( 11. Bxf5 Ndf6 12. Be4 d5 {White kehilangan sebiji buah.} ) ( 11. Nf7 Qa5 12. a3 dxc3 13. b4 Qc7 14. Nxh8 Nf8 15. Nf7 Qc6 {Black jelas lebih baik.} ) 11... Qxd7 12. Nd1 {Mungkin yang terkuat, tetapi ada godaan lain.} ( 12. Ne6 dxc3 13. Nxg7+ Kf7 14. Nxf5 gxf5 15. Qh5+ Kf8 16. Bxf5 Qc6 17. Be6 Qe4+ 18. Qe2 Qxe2+ 19. Kxe2 Nf6 20. f5 Bxg2 21. Rd1 Ke8 {Posisi hampir seimbang.} ) ( 12. Nxb5 axb5 13. Bxb5 Bc6 14. Bc4 ( 14. Bxc6 Qxc6 15. Ne6 Bf6 16. O-O Rc8 17. Rf2 Kf7 {Tidak jelas; pawn d4 memotong posisi White.} ) ( 14. Qc4 Bxb5 15. Qf7+ Kd8 16. Qxg7 Qc6 {Berakhir dengan perpetual check.} ) 14... Nh6 15. O-O Bf6 16. Ne6 Ng4 17. Re1 Qa7 {Black mendapat permainan balas yang sangat baik.} ) 12... e5 13. fxe5 ( 13. c4 h6 14. Nh3 bxc4 15. Bxc4 e4 {Black jelas lebih baik.} ) ( 13. c3 e4 {Dianalisis sebagai amat tidak jelas dalam buku terdahulu.} ) 13... dxe5 14. a4 ( 14. O-O h6 15. Nh3 ( 15. Bf4 hxg5 16. Bxe5 Kf7 ) 15... Ne7 16. c3 e4 17. Bb1 d3 18. Qe1 g5 {Black menang.} ) ( 14. c3 Ne7 15. cxd4 h6 16. Nh3 Qxd4 {Black ada pampasan yang mencukupi.} ) 14... h6 15. Nf3 ( 15. Nh3 bxa4 16. c3 Ne7 17. Bc4 Qc6 18. O-O Rd8 19. b3 d3 20. Qf2 axb3 21. Bxb3 Kf8 {Kekacauan diteruskan.} ) 15... e4 16. axb5 Ne7 17. bxa6 Bc6 18. Bc4 ( 18. O-O exd3 19. cxd3 Bb5 {Black baik.} ) 18... exf3 19. gxf3 Bd5 20. Bxd5 ( 20. Bb5 {Menuju seri.} ) 20... Qxd5 21. Nf2 ( 21. O-O Kf7 22. c4 {Black di bawah tekanan.} ) 21... O-O {Nampak jelas tetapi sebenarnya kesilapan.} ( 21... Kf7 22. O-O Rhe8 23. Re1 Nc6 {Black sedikit lebih baik.} ) 22. O-O Nc6 23. Nd3 Rfe8 ( 23... Rf7 24. Re1 Re7 25. Qf1 Rxe1 26. Nxe1 Kh7 {White masih lebih baik, tetapi kurang berbanding permainan sebenar.} ) 24. Qg2 Kh7 25. Qxg6+ Kxg6 26. Nf4+ Kf7 27. Nxd5 Re2 28. Rf2 Re1+ 29. Rf1 Re2 30. Rf2 Re1+ 31. Kg2 d3 32. cxd3 ( 32. c3 Be5 33. f4 Rg8+ 34. Kf3 Bd4 {White di bawah tekanan.} ) 32... Bd4 33. Rc2 Rg8+ 34. Kh3 Rf1 35. Rg2 Rxf3+ 36. Rg3 Rgxg3+ 37. hxg3 Rf1 38. Nc3 Ne5 39. a7 Rh1+ 40. Kg2 Rg1+ 41. Kh3 Rh1+ 42. Kg2 Rg1+ 43. Kh2 Nf3+ 44. Kh3 Rh1+ 45. Kg2 Rh2+ {Kxf3 Rf2 adalah mate.} 0-1"
+        },
+        {
+          "id": "ch1-g6",
+          "number": 6,
+          "pages": [
+            42,
+            44
+          ],
+          "white": "Michael Schlosser",
+          "black": "Alexander Chernin",
+          "result": "0-1",
+          "event": "Yerevan (ol)",
+          "year": 1996,
+          "summary": "White menukar pawn di d6 dengan cepat dan melepaskan pusat kuatnya tanpa perjuangan, lalu 9.Ne4 membiarkan Black mendahului dalam perkembangan. Chernin menggunakan ...Qb6, ...Nh6-f5 dan ...c4 untuk menyerang king White yang tidak dapat castle. Selepas kesilapan White (17...Nf6 dibiarkan, 19.Ne5, 23.Bf3), pasangan bishop dan inisiatif Black menjadi terlalu kuat.",
+          "keyPoints": [
+            {
+              "at": "8.exd6",
+              "text": "Menolak pawn ke e5 hanya untuk menukarnya serta-merta tidak logik dan membuang masa; White melepaskan pusatnya tanpa kompensasi."
+            },
+            {
+              "at": "9.Ne4",
+              "text": "Knight ini hanya menyerang pawn d6 dan tidak banyak lagi; 9.a4 atau 9.O-O lebih baik. Black dapat mengambil inisiatif dengan ...Qb6."
+            },
+            {
+              "at": "9...Qb6",
+              "text": "Queen menyerang b2 dan menekan c5/f2; selepas dxc5 dxc5 Black mendapat perkembangan pantas dan pusat White berkecai."
+            },
+            {
+              "at": "11...Nh6",
+              "text": "Idea tematik: perkembangan lebih penting daripada pawn b. Knight menuju f5 dan Black tidak perlu risau tentang b5."
+            },
+            {
+              "at": "13...c4",
+              "text": "Menghalang White daripada castle pendek dan membuka diagonal untuk Bb7; king White kekal terdedah di tengah."
+            },
+            {
+              "at": "17...Nf6",
+              "text": "Ketepatan yang terlepas; 17...Nc5 memberi Black kelebihan jelas. Selepas 18.O-O White masih bertahan."
+            },
+            {
+              "at": "19.Ne5",
+              "text": "Silap; 19.bxa6 membawa kedudukan hampir seri. Selepas pertukaran, bishop pair Black menguasai papan."
+            },
+            {
+              "at": "23.Bf3",
+              "text": "Chernin akhirnya mendapat kelebihan jelas dan Bf3 membenarkan ...Ba6 serta ...Ne3 yang memenangkan material; 23.Nd3 lebih baik."
+            },
+            {
+              "at": "26...b3",
+              "text": "Pawn b3 menamatkan pertahanan White dan menjejaskan kedudukan; White berserah selepas pertukaran rook dan ...Rd8."
+            }
+          ],
+          "pgn": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. f4 a6 5. Nf3 b5 6. Bd3 Nd7 7. e5 c5 8. exd6 { Menolak pawn ke e5 hanya untuk menukarnya terus kelihatan tidak logik; pertukaran ini tidak menawarkan apa-apa kepada White. } ( 8. exd6 cxd4 9. Ne4 f5 10. Nf2 Nc5 { Black baik. } ) ( 8. exd6 cxd4 9. Nd5 Ra7 { diikuti ...Nc5, juga baik untuk Black. } ) 8... exd6 { Pilihan Chernin ini lebih baik daripada 8...cxd4 yang pada mulanya difikirkan oleh penulis. } 9. Ne4 { Hanya menyerang pawn d6; tidak banyak lebih daripada itu. } ( 9. O-O Ne7 10. f5 cxd4 11. Ne2 Qb6 { tidak membawa White ke mana-mana; Black selesa. } ) ( 9. a4 b4 ( 9... Ne7 10. axb5 cxd4 11. Ne4 Qb6 12. O-O O-O { tidak jelas. } ) 10. Ne4 Qc7 { Mengawasi c4. } 11. Bc4 Ngf6 12. Nxf6+ Nxf6 13. Qe2+ Kd8 14. O-O ( 14. Ne5 Re8 { dan Black lebih baik. } ) 14... Re8 { Kelebihan perkembangan Black lebih daripada menebus kedudukan king yang agak pelik. } ) 9... Qb6 10. dxc5 dxc5 11. a4 { Pilihan yang menarik tetapi berisiko. } ( 11. Be2 Ngf6 12. Nd6+ Ke7 13. Nxc8+ Raxc8 14. O-O Rhe8 { Dolmatov menilai tidak jelas, tetapi Black lebih baik pada pandangan penulis. } ) 11... Nh6 { Langkah tematik: pusat White berkecai dan perkembangan lebih penting daripada pawn b. } 12. axb5 O-O 13. Be2 { Menyediakan castle pendek, melindungi daripada ...Re8 dan membuka fail d untuk queen. } 13... c4 { Menghalang castling. } 14. Ra3 ( 14. Qd6 Qxb5 { Black ada pilihan yang selesa. } ) ( 14. Qd6 Qa7 { pilihan Dolmatov. } ) 14... Nf5 15. Bxc4 ( 15. g4 Re8 16. gxf5 Rxe4 17. fxg6 hxg6 18. Qd5 Bb7 19. Qxd7 Rd8 { dan tiada pertahanan yang baik terhadap ...Rde8; Black menang menurut Dolmatov. } ) 15... Bb7 { Titik taktikal mudah: 16.Qxd7 akan kehilangan queen kepada ...Rad8. } 16. Nf2 ( 16. Qxd7 Rad8 { queen terperangkap. } ) 16... Rae8+ 17. Be2 ( 17. Kf1 axb5 { White dihalau balik dan kedudukan king menyedihkan. } ) 17... Nf6 { Melepaskan White. } ( 17... Nc5 18. O-O axb5 { jelas lebih baik untuk Black. } ) ( 17... Nc5 18. bxa6 Bxa6 { juga jelas lebih baik untuk Black. } ) 18. O-O Ng4 19. Ne5 { Silap; White boleh menyelamatkan diri dengan 19.bxa6. } ( 19. bxa6 Nxf2 20. Rxf2 Bxf3 21. Rxf3 Rxe2 22. Qxe2 Nd4 23. Qd1 Nxf3+ 24. Qxf3 Bd4 { kedudukan hampir seri; Black tidak ada yang lebih baik. } ) 19... Nxe5 20. fxe5 { White masih boleh melawan dengan 20.bxa6. } ( 20. bxa6 Bxg2 21. Kxg2 Qc6+ 22. Kh3 Nc4 { agak tidak jelas. } ) 20... axb5 { Kedudukan sudah stabil dan pasangan bishop Black menguasai papan. } 21. Kh1 ( 21. Bf3 b4 22. Rb3 Ba6 23. Re1 Bc4 { Black menang exchange tanpa kompensasi. } ) 21... b4 22. Rh3 Rxe5 23. Bf3 { Melepaskan pertahanan; 23.Nd3 menjadikan permainan masih jauh daripada tamat. } ( 23. Nd3 ) 23... Ba6 24. Nd3 Ne3 25. Bxe3 Rxe3 26. Qd2 { Ini sama dengan berserah; 26.b3 lebih bertahan walaupun hodoh. } ( 26. b3 ) 26... b3 27. Bg4 Rxh3 28. Bxh3 Qd6 29. Rf3 Rd8 0-1"
+        },
+        {
+          "id": "ch1-g10",
+          "number": 10,
+          "pages": [
+            62,
+            66
+          ],
+          "white": "Hannes Stefansson",
+          "black": "Tiger Hillarp Persson",
+          "result": "0-1",
+          "event": "Gausdal",
+          "year": 1996,
+          "summary": "Dalam Pirc/Modern gaya Austrian (4.f4) dengan Be3, Black bermain ...Bb7 dahulu dan kemudian memecahkan centre dengan ...c5 selepas White castle. Selepas pertukaran bishop, Black menggunakan Nh6-f5 dan pecahan ...f6 untuk mengaktifkan pasukannya di kingside. White menerima 18.Nxe5 yang kelihatan aktif tetapi menyerahkan inisiatif, dan serangan taktikal Black akhirnya menang selepas kesilapan 21.Na4.",
+          "keyPoints": [
+            {
+              "at": "7...Bb7",
+              "text": "Dengan bishop White sudah di e3 (satu tempo dibelanjakan), Black ada masa untuk membangunkan bishop dahulu. ...c5 serta-merta tidak sesuai kerana White boleh dxc5 dan menukar bishop untuk memaksa ...dxc5."
+            },
+            {
+              "at": "9.dxc5",
+              "text": "Ini pelan tipikal White apabila bishop berada di e3. 9.Kh1 dan 9.e5 juga dibincangkan tetapi Black ada jawapan yang baik."
+            },
+            {
+              "at": "13...Nh6",
+              "text": "Knight di tepi papan bukan masalah: ia menuju f5 sebagai tempat transit. Jangan main 13...e6 kerana Nd6+ dan petak d6/f6 menjadi lemah."
+            },
+            {
+              "at": "14.c4",
+              "text": "Tiger pernah mencadangkan ini sebagai tempat untuk White mencari penambahbaikan, tetapi hampir semua game lain bermain 14.Qe2 O-O dengan idea sama ada ...c4+ atau ...Rfd8."
+            },
+            {
+              "at": "16...f6",
+              "text": "Pecahan ini membuka centre dan mengaktifkan pasukan Black di kingside. Tanpanya, White akan lebih baik dengan ruang dan buah di tengah."
+            },
+            {
+              "at": "18.Nxe5",
+              "text": "Kelihatan aktif tetapi menyerahkan inisiatif kepada Black. 18.fxe5 lebih kurang seimbang."
+            },
+            {
+              "at": "19.cxb5",
+              "text": "Centre White sudah runtuh. Black bermain ...c4+ dengan discovered check, dan selepas Qf2 Ne3 menyerang rook serta petak penting."
+            },
+            {
+              "at": "21.Na4",
+              "text": "Kesilapan yang menentukan. 21.Nc6 axb5 masih membenarkan White bertahan walaupun Black kekal dengan inisiatif."
+            },
+            {
+              "at": "26...Ng3+",
+              "text": "Selepas 26.Nc6 yang tergesa-gesa, Ng3+ memberi mate pada langkah seterusnya; White meletak jawatan."
+            }
+          ],
+          "pgn": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. f4 a6 5. Nf3 b5 6. Bd3 Nd7 7. Be3 ( 7. O-O c5 8. dxc5 Nxc5 9. Be3 Bb7 { Transposisi ke game utama. } ) 7... Bb7 { Black membangunkan bishop dahulu kerana Be3 telah memperlahankan serangan White. } ( 7... c5 { Terlalu awal di sini. } 8. dxc5 Nxc5 9. Bxc5 dxc5 ( 9... Bxc3+ 10. bxc3 dxc5 11. e5 Qa5 12. O-O { White mengekalkan tekanan dan kelihatan berbahaya untuk Black. } ) 10. e5 Ra7 11. Qe2 Nh6 12. a4 Qa5 13. O-O b4 14. Ne4 { Black patut mengelak struktur dengan knight di g8; White jelas lebih baik dalam Carlsen lawan Azmaiparashvili. } ) 8. O-O ( 8. Qe2 { Alternatif serius yang dibincangkan dalam game seterusnya. } ) 8... c5 9. dxc5 ( 9. Kh1 c4 10. Be2 b4 11. Na4 Bxe4 12. Bxc4 Ngf6 13. a3 a5 { Mengekalkan kedudukan yang harmoni untuk Black. } ( 13... Rc8 14. Bb3 bxa3 15. Rxa3 { White sedikit lebih baik. } ) ) ( 9. e5 b4 ( 9... cxd4 10. Bxd4 Nh6 11. Be4 Bxe4 12. Nxe4 dxe5 13. fxe5 Nf5 14. c3 O-O { Kedudukan seimbang. } ) ( 9... Nh6 10. Be4 Bxe4 ( 10... cxd4 11. Bxb7 dxc3 12. e6 fxe6 13. Ng5 { Lebih baik untuk White. } ) 11. Nxe4 Nf5 12. Bf2 cxd4 13. exd6 O-O 14. Nxd4 Bxd4 15. Bxd4 exd6 { Kedudukan tidak jelas. } ) 10. Be4 ( 10. Na4 cxd4 11. Bxd4 Nh6 { Baik untuk Black. } ) 10... bxc3 ( 10... Qc8 11. Bxb7 Qxb7 12. Na4 cxd4 13. Bxd4 dxe5 14. fxe5 e6 15. a3 { White ada inisiatif yang jelas. } ) 11. Bxb7 Rb8 12. Bc6 cxb2 13. Rb1 Nh6 ( 13... Qc8 14. d5 ) 14. dxc5 O-O 15. cxd6 exd6 16. Bf2 Nc5 17. exd6 Ne6 { Kedudukan kekal tidak jelas; struktur ini biasanya sedikit lebih baik untuk White tetapi Black cukup sumber untuk imbang. } ) 9... Nxc5 10. Bxc5 ( 10. a3 Bxc3 11. bxc3 Bxe4 { Black memenangi pawn. } ) 10... dxc5 ( 10... Bxc3 11. bxc3 dxc5 { Perlu dimainkan apabila White bermain Qe2 dan bukannya castle. } ) 11. e5 Qb6 12. Be4 Bxe4 13. Nxe4 Nh6 { Knight boleh menggunakan f5 sebagai tempat transit. } ( 13... e6 14. Nd6+ { Walaupun tiada check ini, petak d6 dan f6 akan lemah. } ) 14. c4 ( 14. Qe2 O-O ( 14... c4+ 15. Qf2 Qb7 ( 15... Qxf2+ 16. Rxf2 O-O 17. c3 f6 18. exf6 exf6 19. Re1 Rfd8 20. Rfe2 Rac8 { Sama kedudukan. } ) 16. Rae1 O-O 17. h3 f6 18. exf6 exf6 19. Nc5 Qc8 20. Ne6 Re8 21. Nfd4 { White jelas lebih baik dalam Weiss lawan Heck. } ) 15. Rad1 c4+ ( 15... Rfd8 16. c3 f6 17. Qe3 fxe5 18. fxe5 Ng4 19. Rxd8+ Rxd8 20. Qxc5 Qxc5+ 21. Nxc5 Nxe5 22. Nxe5 Bxe5 23. Ne6 Rb8 { Peluang baik dalam endgame. } ) 16. Qf2 Qxf2+ 17. Kxf2 f6 18. exf6 Ng4+ 19. Kg3 exf6 { Black ada inisiatif, walaupun White sepatutnya boleh bertahan dalam endgame. } ) 14... O-O 15. Rc1 Rad8 16. Qe2 f6 { Membuka centre dan mengaktifkan pasukan Black di kingside. } 17. Nc3 fxe5 18. Nxe5 ( 18. Nd5 Rxd5 19. cxd5 exf4 { Black lebih baik lagi. } ) ( 18. fxe5 { Lebih kurang seimbang. } ) 18... Nf5 19. cxb5 ( 19. Kh1 Nd4 ) ( 19. Nd5 Qd6 { Diikuti ...e6 dan ...Nd4, lebih baik untuk Black. } ) 19... c4+ 20. Qf2 Ne3 21. Na4 ( 21. Nc6 axb5 22. Nxd8 Qxd8 23. Rcd1 ( 23. Rfe1 Ng4 ) ( 23. Nxb5 Nxf1 24. Rxf1 Rf5 ) 23... Nxd1 24. Rxd1 { Black masih ada inisiatif selepas ...Qa5 atau ...Qb8. } ) 21... Qd4 22. Nc6 ( 22. Nf3 Nxf1 23. Nxd4 Bxd4 { Black menang exchange dan lebih lagi. } ) 22... Nxf1 23. Nxd8 Rxf4 24. Qxd4 Bxd4+ 25. Kh1 Rf5 26. Nc6 ( 26. g3 Rf2 27. Rxf1 Rxf1+ 28. Kg2 Rf2+ { Black menang dengan mudah. } ) ( 26. h3 axb5 27. Nc3 Ng3+ 28. Kh2 Rf1 29. Rxf1 Nxf1+ 30. Kh1 Bxc3 31. bxc3 b4 { Keputusan sama. } ) 26... Ng3+ { White meletak jawatan kerana mate pada langkah seterusnya. } 0-1"
         }
       ],
       "gameIndex": [
@@ -576,7 +844,159 @@
       "id": "ch7",
       "number": 7,
       "title": "4.Bg5 – Into Midair",
-      "games": [],
+      "games": [
+        {
+          "id": "ch7-g62",
+          "number": 62,
+          "pages": [
+            339,
+            343
+          ],
+          "white": "Hermann Tydecks",
+          "black": "Thomas Paehtz (Jr)",
+          "result": "0-1",
+          "event": "Oberhof",
+          "year": 1999,
+          "summary": "White main dengan Bg5 dan Qd2 tetapi tidak menyelesaikan perkembangan buah. Black melawan dengan ...a6, ...b5, ...b4 dan ...c6 yang fleksibel, lalu membuka permainan di tengah dengan ...c5. White pula menukar pawn dengan cxb4 yang merosakkan struktur sendiri dan bermain Ra4 tanpa membangunkan buah, jadi Black menang dengan mudah.",
+          "keyPoints": [
+            {
+              "at": "5...b5",
+              "text": "Black terus bermain ...b5 supaya ...Nd7 tidak terkunci. Selepas 5...Nd7 6.a4! pawn e Black terpin dan sukar untuk masuk struktur Hippo."
+            },
+            {
+              "at": "6.a4",
+              "text": "Set-up dengan castling panjang kurang masuk akal di sini. Pawn d4 lebih lemah dan Black senang mencapai ...Nd7 serta ...c5."
+            },
+            {
+              "at": "8...c6",
+              "text": "Black bermain fleksibel dengan ...c6 dan bercadang ...e5. Dia mengelak ...c5 selepas ...a5 kerana petak cerah di sayap queen akan jadi lemah."
+            },
+            {
+              "at": "10.f3",
+              "text": "White terpaksa melemahkan diri dengan f3 kerana 10.Bd3 O-O 11.Nf3 membenarkan 11...bxc3 12.bxc3 d5."
+            },
+            {
+              "at": "12.cxb4",
+              "text": "Menukar pawn tanpa memenangkan pawn adalah kesilapan. Struktur White rosak dan tengahnya lebih mudah diserang. 12.Bd3 dan Ne2 lebih baik."
+            },
+            {
+              "at": "14.Ra4",
+              "text": "White terus mengabaikan perkembangan buah. Pasukan Black yang sudah siap menghukumnya dengan pecahan di tengah."
+            },
+            {
+              "at": "14...c5",
+              "text": "Pecahan ...c5 menyerang tengah dan membuka petak untuk buah Black. Sesudah 15.Nb6 Ra7 White tidak mampu menahan semua ancaman."
+            },
+            {
+              "at": "19.Nc4",
+              "text": "Black sudah menguasai permainan. Selepas ...Nxd5 dan ...Ne5, serta ...Ba6, White hilang kedudukan dan menyerah."
+            }
+          ],
+          "pgn": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. Bg5 a6 5. Qd2 {Ini pilihan paling fleksibel untuk White.} ( 5. f4 {Dibincangkan dalam game seterusnya.} ) ( 5. a4 Nc6 {Wajar menyerang pawn d4.} 6. d5 Nb4 7. a5 c5 {Langkah ini mengundang kerumitan.} ( 7... h6 {Pilihan paling selamat.} 8. Be3 e6 9. Ra4 c5 10. dxc6 Nxc6 11. Bb6 Qe7 {Kedudukan tidak jelas.} ) 8. Nce2 {Pembaikan, satu novelty.} ( 8. Na4 Qxa5 9. c3 b5 10. cxb4 Qxb4+ 11. Nc3 Qxb2 12. Nxb5 Bd7 13. Rb1 {13.Nc7+ lebih baik.} Qa2 14. Nc7+ Kd8 15. Bd3 Bc3+ 16. Kf1 Kxc7 {Black menang dalam Ulibin - T. Paehtz, Biel 2004.} ) 8... Bxb2 9. Rb1 {White memaksa Black menyerahkan satu buah demi tiga pawn.} Bf6 10. Bxf6 Nxf6 11. c3 Nbxd5 12. exd5 Qxa5 {Kedudukan ini menentukan sama ada 7...c5 lebih baik daripada 7...h6.} 13. Ra1 Qb5 14. Nf4 Qb2 15. Rc1 b5 ( 15... g5 16. Nfe2 b5 {Mungkin lebih baik.} ) 16. Bd3 c4 17. Bb1 Bg4 {Akibatnya tidak jelas.} ) 5... b5 ( 5... Nd7 6. a4 {Kesilapan jelas. Sukar untuk Black masuk struktur Hippo kerana pawn e terpin.} ) 6. a4 {Berbanding Flexible Dragon, set-up agresif dengan castling panjang kurang sesuai kerana d4 lebih lemah.} ( 6. f3 Nd7 7. h4 h6 ) ( 6. O-O-O Bb7 7. f3 Nd7 8. h4 c5 9. Nge2 ( 9. dxc5 Nxc5 10. h5 Rc8 11. Kb1 Ne6 12. Be3 Bxc3 13. bxc3 g5 {Black baik.} ) 9... Qa5 ( 9... Ngf6 {Mungkin lebih baik.} 10. dxc5 Nxc5 11. Bh6 Bxh6 12. Qxh6 b4 ) 10. Kb1 ( 10. dxc5 Nxc5 11. Kb1 h5 12. Nd4 Nd7 13. g3 Ngf6 {Tidak jelas.} ) 10... b4 11. Nd5 Bxd5 12. exd5 Nb6 13. Nc1 ( 13. a3 Qa4 {Masih memberi White banyak untuk difikirkan di sayap queen.} ) 13... c4 14. Qe1 Qb5 15. b3 h6 16. Bf4 Nf6 17. Bxd6 Nfxd5 {White dihancurkan dalam Spangenberg - Azmaiparashvili, Moscow 1994.} ) 6... b4 7. Nd5 ( 7. Na2 a5 8. c3 Nf6 9. Bd3 O-O ) ( 7. Na2 a5 8. c3 bxc3 9. Nxc3 Bb7 ) 7... a5 8. c3 c6 {Fleksibel. Black bercadang ...e5 dan menjaga pilihan ...d5, bukannya ...c5 yang melemahkan petak cerah.} ( 8... h6 9. Bh4 g5 10. Bg3 e6 {Melemahkan dan menyukarkan ...c5.} ( 10... Bb7 11. Bd3 f5 {Peluang terbaik untuk Black.} ) 11. Ne3 Nf6 12. f3 bxc3 13. bxc3 O-O 14. Bd3 ( 14. h4 {Nampak lebih bertenaga.} ) 14... Nh5 15. Ne2 f5 {Jika 15...Nd7 secara perlahan, White lebih selesa.} 16. Bf2 Nc6 17. exf5 exf5 18. h4 {Black dalam kesusahan dalam Filipenko - Shchekachev, Smolensk 1992.} ) 9. Ne3 Nf6 {Susulan logik yang memaksa White melemahkan pawn f.} 10. f3 ( 10. Bd3 O-O 11. Nf3 bxc3 12. bxc3 d5 {Black menyerang tengah.} 13. Bxf6 ( 13. e5 Ne4 {Tiada apa yang perlu dikesalkan oleh Black.} ) ( 13. exd5 cxd5 14. Bh4 Ba6 15. O-O Nbd7 {Tiada apa-apa untuk White.} ) 13... exf6 {Peluang untuk kedua-dua pihak.} ) ( 10. Bd3 O-O 11. Ne2 e5 ) 10... Qb6 {Tiada sebab melindungi pawn b dan queen tidak berguna di fail b.} ( 10... O-O {Lebih baik.} 11. cxb4 axb4 12. Qxb4 Nbd7 13. Qd2 h6 14. Bh4 e5 15. d5 Nc5 {Black ada banyak pampasan untuk pawn.} 16. Bc4 Nfxe4 {16.Bc4 membenarkan taktik ini.} ) 11. Nc4 Qb7 12. cxb4 {White tidak patut menukar tanpa menang pawn. Struktur sendiri rosak.} ( 12. Bd3 {Diikuti Ne2 lebih baik, dengan tengah kekal utuh.} ) 12... axb4 13. a5 O-O 14. Ra4 {White sudah lupa tentang perkembangan.} c5 15. Nb6 Ra7 ( 15... Rxa5 16. Rxa5 Qxb6 {Pampasan yang sangat baik.} ) 16. dxc5 dxc5 17. Bc4 ( 17. e5 Nfd7 18. Nxc8 Qxc8 19. f4 Nc6 {White mesti menghalang terlalu banyak ancaman.} ) 17... Nbd7 ( 17... Nc6 {Memenangkan pawn.} ) 18. Bd5 Qc7 19. Nc4 Nxd5 20. exd5 Ne5 21. Ne3 Ba6 0-1"
+        },
+        {
+          "id": "ch7-g63",
+          "number": 63,
+          "pages": [
+            343,
+            346
+          ],
+          "white": "Short, Stephen",
+          "black": "Johannesson, Ingvar Thor",
+          "result": "0-1",
+          "event": "Bunratty",
+          "year": 2008,
+          "summary": "Dalam Pirc/Modern dengan 4.Bg5 dan 5.f4, Black melaksanakan pelan ...b5, ...Nd7 dan ...c5 dengan tepat. Short bermain terlalu lambat dan melakukan 9.Be4? yang membenarkan 8...cxd4 membongkar posisi White; Black mendapat tiga pawn untuk exchange serta pawn b2 yang berbahaya. Endgame dimenangkan dengan mudah oleh Black.",
+          "keyPoints": [
+            {
+              "at": "5.f4",
+              "text": "5.f4 kurang fleksibel berbanding 5.Qd2; White cuba bina set-up gaya Austria dengan Bg5."
+            },
+            {
+              "at": "6...Nd7",
+              "text": "6...Nd7 ialah langkah terkuat: White menyasarkan e4-e5, jadi Black bersedia dengan ...c5 secara cepat."
+            },
+            {
+              "at": "7...c5",
+              "text": "Black tidak buang tempo dengan ...Bb7; selepas ...c5 White perlu pertimbangkan e5, d5 atau dxc5 tetapi semuanya tidak menjanjikan."
+            },
+            {
+              "at": "8...cxd4",
+              "text": "8...cxd4 hebat kerana Black tidak membazir tempo pada ...Bb7; posisi White terus goyah."
+            },
+            {
+              "at": "9.Be4",
+              "text": "9.Be4? membawa kejatuhan awal. Percubaan terbaik ialah 9.Ne4 Qa5+ 10.Ned2, dan Black masih selesa."
+            },
+            {
+              "at": "10...cxb2",
+              "text": "Selepas 10.Bxa8 cxb2 pawn b2 menjadi duri besar; ini senario impian Black."
+            },
+            {
+              "at": "13...Kxd8",
+              "text": "Tiga pawn untuk exchange serta pawn b2 yang kuat menjadikan hampir mustahil Black tersilap."
+            },
+            {
+              "at": "28...c3",
+              "text": "Black menyelesaikan dengan ...Nd3+ dan ...c3; White hanya mempunyai kombinasi Bg5 + f4 yang tidak meyakinkan."
+            }
+          ],
+          "pgn": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. Bg5 a6 5. f4 {Kurang fleksibel berbanding 5.Qd2, jadi ia langkah yang lebih lemah.} b5 {Black gerakkan pawn b dahulu supaya 6.a4 tidak menjadi masalah.} 6. Nf3 Nd7 {Langkah terkuat: White mahu e4-e5, jadi Black bersiap untuk ...c5 dengan pantas.} ( 6... Bb7 7. Bd3 Nd7 8. a4 b4 9. Ne2 c5 10. c3 {Cadangan lama, tetapi posisi White tidak sejelas yang disangka.} ) ( 6... Bb7 7. Bd3 Nd7 8. e5 c5 9. Be4 Bxe4 10. Nxe4 {Lebih kuat untuk White kerana mengancam Nxd6+; Black kurang selesa.} ) 7. Bd3 {Bidak ini kemudian menjadi sasaran tempo.} ( 7. a4 b4 8. Ne2 c5 9. c3 bxc3 10. bxc3 Ngf6 11. Ng3 ( 11. e5 Ne4 {Juga baik untuk Black.} ) 11... Qa5 12. Qd2 Bb7 13. Bd3 d5 {Black jelas lebih baik.} ) ( 7. e5 f6 8. exf6 Ngxf6 9. Bd3 c5 {Juga permainan menjanjikan untuk Black.} ) 7... c5 8. e5 ( 8. d5 c4 9. Be2 Nc5 {Menyekat tengah biasanya tidak baik; Black mempunyai permainan yang bagus.} ( 9... b4 {Kurang jelas.} ) ) ( 8. dxc5 Nxc5 9. O-O Bb7 {Black sudah mempunyai posisi cantik.} 10. Qe2 ( 10. Qe1 Nf6 11. e5 dxe5 12. fxe5 Ng4 13. Ne4 Qb6 14. Kh1 Rc8 {White sedikit lebih teruk.} ) 10... Qc7 {Langkah ini sebagai persediaan untuk ...Nf6.} ( 10... Nf6 11. e5 Nd5 12. Nxd5 Bxd5 13. f5 {Posisi menjadi sangat tajam dan berbahaya.} ) ( 10... b4 11. Nd5 Bxd5 12. exd5 Bxb2 13. Rab1 Bc3 {White tidak mempunyai pampasan yang cukup untuk pawn.} ) 11. e5 dxe5 12. fxe5 Nh6 13. a4 ( 13. Ne4 Ne6 {Kuat untuk Black.} ) 13... O-O {Black mempunyai posisi yang baik.} ) 8... cxd4 {Perbezaan besar berbanding posisi di mana Black membazir tempo pada ...Bb7.} 9. Be4 {Membawa kepada keruntuhan awal posisi White.} ( 9. Ne4 Qa5+ ( 9... dxe5 10. Nd6+ Kf8 11. O-O {Memberi White pampasan yang tidak perlu.} ) 10. Ned2 ( 10. Kf2 dxe5 11. fxe5 Nh6 ( 11... Nxe5 ) 12. Re1 O-O {Lebih baik untuk Black.} ) 10... dxe5 11. fxe5 Nh6 ( 11... Nxe5 12. Nxe5 Bxe5 13. O-O Bb7 14. Qe2 Qc7 15. Nf3 {White ada sedikit pampasan tetapi tidak cukup secara objektif.} ) 12. O-O Qb6 13. a4 Bb7 14. Qe2 Ng4 {White menghadapi perjuangan sukar.} ) 9... dxc3 10. Bxa8 cxb2 {Senario impian Black menjadi kenyataan.} 11. Rb1 dxe5 ( 11... Qc7 {Menurut engine, ini lebih kuat lagi.} ) 12. fxe5 Nxe5 13. Qxd8+ Kxd8 {Dengan tiga pawn untuk exchange dan pawn b2, hampir mustahil Black tersilap.} 14. O-O Nc4 15. Rfd1+ Kc7 16. Nd4 Bg4 17. Rd3 Nf6 18. Bf3 Bxf3 19. Nxf3 Rd8 20. Bf4+ Kc8 21. Ne5 Nh5 22. Rxd8+ Kxd8 23. Rd1+ Kc8 24. Nxc4 bxc4 25. Be3 Be5 26. Bc5 Nf4 27. Kf2 Nd3+ 28. cxd3 c3 {Pawn c3 tidak dapat dihalang; White tidak mampu membendungnya.} 0-1"
+        },
+        {
+          "id": "ch7-g64",
+          "number": 64,
+          "pages": [
+            346,
+            351
+          ],
+          "white": "Sandor Videki",
+          "black": "Tiger Hillarp Persson",
+          "result": "0-1",
+          "event": "Budapest",
+          "year": 1996,
+          "summary": "Dalam Modern Defence dengan 4.Bg5, Hillarp Persson melancarkan ...b5 dan ...b4 diikuti ...c5 untuk menyerang pusat White. White tersilap dengan menutup pusat melalui 12.d5, lalu Black menjawab dengan ...c4 dan ...b3 sehingga sayap queenside White lumpuh. Kemuncaknya ialah korban rook 23...Rxe2!! apabila king White terperangkap di tengah, dan Black menang dalam endgame.",
+          "keyPoints": [
+            {
+              "at": "5...b5",
+              "text": "Black segera mengembangkan permainan di queenside. Idea utama ialah menyediakan ...c5 dengan cepat, bukan menyerang pawn e4."
+            },
+            {
+              "at": "8...b4",
+              "text": "Pengecualian kepada peraturan umum untuk tidak menolak pawn ke b4. Knight c3 terpaksa berundur dan Black mendapat masa untuk ...c5."
+            },
+            {
+              "at": "12.d5",
+              "text": "Langkah ini menutup pusat tetapi dikritik. Alternatif 12.Qe2 atau 12.cxb4 lebih baik."
+            },
+            {
+              "at": "12...c4",
+              "text": "Tema berulang dalam struktur ini. Black merampas petak c5 dan d3 serta menekan pusat White."
+            },
+            {
+              "at": "13...b3",
+              "text": "Pawn b3 melumpuhkan sayap queenside White. Bishop White terpaksa pasif di d1."
+            },
+            {
+              "at": "15...exf6",
+              "text": "Pengambilan semula dengan pawn membuka e-file untuk rook dan menyediakan ...f5 untuk menekan e4."
+            },
+            {
+              "at": "19...Qe8",
+              "text": "Queen menghalang White daripada castling sambil memerhati pawn a4 dan memberi petak e7 kepada rook."
+            },
+            {
+              "at": "23...Rxe2",
+              "text": "Korban rook yang menentukan. Dengan king White tersekat di tengah, bishop-bishop Black menjadi sangat berbahaya."
+            },
+            {
+              "at": "39...Ke7",
+              "text": "White ketinggalan bahan dan serangan Black tidak dapat dibendung, jadi White meletakkan jawatan."
+            }
+          ],
+          "pgn": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. Bg5 a6 5. Nf3 ( 5. Bc4 {Pilihan agresif yang perlu dijawab dengan ...b5.} b5 ( 5... h6 {Tidak sesuai kerana White mendapat kelebihan pembangunan.} 6. Qf3 Nf6 7. Bxf6 exf6 8. Nge2 ) ( 5... Nc6 6. Nf3 ( 6. Nge2 Nf6 7. f3 b5 8. Bb3 O-O ) 6... Nf6 7. d5 {White sedikit lebih baik.} ) 6. Bb3 ( 6. Bd5 c6 7. Bb3 Nd7 8. Nf3 Qc7 9. a4 b4 10. Ne2 Ngf6 11. Qd3 a5 ( 11... c5 ) 12. O-O Ba6 13. Qe3 c5 {Black tidak perlu tergesa-gesa castling dan nampak menjanjikan.} ) 6... Bb7 {Perlu supaya Qf3 boleh dijawab dengan ...Nf6 tanpa e4-e5.} ) 5... b5 6. Qd2 ( 6. Bd3 {Lebih berbahaya.} Nd7 ( 6... h6 7. Be3 {Black menang satu tempo berbanding Flexible Dragon Restrained, tetapi pawn g6 kehilangan pelindung h7.} ) 7. a4 b4 8. Ne2 Bb7 ( 8... c5 9. c3 bxc3 ( 9... Qa5 10. O-O Bb7 11. Bd2 {Selepas ini sukar bagi Black untuk mengambil di c3.} ) 10. bxc3 Bb7 11. Rb1 Qc7 ) ) 6... Bb7 {Langkah yang kurang tepat kerana ...c5 lebih penting daripada menyerang e4.} ( 6... Nd7 7. Bd3 c5 8. dxc5 Nxc5 9. O-O Bb7 10. Rfe1 Nf6 ( 10... Rc8 {Lebih bercita-cita tinggi.} ) 11. Bh6 O-O {Peningkatan jelas dan hampir sama rata.} ) ( 6... Nd7 7. a4 b4 8. Nd5 ( 8. Ne2 {Serupa dengan permainan sebenar.} ) 8... a5 9. Bc4 c6 10. Ne3 Nb6 11. Bd3 h6 12. Bh4 g5 13. Bg3 h5 14. Nxg5 h4 15. Bf4 Bxd4 16. Nd1 e5 {Kedudukan kucar-kacir yang menyenangkan, peluang Black tidak lebih buruk.} ) 7. Bd3 Nd7 8. a4 b4 ( 8... c5 {Satu kemungkinan menarik yang patut diuji.} 9. axb5 cxd4 10. Nd5 h6 11. Bh4 axb5 12. Rxa8 Bxa8 13. O-O Ngf6 14. Nxf6+ Nxf6 15. Nxd4 Qb6 16. Bxf6 Bxf6 17. Nxb5 Bxe4 18. Bxe4 Qxb5 19. b4 Kf8 {Peluang kira-kira sama.} ) 9. Ne2 ( 9. Nd5 {Pilihan lain untuk White.} h6 10. Bh4 c5 ( 10... Bxd5 11. exd5 g5 12. Bg3 Ngf6 13. Qxb4 Nxd5 14. Qc4 e6 {Agak tidak jelas.} ) ( 10... a5 {Lebih selamat tetapi agak perlahan.} 11. c3 bxc3 ( 11... g5 12. Bg3 {Tidak sebaik yang disangka.} ) 12. bxc3 g5 13. Bg3 Ngf6 14. Nxf6+ Nxf6 15. e5 Ne4 16. Qe2 Nxg3 17. fxg3 {White memegang inisiatif.} ) 11. O-O cxd4 ( 11... Qa5 {Alternatif yang bercita-cita tinggi.} ) 12. Qxb4 Rb8 13. Qc4 Rc8 {White hanya boleh mengulang langkah.} ) 9... c5 10. c3 Ngf6 ( 10... bxc3 11. bxc3 h6 12. Bh4 ( 12. Be3 Ngf6 13. Ng3 Ng4 {Sekurang-kurangnya sama untuk Black.} ) 12... g5 13. Bg3 Ngf6 14. Qe3 ( 14. Qc2 cxd4 15. cxd4 Rc8 ) 14... Ng4 15. Qc1 cxd4 16. cxd4 Rc8 {Inisiatif beralih kepada Black.} ) 11. Ng3 O-O ( 11... h6 12. Be3 h5 {Bertukar kepada Flexible Dragon Restrained.} ) 12. d5 ( 12. cxb4 cxd4 13. Nxd4 Ne5 14. Bc2 d5 {Black mendapat pampasan di tengah.} ) ( 12. O-O c4 13. Bxc4 bxc3 14. bxc3 Bxe4 15. Nxe4 Nxe4 {Sama rata.} ) ( 12. Qe2 {Lebih baik dengan mengekalkan ketegangan di tengah.} bxc3 13. bxc3 h6 14. Bd2 cxd4 ( 14... Qc7 15. O-O e6 16. a5 Rfb8 17. Rfb1 Bc6 {Black hampir sama.} ) 15. cxd4 e5 16. Rb1 Bc6 {Black mempunyai counterplay yang cemerlang.} ) 12... c4 13. Bc2 ( 13. Bb1 Nc5 14. Qe2 bxc3 15. bxc3 Nxd5 {White kalah terus.} ) ( 13. Bxc4 bxc3 14. bxc3 Qc7 15. Qa2 ( 15. Rb1 Qxc4 16. Rxb7 Nc5 ) 15... Rfc8 16. Rb1 Qxc4 17. Qxc4 Rxc4 18. Rxb7 Nc5 {Black jelas lebih baik.} ) 13... b3 14. Bd1 ( 14. Bb1 a5 {Queenside White lumpuh, tetapi sekurang-kurangnya White boleh menyerang pawn c4.} ) 14... Nc5 15. Bxf6 exf6 ( 15... Nd3+ 16. Kf1 Bxf6 17. Be2 {White memenangi sebiji pawn.} ) 16. Be2 ( 16. O-O Re8 17. Rfe1 Rc8 {White sukar bergerak dan tekanan ke atas e4 meningkat.} ) 16... Re8 17. Bxc4 Nxe4 18. Nxe4 Rxe4+ 19. Be2 Qe8 20. Nd4 f5 21. Nc6 Bh6 22. Qd1 a5 23. Kf1 Rxe2 24. Qxe2 Ba6 25. c4 Qxe2+ 26. Kxe2 Bxc4+ 27. Kd1 Kf8 28. Nd4 Bxd5 29. f3 Be3 30. Nb5 Rc8 31. Re1 f4 32. Na3 Bb7 33. Rxe3 fxe3 34. Ke2 Ba6+ 35. Kxe3 Re8+ 36. Kd2 Re2+ 37. Kc3 Rxg2 38. Nb5 Rxh2 39. Rd1 Ke7 {Endgame tidak ada harapan, White meletakkan jawatan.} 0-1"
+        }
+      ],
       "pages": [
         338,
         351

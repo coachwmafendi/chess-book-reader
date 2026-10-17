@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 450">
+  <rect width="300" height="450" fill="#23201c"/>
+  <rect x="12" y="12" width="276" height="426" rx="10" fill="#1b1916" stroke="#38332c" stroke-width="2"/>
+  <text x="150" y="160" font-size="120" text-anchor="middle" fill="#8cc4b0">♞</text>
+  <text x="150" y="250" font-family="Georgia, serif" font-size="28" font-weight="600" text-anchor="middle" fill="#ece4d6">The Modern Tiger</text>
+  <text x="150" y="285" font-family="system-ui, sans-serif" font-size="15" text-anchor="middle" fill="#a39887">Tiger Hillarp Persson</text>
+  <text x="150" y="400" font-family="system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#7a6f63">Rak Catur · Buku Study</text>
+</svg>
