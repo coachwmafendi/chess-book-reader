@@ -880,6 +880,7 @@ function startupRoute(): ReturnType<typeof parseHash> {
 }
 
 function applyRoute(route = parseHash()) {
+  showToc(false); // sebarang navigasi (bab, game, carian, nota) tutup overlay
   if (!route.bookId) return showLibrary();
   const b = findBook(route.bookId);
   if (!b) return showLibrary();
