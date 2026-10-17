@@ -44,7 +44,7 @@ class AnthropicProvider implements LlmProvider {
 
     const res = await this.client.messages.stream({
       model: this.model,
-      max_tokens: 64000,
+      max_tokens: 128000, // game panjang + thinking boleh melebihi 64k (Game 4 terpotong pada 64k)
       system: `${system}\n\nPulangkan jawapan dengan memanggil tool "${tool.name}" sekali sahaja. Jangan balas dengan teks biasa.`,
       tools: [tool as Anthropic.Tool],
       tool_choice: { type: 'auto', disable_parallel_tool_use: true },

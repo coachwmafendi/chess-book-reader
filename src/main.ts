@@ -170,6 +170,11 @@ const fig = (san: string) => san.replace(/[KQRBN](?=[a-h1-8x+#]|$)/g, figSpan);
 // Tukar SAN dalam teks biasa (contoh tajuk "4.f4 Nf6") kepada figurine.
 const figText = (s: string) => s.replace(/\b([KQRBN])(x?[a-h][1-8])/g, (_, p, r) => figSpan(p) + r);
 const figPlain = (s: string) => s.replace(/\b([KQRBN])(x?[a-h][1-8])/g, (_, p, r) => FIG[p] + r); // untuk <option>
+/** Label nota "Bab 7 · Game 64 · 4...a6" — figurine hanya pada bahagian langkah (elak "Bab" jadi ♗ab). */
+const noteLabelHtml = (label: string) => {
+  const i = label.lastIndexOf(' · ');
+  return i < 0 ? esc(label) : esc(label.slice(0, i + 3)) + fig(esc(label.slice(i + 3)));
+};
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
 const uid = (book: Book, ch: Chapter, key: string) => `${book.id}/${ch.id}/${key}`;
@@ -598,7 +603,7 @@ function renderToc() {
           const info = describeSec(sec);
           if (!info) return '';
           const href = sectionHref(info.book.id, info.ch.id, info.key, path || undefined);
-          return `<li><button data-goto="${href}">${n.bookmark ? '★ ' : ''}${fig(esc(n.label))}${
+          return `<li><button data-goto="${href}">${n.bookmark ? '★ ' : ''}${noteLabelHtml(n.label)}${
             n.note ? `<span class="muted"> — ${esc(n.note.slice(0, 80))}</span>` : ''
           }</button></li>`;
         })

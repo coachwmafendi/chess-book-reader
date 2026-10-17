@@ -132,6 +132,15 @@ const scanTool: Tool = {
 };
 
 // ---------- Extract + baiki ----------
+/** buildTree, tetapi ralat sintaks PGN (contoh kurungan tidak seimbang) dilaporkan sebagai ralat untuk dibaiki. */
+function safeBuild(pgn: string, fen: string): ReturnType<typeof buildTree> {
+  try {
+    return buildTree(pgn, fen);
+  } catch (e) {
+    const root = buildTree('', fen).root;
+    return { root, errors: [{ path: 'PGN', san: '', fen, message: `sintaks PGN rosak: ${(e as Error).message}` }] };
+  }
+}
 async function extractWithRepair<T extends { pgn: string; startFen?: string; keyPoints?: unknown[] }>(
   pages: number[],
   instruction: string,
@@ -147,7 +156,7 @@ async function extractWithRepair<T extends { pgn: string; startFen?: string; key
 
   let result = await provider.complete<T>(SYSTEM, content, tool);
   for (let attempt = 1; attempt <= 2; attempt++) {
-    const { root, errors } = buildTree(result.pgn, result.startFen ?? defaultFen);
+    const { root, errors } = safeBuild(result.pgn, result.startFen ?? defaultFen);
     // keyPoints intro ialah string biasa (tiada `at`) — hanya semak objek { at, text } dari game.
     const badKps = ((result.keyPoints ?? []) as unknown[]).filter(
       (k): k is { at: string } => typeof k === 'object' && k !== null && typeof (k as { at?: unknown }).at === 'string' && !findMainline(root, (k as { at: string }).at),
@@ -157,7 +166,7 @@ async function extractWithRepair<T extends { pgn: string; startFen?: string; key
     if (!errors.length && !badKps.length && !unfinished) return result;
 
     const report = [
-      ...errors.map((e) => `- ${e.path}: tidak sah dalam posisi ${e.fen}`),
+      ...errors.map((e) => (e.path === 'PGN' ? `- ${e.message}. Semak ( ) dan { } seimbang.` : `- ${e.path}: tidak sah dalam posisi ${e.fen}`)),
       ...badKps.map((k) => `- keyPoint "${k.at}" tiada dalam main line`),
       ...(unfinished ? ['- result "*": main line mungkin terpotong. Teruskan hingga langkah terakhir game dan isi result (1-0, 0-1, 1/2-1/2).'] : []),
     ].join('\n');
@@ -171,7 +180,7 @@ async function extractWithRepair<T extends { pgn: string; startFen?: string; key
       tool,
     );
   }
-  const { errors } = buildTree(result.pgn, result.startFen ?? defaultFen);
+  const { errors } = safeBuild(result.pgn, result.startFen ?? defaultFen);
   if (errors.length) console.log(`   ${tag}✗ masih ada ${errors.length} ralat — line itu akan dipotong dalam reader. Semak manual.`);
   return result;
 }
@@ -296,8 +305,9 @@ async function games() {
 
   let done = 0;
   let failed = 0;
+  let streak = 0; // kegagalan berturut-turut — biasanya kredit habis / API down
   const worker = async () => {
-    for (let job = jobs.shift(); job; job = jobs.shift()) {
+    for (let job = jobs.shift(); job && streak < 3; job = jobs.shift()) {
       const { ch, ref, end } = job;
       const tag = `[G${ref.number}] `;
       const pdfPages = Array.from({ length: end - ref.page + 1 }, (_, i) => ref.page + i + offset);
@@ -317,13 +327,16 @@ async function games() {
         );
         writeFileSync(out, JSON.stringify(book, null, 2) + '\n');
         console.log(`   ${tag}✅ (${++done} siap)`);
+        streak = 0;
       } catch (e) {
         failed++;
+        streak++;
         console.log(`   ${tag}✗ gagal: ${(e as Error).message}`);
       }
     }
   };
   await Promise.all(Array.from({ length: Number(args.concurrency) }, worker));
+  if (streak >= 3) console.log(`⛔ Dihentikan selepas ${streak} kegagalan berturut-turut. Baki ${jobs.length} game — jalankan semula untuk sambung.`);
   console.log(`✅ ${done} game disimpan, ${failed} gagal. Jalankan "npm run validate".`);
 }
 

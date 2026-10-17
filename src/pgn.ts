@@ -7,7 +7,9 @@ const tag = (k: string, v: string | number) => `[${k} "${String(v).replace(/"/g,
 function block(tags: [string, string | number | undefined][], fen: string, movetext: string, result: string) {
   const lines = tags.filter(([, v]) => v !== undefined && v !== '').map(([k, v]) => tag(k, v!));
   if (fen !== START_FEN) lines.push(tag('FEN', fen), tag('SetUp', '1'));
-  return `${lines.join('\n')}\n\n${movetext.trim()} ${result}\n`;
+  // Sesetengah PGN dalam data sudah berakhir dengan keputusan — buang supaya tidak jadi game kosong kedua.
+  const moves = movetext.trim().replace(/\s*(1-0|0-1|1\/2-1\/2|\*)$/, '');
+  return `${lines.join('\n')}\n\n${moves} ${result}\n`;
 }
 
 export function gamePgn(book: Book, ch: Chapter, g: Game) {
