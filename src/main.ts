@@ -88,7 +88,7 @@ const train = {
 };
 
 const engine = new Engine();
-const currentBook = () => findBook(currentBookId ?? '');
+const currentBook = () => findBook(currentBookId ?? '') ?? null;
 
 // ---------- Layout ----------
 const app = document.querySelector<HTMLDivElement>('#app')!;

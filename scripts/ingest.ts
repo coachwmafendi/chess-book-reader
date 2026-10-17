@@ -5,21 +5,24 @@
 // Langkah 2 — extract: proses satu bab (pengenalan + semua game) mengikut peta dari langkah 1.
 //   npm run ingest -- chapter --pdf buku.pdf --book modern-tiger --chapter 1 --title "4.f4 – Austrian Style"
 //
+// Game sahaja, ikut gameIndex dalam data/<id>.json (selari, boleh sambung semula; game sedia ada dilangkau):
+//   npm run ingest -- games --pdf buku.pdf --book modern-tiger [--chapter 3] [--concurrency 4]
+//
 // Ringkasan bab sahaja (pengenalan setiap bab, guna pages + gameIndex dalam data/<id>.json, halaman tercetak):
 //   npm run ingest -- intro --pdf buku.pdf --book modern-tiger [--chapter 3] [--force]
 //
-// Perlu: ANTHROPIC_API_KEY dalam environment.
+// Provider LLM: INGEST_PROVIDER=anthropic (default) atau google.
+// Anthropic perlu ANTHROPIC_API_KEY / CLAUDE_MODEL. Google perlu GOOGLE_API_KEY / GOOGLE_MODEL.
 // Nombor halaman = nombor halaman PDF (bukan nombor yang tercetak dalam buku).
 
-import Anthropic from '@anthropic-ai/sdk';
 import * as mupdf from 'mupdf';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { buildTree, findMainline, START_FEN } from '../src/lib/tree';
 import type { Book, Chapter, ChapterIntro, Game } from '../src/types';
+import { getProvider, type Tool } from './llm';
 
-const MODEL = process.env.CLAUDE_MODEL ?? 'claude-sonnet-5-5';
-const client = new Anthropic();
+const provider = getProvider();
 
 const { positionals, values: args } = parseArgs({
   allowPositionals: true,
@@ -33,6 +36,7 @@ const { positionals, values: args } = parseArgs({
     to: { type: 'string' },
     scale: { type: 'string', default: '2' },
     force: { type: 'boolean', default: false },
+    concurrency: { type: 'string', default: '4' },
   },
 });
 
@@ -53,29 +57,6 @@ async function page(n: number, scale = Number(args.scale)): Promise<string> {
   return buf.toString('base64');
 }
 
-const img = (data: string) =>
-  ({ type: 'image', source: { type: 'base64', media_type: 'image/png', data } }) as const;
-
-async function callTool<T>(system: string, content: Anthropic.ContentBlockParam[], tool: Anthropic.Tool): Promise<T> {
-  // Stream + max_tokens besar: thinking adaptive + PGN panjang boleh melebihi 16k token.
-  const res = await client.messages.stream({
-    model: MODEL,
-    max_tokens: 64000,
-    // Model 5.5 tolak tool_choice 'tool'/'any' — guna 'auto' + arahan eksplisit.
-    system: `${system}\n\nPulangkan jawapan dengan memanggil tool "${tool.name}" sekali sahaja. Jangan balas dengan teks biasa.`,
-    tools: [tool],
-    tool_choice: { type: 'auto', disable_parallel_tool_use: true },
-    messages: [{ role: 'user', content }],
-  }).finalMessage();
-  const block = res.content.find((b) => b.type === 'tool_use');
-  if (!block || block.type !== 'tool_use') {
-    const text = res.content.flatMap((b) => (b.type === 'text' ? [b.text] : [])).join(' ').slice(0, 300);
-    throw new Error(`Model tidak memulangkan tool_use (stop_reason: ${res.stop_reason}, out ${res.usage.output_tokens}) ${text}`);
-  }
-  console.log(`   ↳ token: in ${res.usage.input_tokens}, out ${res.usage.output_tokens}`);
-  return block.input as T;
-}
-
 // ---------- Prompt ----------
 const SYSTEM = `Anda membaca halaman buku catur yang diimbas (biasanya dua kolum, notation figurine, diagram papan).
 Tugas anda: tukar kandungan kepada PGN yang TEPAT.
@@ -92,7 +73,7 @@ Peraturan PGN:
 Ringkasan & point penting: Bahasa Melayu, gaya pemain kelab, fokus pada IDEA dan PELAN, bukan senarai langkah.
 Istilah catur (pawn, knight, bishop, rook, queen, king, castling, endgame) boleh kekal dalam Bahasa Inggeris.`;
 
-const gameTool: Anthropic.Tool = {
+const gameTool: Tool = {
   name: 'save_game',
   description: 'Simpan satu game yang diextract',
   input_schema: {
@@ -116,7 +97,7 @@ const gameTool: Anthropic.Tool = {
   },
 };
 
-const introTool: Anthropic.Tool = {
+const introTool: Tool = {
   name: 'save_intro',
   description: 'Simpan pengenalan bab',
   input_schema: {
@@ -131,7 +112,7 @@ const introTool: Anthropic.Tool = {
   },
 };
 
-const scanTool: Anthropic.Tool = {
+const scanTool: Tool = {
   name: 'save_map',
   description: 'Senarai game yang bermula dalam halaman ini',
   input_schema: {
@@ -154,40 +135,44 @@ const scanTool: Anthropic.Tool = {
 async function extractWithRepair<T extends { pgn: string; startFen?: string; keyPoints?: unknown[] }>(
   pages: number[],
   instruction: string,
-  tool: Anthropic.Tool,
+  tool: Tool,
   defaultFen = START_FEN,
+  tag = '',
 ): Promise<T> {
   const images = await Promise.all(pages.map((p) => page(p)));
-  const content: Anthropic.ContentBlockParam[] = [
-    ...images.flatMap((d, i) => [{ type: 'text' as const, text: `Halaman PDF ${pages[i]}:` }, img(d)]),
-    { type: 'text', text: instruction },
+  const content = [
+    ...images.flatMap((d, i) => [{ type: 'text' as const, text: `Halaman PDF ${pages[i]}:` }, { type: 'image' as const, data: d }]),
+    { type: 'text' as const, text: instruction },
   ];
 
-  let result = await callTool<T>(SYSTEM, content, tool);
+  let result = await provider.complete<T>(SYSTEM, content, tool);
   for (let attempt = 1; attempt <= 2; attempt++) {
     const { root, errors } = buildTree(result.pgn, result.startFen ?? defaultFen);
     // keyPoints intro ialah string biasa (tiada `at`) — hanya semak objek { at, text } dari game.
     const badKps = ((result.keyPoints ?? []) as unknown[]).filter(
       (k): k is { at: string } => typeof k === 'object' && k !== null && typeof (k as { at?: unknown }).at === 'string' && !findMainline(root, (k as { at: string }).at),
     );
-    if (!errors.length && !badKps.length) return result;
+    // Game tanpa keputusan biasanya bermaksud main line terpotong sebelum langkah terakhir.
+    const unfinished = (result as { result?: string }).result === '*';
+    if (!errors.length && !badKps.length && !unfinished) return result;
 
     const report = [
       ...errors.map((e) => `- ${e.path}: tidak sah dalam posisi ${e.fen}`),
       ...badKps.map((k) => `- keyPoint "${k.at}" tiada dalam main line`),
+      ...(unfinished ? ['- result "*": main line mungkin terpotong. Teruskan hingga langkah terakhir game dan isi result (1-0, 0-1, 1/2-1/2).'] : []),
     ].join('\n');
-    console.log(`   ⚠ cubaan ${attempt}: ${errors.length} langkah tidak sah, ${badKps.length} keyPoint salah — minta pembetulan`);
-    result = await callTool<T>(
+    console.log(`   ${tag}⚠ cubaan ${attempt}: ${errors.length} langkah tidak sah, ${badKps.length} keyPoint salah — minta pembetulan`);
+    result = await provider.complete<T>(
       SYSTEM,
       [
         ...content,
-        { type: 'text', text: `Hasil sebelum ini:\n${JSON.stringify(result)}\n\nMasalah yang dikesan oleh chess.js:\n${report}\n\nBaca semula halaman yang berkaitan dan pulangkan versi yang dibetulkan sepenuhnya.` },
+        { type: 'text' as const, text: `Hasil sebelum ini:\n${JSON.stringify(result)}\n\nMasalah yang dikesan oleh chess.js:\n${report}\n\nBaca semula halaman yang berkaitan dan pulangkan versi yang dibetulkan sepenuhnya.` },
       ],
       tool,
     );
   }
   const { errors } = buildTree(result.pgn, result.startFen ?? defaultFen);
-  if (errors.length) console.log(`   ✗ masih ada ${errors.length} ralat — line itu akan dipotong dalam reader. Semak manual.`);
+  if (errors.length) console.log(`   ${tag}✗ masih ada ${errors.length} ralat — line itu akan dipotong dalam reader. Semak manual.`);
   return result;
 }
 
@@ -199,11 +184,11 @@ async function scan() {
     const pages = Array.from({ length: Math.min(10, to - s + 1) }, (_, i) => s + i);
     console.log(`🔎 imbas halaman ${pages[0]}–${pages.at(-1)}`);
     const imgs = await Promise.all(pages.map((p) => page(p, 0.8)));
-    const res = await callTool<{ games: typeof found }>(
+    const res = await provider.complete<{ games: typeof found }>(
       'Anda mengenal pasti tajuk game dalam buku catur.',
       [
-        ...imgs.flatMap((d, i) => [{ type: 'text' as const, text: `Halaman PDF ${pages[i]}:` }, img(d)]),
-        { type: 'text', text: 'Senaraikan setiap tajuk "GAME N" yang muncul, dengan nombor halaman PDF dan nama pemain.' },
+        ...imgs.flatMap((d, i) => [{ type: 'text' as const, text: `Halaman PDF ${pages[i]}:` }, { type: 'image' as const, data: d }]),
+        { type: 'text' as const, text: 'Senaraikan setiap tajuk "GAME N" yang muncul, dengan nombor halaman PDF dan nama pemain.' },
       ],
       scanTool,
     );
@@ -291,7 +276,59 @@ async function intros() {
   console.log(`✅ Disimpan ke ${out}. Jalankan "npm run validate".`);
 }
 
+async function games() {
+  const out = `data/${args.book}.json`;
+  const book: Book = JSON.parse(readFileSync(out, 'utf8'));
+  const offset = book.source?.pageOffset ?? 0;
+  const only = args.chapter ? Number(args.chapter) : null;
+
+  const jobs: { ch: Chapter; ref: NonNullable<Chapter['gameIndex']>[number]; end: number }[] = [];
+  for (const ch of book.chapters) {
+    if (only !== null && ch.number !== only) continue;
+    const refs = ch.gameIndex ?? [];
+    refs.forEach((ref, i) => {
+      if (ch.games.some((g) => g.number === ref.number)) return;
+      // Game berakhir di halaman game seterusnya (inklusif) atau di hujung bab.
+      jobs.push({ ch, ref, end: refs[i + 1]?.page ?? ch.pages[1] });
+    });
+  }
+  console.log(`♟  ${jobs.length} game untuk diproses (concurrency ${args.concurrency})`);
+
+  let done = 0;
+  let failed = 0;
+  const worker = async () => {
+    for (let job = jobs.shift(); job; job = jobs.shift()) {
+      const { ch, ref, end } = job;
+      const tag = `[G${ref.number}] `;
+      const pdfPages = Array.from({ length: end - ref.page + 1 }, (_, i) => ref.page + i + offset);
+      console.log(`   ${tag}${ref.white} – ${ref.black} (Bab ${ch.number}, hlm ${ref.page}–${end})`);
+      try {
+        const r = await extractWithRepair<Omit<Game, 'id' | 'number' | 'pages'>>(
+          pdfPages,
+          `Extract Game ${ref.number} (${ref.white} – ${ref.black}) SAHAJA — mula dari tajuk "Game ${ref.number}", ` +
+            'berhenti sebelum game seterusnya. Main line mesti lengkap hingga langkah terakhir game, dengan result.',
+          gameTool,
+          START_FEN,
+          tag,
+        );
+        // Satu proses Node = satu penulis; tulis selepas setiap game supaya kerja tidak hilang jika terhenti.
+        ch.games = [...ch.games, { id: `${ch.id}-g${ref.number}`, number: ref.number, pages: [ref.page, end] as [number, number], ...r }].sort(
+          (a, b) => a.number - b.number,
+        );
+        writeFileSync(out, JSON.stringify(book, null, 2) + '\n');
+        console.log(`   ${tag}✅ (${++done} siap)`);
+      } catch (e) {
+        failed++;
+        console.log(`   ${tag}✗ gagal: ${(e as Error).message}`);
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: Number(args.concurrency) }, worker));
+  console.log(`✅ ${done} game disimpan, ${failed} gagal. Jalankan "npm run validate".`);
+}
+
 if (cmd === 'scan') await scan();
+else if (cmd === 'games') await games();
 else if (cmd === 'chapter') await chapter();
 else if (cmd === 'intro') await intros();
-else console.log('Guna: npm run ingest -- scan|chapter|intro --pdf <fail> --book <id> ...');
+else console.log('Guna: npm run ingest -- scan|chapter|intro|games --pdf <fail> --book <id> ...');
