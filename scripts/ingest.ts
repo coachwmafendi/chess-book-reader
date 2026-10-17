@@ -5,6 +5,9 @@
 // Langkah 2 — extract: proses satu bab (pengenalan + semua game) mengikut peta dari langkah 1.
 //   npm run ingest -- chapter --pdf buku.pdf --book modern-tiger --chapter 1 --title "4.f4 – Austrian Style"
 //
+// Ringkasan bab sahaja (pengenalan setiap bab, guna pages + gameIndex dalam data/<id>.json, halaman tercetak):
+//   npm run ingest -- intro --pdf buku.pdf --book modern-tiger [--chapter 3] [--force]
+//
 // Perlu: ANTHROPIC_API_KEY dalam environment.
 // Nombor halaman = nombor halaman PDF (bukan nombor yang tercetak dalam buku).
 
@@ -13,7 +16,7 @@ import * as mupdf from 'mupdf';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { buildTree, findMainline, START_FEN } from '../src/lib/tree';
-import type { Book, Chapter, Game } from '../src/types';
+import type { Book, Chapter, ChapterIntro, Game } from '../src/types';
 
 const MODEL = process.env.CLAUDE_MODEL ?? 'claude-sonnet-5-5';
 const client = new Anthropic();
@@ -29,6 +32,7 @@ const { positionals, values: args } = parseArgs({
     from: { type: 'string' },
     to: { type: 'string' },
     scale: { type: 'string', default: '2' },
+    force: { type: 'boolean', default: false },
   },
 });
 
@@ -222,10 +226,11 @@ async function chapter() {
     : { id: args.book!, title: args.title ?? args.book!, author: args.author ?? '', chapters: [] };
 
   const n = Number(args.chapter);
+  const offset = book.source?.pageOffset ?? 0;
   const range = (a: number, b: number) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
 
   console.log(`📘 Bab ${n}: pengenalan (hlm ${map.from}–${map.games[0].page})`);
-  const intro = await extractWithRepair<Chapter['intro']>(
+  const intro = await extractWithRepair<ChapterIntro>(
     range(map.from, map.games[0].page),
     'Extract PENGENALAN bab sahaja (abaikan game yang bermula di halaman terakhir). Beri ringkasan bab, 4–6 point penting tentang pelan/idea, dan PGN langkah-langkah utama.',
     introTool,
@@ -240,15 +245,53 @@ async function chapter() {
       `Extract Game ${g.number} (${g.white} – ${g.black}) SAHAJA — mula dari tajuk game itu, berhenti sebelum game seterusnya.`,
       gameTool,
     );
-    games.push({ id: `ch${n}-g${g.number}`, number: g.number, pages: [g.page, end], ...r });
+    games.push({ id: `ch${n}-g${g.number}`, number: g.number, pages: [g.page - offset, end - offset], ...r });
   }
 
-  const ch: Chapter = { id: `ch${n}`, number: n, title: args.title ?? `Bab ${n}`, pages: [map.from, map.to], intro, games };
+  // Data simpan halaman tercetak; kekalkan tajuk/halaman/gameIndex sedia ada (dari isi kandungan).
+  const prev = book.chapters.find((c) => c.number === n);
+  const ch: Chapter = {
+    id: `ch${n}`,
+    number: n,
+    title: args.title ?? prev?.title ?? `Bab ${n}`,
+    pages: prev?.pages ?? [map.from - offset, map.to - offset],
+    intro,
+    games,
+    ...(prev?.gameIndex && { gameIndex: prev.gameIndex }),
+  };
   book.chapters = [...book.chapters.filter((c) => c.number !== n), ch].sort((a, b) => a.number - b.number);
   writeFileSync(out, JSON.stringify(book, null, 2));
   console.log(`✅ Disimpan ke ${out}. Jalankan "npm run validate" untuk semakan akhir.`);
 }
 
+async function intros() {
+  const out = `data/${args.book}.json`;
+  const book: Book = JSON.parse(readFileSync(out, 'utf8'));
+  const offset = book.source?.pageOffset ?? 0;
+  const only = args.chapter ? Number(args.chapter) : null;
+  for (const ch of book.chapters) {
+    if (only !== null && ch.number !== only) continue;
+    if (ch.intro && !args.force) {
+      console.log(`⏭  Bab ${ch.number}: ringkasan sudah ada (guna --force untuk ganti)`);
+      continue;
+    }
+    // Pengenalan = dari halaman pertama bab hingga halaman game pertama (game itu sendiri diabaikan).
+    const first = ch.gameIndex?.[0]?.page ?? Math.min(ch.pages[0] + 5, ch.pages[1]);
+    const pdfPages = Array.from({ length: first - ch.pages[0] + 1 }, (_, i) => ch.pages[0] + i + offset);
+    console.log(`📘 Bab ${ch.number}: ${ch.title} (hlm ${ch.pages[0]}–${first}, PDF ${pdfPages[0]}–${pdfPages.at(-1)})`);
+    ch.intro = await extractWithRepair<ChapterIntro>(
+      pdfPages,
+      `Ini Bab ${ch.number} "${ch.title}". Extract PENGENALAN bab sahaja (abaikan game yang bermula di halaman terakhir). ` +
+        'Beri ringkasan bab 3–5 ayat (variation apa, idea utama kedua-dua pihak, pendapat penulis), 4–6 point penting tentang pelan/idea, ' +
+        'dan PGN langkah-langkah utama yang dibincangkan bermula dari startFen.',
+      introTool,
+    );
+    writeFileSync(out, JSON.stringify(book, null, 2) + '\n'); // simpan selepas setiap bab
+  }
+  console.log(`✅ Disimpan ke ${out}. Jalankan "npm run validate".`);
+}
+
 if (cmd === 'scan') await scan();
 else if (cmd === 'chapter') await chapter();
-else console.log('Guna: npm run ingest -- scan|chapter --pdf <fail> --book <id> ...');
+else if (cmd === 'intro') await intros();
+else console.log('Guna: npm run ingest -- scan|chapter|intro --pdf <fail> --book <id> ...');

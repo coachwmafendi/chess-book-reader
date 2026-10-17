@@ -136,6 +136,50 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .var { margin: 2px 0 6px 8px; padding-left: 10px; border-left: 2px solid var(--line); font-size: 13.5px; }
 .var .mv { font-weight: 400; }
 
+/* Isi kandungan */
+.toc-btn {
+  border: 1px solid var(--line); background: var(--bg); border-radius: 8px; padding: 6px 12px; font-weight: 500;
+}
+.toc-btn:hover { border-color: var(--accent); }
+.toc {
+  position: fixed; inset: 0; z-index: 50; background: rgba(20, 16, 12, .45);
+  display: flex; justify-content: center; align-items: flex-start; padding: 6vh 16px; overflow-y: auto;
+}
+.toc[hidden] { display: none; }
+.toc-card {
+  width: min(100%, 640px); background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 20px 22px; box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+.toc-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.toc-head h2 { font-family: var(--serif); font-size: 24px; margin: 0; }
+.toc-head p { margin: 2px 0 0; font-size: 14px; }
+.toc-close { border: 0; background: none; font-size: 18px; color: var(--muted); padding: 4px 8px; border-radius: 6px; }
+.toc-close:hover { background: var(--bg); color: var(--ink); }
+.toc-list { list-style: none; margin: 16px 0 0; padding: 0; }
+.toc-ch { border-top: 1px solid var(--line); padding: 4px 0 8px; }
+.toc-ch.active .toc-title { color: var(--accent); font-weight: 600; }
+.toc-row {
+  display: flex; align-items: baseline; gap: 12px; width: 100%; text-align: left;
+  background: none; border: 0; padding: 8px 6px 2px; border-radius: 8px;
+}
+.toc-row:hover { background: var(--bg); }
+.toc-num { color: var(--muted); min-width: 22px; font-variant-numeric: tabular-nums; }
+.toc-title { flex: 1; font-family: var(--serif); font-size: 16px; }
+.toc-page { color: var(--muted); font-variant-numeric: tabular-nums; }
+.toc-status { display: flex; gap: 6px; padding-left: 40px; }
+.badge { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 99px; padding: 0 8px; }
+.badge.ok { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+
+/* Senarai game dalam bab */
+.games { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
+.gl { display: flex; gap: 10px; padding: 5px 8px; border-radius: 6px; font-size: 14px; color: var(--muted); }
+.gl.ready { color: var(--ink); cursor: pointer; }
+.gl.ready:hover { background: var(--bg); }
+.gl.ready .gl-num { color: var(--accent); font-weight: 600; }
+.gl-num { min-width: 24px; font-variant-numeric: tabular-nums; }
+.gl-name { flex: 1; }
+.gl-page { font-variant-numeric: tabular-nums; }
+
 /* Responsif */
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; padding: 12px 16px; gap: 16px; }

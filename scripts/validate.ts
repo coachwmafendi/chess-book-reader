@@ -10,7 +10,7 @@ for (const file of process.argv.slice(2)) {
   console.log(`\n📖 ${book.title}`);
   for (const ch of book.chapters) {
     const sections = [
-      { name: `Bab ${ch.number} (pengenalan)`, pgn: ch.intro.pgn, fen: ch.intro.startFen, kps: [] as { at: string }[] },
+      ...(ch.intro ? [{ name: `Bab ${ch.number} (pengenalan)`, pgn: ch.intro.pgn, fen: ch.intro.startFen, kps: [] as { at: string }[] }] : []),
       ...ch.games.map((g) => ({ name: `Game ${g.number}: ${g.white} – ${g.black}`, pgn: g.pgn, fen: g.startFen ?? START_FEN, kps: g.keyPoints })),
     ];
     for (const s of sections) {

@@ -22,9 +22,24 @@ export interface Chapter {
   id: string;
   number: number;
   title: string;
-  pages: [number, number];
-  intro: { startFen: string; summary: string; keyPoints: string[]; pgn: string };
+  pages: [number, number]; // nombor halaman tercetak (PDF = tercetak + source.pageOffset)
+  intro?: ChapterIntro; // tiada = ringkasan bab belum diproses
   games: Game[];
+  gameIndex?: GameRef[]; // senarai penuh game dalam bab (dari "Index of Main Games")
+}
+
+export interface ChapterIntro {
+  startFen: string;
+  summary: string;
+  keyPoints: string[];
+  pgn: string;
+}
+
+export interface GameRef {
+  number: number;
+  white: string;
+  black: string;
+  page: number; // halaman tercetak
 }
 
 export interface Book {

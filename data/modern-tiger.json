@@ -2,13 +2,19 @@
   "id": "modern-tiger",
   "title": "The Modern Tiger",
   "author": "Tiger Hillarp Persson",
-  "source": { "file": "the-modern-tiger.pdf", "pageOffset": 1 },
+  "source": {
+    "file": "the-modern-tiger.pdf",
+    "pageOffset": 1
+  },
   "chapters": [
     {
       "id": "ch1",
       "number": 1,
       "title": "4.f4 – Austrian Style",
-      "pages": [9, 18],
+      "pages": [
+        9,
+        97
+      ],
       "intro": {
         "startFen": "rnbqk1nr/ppp1ppbp/3p2p1/8/3PPP2/2N5/PPP3PP/R1BQKBNR b KQkq - 0 4",
         "summary": "Bab ini menangani cara paling 'brutal' melawan Modern: White main 4.f4 untuk menolak e4-e5 dan menghimpit Black. Jawapan penulis ialah 4...a6! diikuti ...b5, ...Bb7, ...Nd7 dan ...c5 — serang pusat White dari tepi, bukan secara langsung.",
@@ -30,21 +36,938 @@
           "event": "Internacional de Sants",
           "year": 2004,
           "result": "0-1",
-          "pages": [12, 18],
+          "pages": [
+            12,
+            18
+          ],
           "summary": "Black menjawab Ng5 dan e5-e6 dengan 8...cxd4!? 9.e6 f5! — satu pengorbanan queen secara positional. Selepas 12...Bxd5 Black dapat dua minor piece dan dua pawn untuk queen, kawal pusat, dan struktur pawn White rosak. White hilang arah, dan Black menang selepas 28.Qe1?? Rb1!.",
           "keyPoints": [
-            { "at": "8...cxd4", "text": "Laluan paling tajam — malah membawa kepada pengorbanan queen. 8...Nh6 yang lebih selamat ada dalam Game 2." },
-            { "at": "9...f5", "text": "Konsep utama: jawab e5-e6 dengan ...f5 dan korbankan knight d7. Posisi seimbang di atas 'pisau cukur', tapi tiada sangkalan ditemui." },
-            { "at": "10.Nd5", "text": "Lebih mencabar daripada 10.Qf3?, 10.Bxf5?! dan 10.exd7+." },
-            { "at": "12...Bxd5", "text": "Imbangan material: 2 minor piece + 2 pawn untuk queen. Black kawal pusat; White susah cari pelan." },
-            { "at": "13.O-O", "text": "Langkah paling mencabar untuk White sebenarnya 13.b4! — rujuk variation." },
-            { "at": "15...O-O", "text": "Tidak perlu. Lebih kuat 15...Bf6 atau 15...Rc8." },
-            { "at": "18...Ng4", "text": "Kurang tepat — 18...Rfe8! diikuti ...Rc8 dan ...Ne4 sangat baik untuk Black." },
-            { "at": "28.Qe1", "text": "Blunder dalam time trouble. 28.g5 lebih baik, dan Black masih ada idea indah ...h5!! untuk 'memenjarakan' queen White." }
+            {
+              "at": "8...cxd4",
+              "text": "Laluan paling tajam — malah membawa kepada pengorbanan queen. 8...Nh6 yang lebih selamat ada dalam Game 2."
+            },
+            {
+              "at": "9...f5",
+              "text": "Konsep utama: jawab e5-e6 dengan ...f5 dan korbankan knight d7. Posisi seimbang di atas 'pisau cukur', tapi tiada sangkalan ditemui."
+            },
+            {
+              "at": "10.Nd5",
+              "text": "Lebih mencabar daripada 10.Qf3?, 10.Bxf5?! dan 10.exd7+."
+            },
+            {
+              "at": "12...Bxd5",
+              "text": "Imbangan material: 2 minor piece + 2 pawn untuk queen. Black kawal pusat; White susah cari pelan."
+            },
+            {
+              "at": "13.O-O",
+              "text": "Langkah paling mencabar untuk White sebenarnya 13.b4! — rujuk variation."
+            },
+            {
+              "at": "15...O-O",
+              "text": "Tidak perlu. Lebih kuat 15...Bf6 atau 15...Rc8."
+            },
+            {
+              "at": "18...Ng4",
+              "text": "Kurang tepat — 18...Rfe8! diikuti ...Rc8 dan ...Ne4 sangat baik untuk Black."
+            },
+            {
+              "at": "28.Qe1",
+              "text": "Blunder dalam time trouble. 28.g5 lebih baik, dan Black masih ada idea indah ...h5!! untuk 'memenjarakan' queen White."
+            }
           ],
           "pgn": "1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. f4 a6 5. Nf3 b5 6. Bd3 Nd7 { Kini lebih popular daripada 6...Bb7. Knight keluar dulu supaya ...c5 boleh dimainkan cepat. } ( 6... Bb7 ) 7. e5 { Set-up paling berprinsip dan tajam: kingside siap, sekarang serang terus di tengah. } ( 7. O-O c5 8. dxc5 Nxc5 9. Be3 Nxd3 { Cuba hukum susunan langkah White. } ( 9... Bb7 { Transpose ke Game 10. } ) 10. Qxd3 ( 10. cxd3 Nf6 ) 10... Nf6 { Seimbang — White sedikit lebih maju, Black ada pasangan bishop. } ) 7... c5 { Lebih menyeronokkan daripada 7...Bb7. } ( 7... Bb7 8. Ng5 { Langsung dan kuat. 8.Qe2 transpose ke Game 5. } ) ( 7... e6 { Jangan main ...e6 melainkan White sudah buat langkah perlahan. } ) 8. Ng5 { 'Aku datang!' — White mahu paksa e5-e6. } ( 8. e6 fxe6 9. Ng5 Bxd4 10. Nxe6 ( 10. Be4 Rb8 ) ( 10. Nxh7 Bxc3+ 11. bxc3 Nf8 12. Nxf8 Kxf8 13. Qf3 Rb8 14. Qg3 Nf6 { Sangat tidak jelas. } ) 10... Bxc3+ 11. bxc3 Qb6 12. Qf3 d5 { Penambahbaikan penulis. } 13. Qxd5 Bb7 14. Ng7+ Kd8 15. Qf7 Ngf6 16. c4 Bxg2 { Black menang dalam Van Apeldoorn – Hillarp Persson, 2007. } ) 8... cxd4 { Laluan paling tajam Black. } ( 8... Nh6 { Lebih selamat — Game 2. } ) 9. e6 f5 { Korbankan knight d7 demi kawalan pusat. } 10. Nd5 ( 10. Qf3 dxc3 11. b3 Nb6 12. Qc6+ Kf8 13. Nf7 Bd7 14. Nxd8 Bxc6 15. Nxc6 Nf6 { Black jelas lebih baik. } ) ( 10. Bxf5 Ndf6 11. Be4 ( 11. Bxg6+ hxg6 12. Qd3 Kf8 13. Qxg6 Qe8 { Cemerlang untuk Black. } ) 11... d5 12. Nf7 Qa5 13. Qxd4 dxe4 { Black selesa. } ) ( 10. exd7+ Bxd7 11. Nb1 e5 12. O-O Ne7 13. a4 h6 14. Nh3 e4 15. Be2 Qb6 16. Kh1 O-O { Black ada pampasan yang sangat baik. } ) 10... Nc5 11. Nf7 { Fork queen dan rook. } ( 11. Bxf5 Bb7 ( 11... Nh6 12. Bg4 ) 12. Nf7 Qb8 13. Nxh8 ( 13. Nb6 Bxg2 14. Rg1 Nh6 ) 13... Bxd5 14. Nxg6 hxg6 15. Bxg6+ Kd8 { Black lebih baik. } ) 11... Bxe6 12. Nxd8 Bxd5 { Dua minor piece + dua pawn untuk queen. Black kawal pusat; White perlu cari pelan seperti a2-a4. } 13. O-O ( 13. a4 bxa4 14. Qe2 Nf6 15. O-O Rxd8 16. Bxa6 Nxa6 17. Qxa6 Kf7 { Counterplay di fail c. } ) ( 13. Be2 Bxg2 14. Rg1 Bd5 { Tidak jelas. } ) ( 13. b4 { Pelan paling mencabar untuk White. } Nxd3+ ( 13... Na4 14. c4 ) 14. cxd3 Rxd8 15. O-O Nh6 16. a4 { Paling langsung: buka queenside untuk Ra5, Bb2, Qa1. } O-O 17. axb5 axb5 18. Ra5 Rb8 19. Re1 Rfe8 { Enjin beri White kira-kira +1, tapi Black ada counterplay dengan ...Nf7/...Ng4 dan ...e5-e4. } ) 13... Rxd8 14. b3 ( 14. Be2 e6 15. Bf3 Ne7 { Tidak jelas. } ) 14... Nh6 ( 14... Nf6 15. Bb2 e5 16. a4 bxa4 17. b4 Nxd3 18. Qxd3 O-O 19. Qxa6 Ng4 20. Qxa4 Ne3 21. Rf2 Rb8 { Kucar-kacir yang menarik. } ) 15. Qe1 { Selepas ini penulis lebih suka posisi Black. } ( 15. Re1 Bf6 16. a4 bxa4 17. b4 Nxd3 18. Qxd3 Rc8 19. Bb2 Rc4 20. Rxa4 O-O 21. c3 Rfc8 22. cxd4 Rc2 23. Re2 Rc1+ 24. Kf2 Ng4+ 25. Kg3 Rh1 { Ancaman mat ...Rxh2 dan ...h5 — White runtuh. } ) 15... O-O ( 15... Bf6 ) ( 15... Rc8 ) 16. a4 ( 16. Qxe7 Ng4 17. Re1 ( 17. Rb1 Rfe8 18. Qc7 Rc8 19. Qxd6 Ba8 ) 17... Ne3 18. Bxe3 Bf6 19. Bxd4 Bxe7 20. Rxe7 Rf7 21. Rxf7 Kxf7 22. Bf1 Be4 { Material sama, White kelebihan kecil. } ) 16... bxa4 17. Bc4 ( 17. bxa4 Ng4 18. Rb1 Rfe8 { Pampasan penuh untuk Black. } ) 17... Bxc4 18. bxc4 Ng4 ( 18... Rfe8 { Diikuti ...Rc8 dan ...Ne4 — sangat baik untuk Black. } ) 19. h3 Nf6 20. Qxe7 Nfe4 21. Bb2 Rd7 22. Qh4 Rb7 23. Ra2 Rfb8 24. Ba3 Rb1 25. Bxc5 Rxf1+ ( 25... Bf6 26. Qxf6 Nxf6 27. Bxd4 Nh5 28. Rxa4 Nxf4 29. Rxb1 Rxb1+ 30. Kh2 Ne6 { Lebih selamat — pawn tambahan dalam endgame. } ) 26. Kxf1 dxc5 27. g4 Bf6 28. Qe1 { Blunder dalam time trouble. } ( 28. g5 Rb1+ 29. Kg2 Bd8 30. Rxa4 a5 31. Ra3 Rc1 32. Rb3 Rxc2+ 33. Kg1 Rc1+ 34. Kg2 h5 { Korbankan lagi material untuk 'penjarakan' queen White. } 35. Rb8 a4 36. Rxd8+ Kf7 37. Rd7+ Kf8 38. Rd8+ Ke7 39. Rg8 Kf7 40. Rd8 a3 41. Ra8 { Penulis tidak jumpa kemenangan untuk Black. } ) 28... Rb1 { Menang queen. } 29. Rxa4 Rxe1+ 30. Kxe1 Bh4+ 31. Kf1 Bg3 0-1"
         }
+      ],
+      "gameIndex": [
+        {
+          "number": 1,
+          "white": "Ghannoum",
+          "black": "Hillarp Persson",
+          "page": 12
+        },
+        {
+          "number": 2,
+          "white": "Yemelin",
+          "black": "Chepukaitis",
+          "page": 18
+        },
+        {
+          "number": 3,
+          "white": "Forster",
+          "black": "Bacrot",
+          "page": 22
+        },
+        {
+          "number": 4,
+          "white": "Yusupov",
+          "black": "Forster",
+          "page": 28
+        },
+        {
+          "number": 5,
+          "white": "De Firmian",
+          "black": "Hillarp Persson",
+          "page": 36
+        },
+        {
+          "number": 6,
+          "white": "Schlosser, M.",
+          "black": "Chernin",
+          "page": 42
+        },
+        {
+          "number": 7,
+          "white": "Smeets",
+          "black": "Vachier-Lagrave",
+          "page": 44
+        },
+        {
+          "number": 8,
+          "white": "Hunt, A.",
+          "black": "Svidler",
+          "page": 52
+        },
+        {
+          "number": 9,
+          "white": "Timofeev",
+          "black": "Siebrecht",
+          "page": 56
+        },
+        {
+          "number": 10,
+          "white": "Stefansson",
+          "black": "Hillarp Persson",
+          "page": 62
+        },
+        {
+          "number": 11,
+          "white": "Michalczak",
+          "black": "Caruana",
+          "page": 66
+        },
+        {
+          "number": 12,
+          "white": "Fluvia Poyatos",
+          "black": "Hillarp Persson",
+          "page": 72
+        },
+        {
+          "number": 13,
+          "white": "Khairullin",
+          "black": "Dzhangobegov",
+          "page": 79
+        },
+        {
+          "number": 14,
+          "white": "Hermansson",
+          "black": "Hillarp Persson",
+          "page": 86
+        },
+        {
+          "number": 15,
+          "white": "Spiess",
+          "black": "Hillarp Persson",
+          "page": 89
+        },
+        {
+          "number": 16,
+          "white": "Turov",
+          "black": "Hillarp Persson",
+          "page": 93
+        }
       ]
+    },
+    {
+      "id": "ch2",
+      "number": 2,
+      "title": "4.f4 Nf6 – The Back-up Plan",
+      "games": [],
+      "pages": [
+        98,
+        150
+      ],
+      "gameIndex": [
+        {
+          "number": 17,
+          "white": "Sutovsky",
+          "black": "Ivanchuk",
+          "page": 100
+        },
+        {
+          "number": 18,
+          "white": "Filipovic",
+          "black": "Skoberne",
+          "page": 109
+        },
+        {
+          "number": 19,
+          "white": "Kramnik",
+          "black": "Grischuk",
+          "page": 114
+        },
+        {
+          "number": 20,
+          "white": "Sveshnikov, V.",
+          "black": "Chatalbashev",
+          "page": 118
+        },
+        {
+          "number": 21,
+          "white": "Nithander",
+          "black": "Hillarp Persson",
+          "page": 126
+        },
+        {
+          "number": 22,
+          "white": "Hector",
+          "black": "Kristiansen",
+          "page": 129
+        },
+        {
+          "number": 23,
+          "white": "Bryson",
+          "black": "Jones, G.",
+          "page": 135
+        },
+        {
+          "number": 24,
+          "white": "Glek",
+          "black": "Ribli",
+          "page": 139
+        },
+        {
+          "number": 25,
+          "white": "Howell",
+          "black": "Speelman",
+          "page": 144
+        }
+      ],
+      "intro": {
+        "startFen": "rnbqk2r/ppp1ppbp/3p1np1/8/3PPP2/2N5/PPP3PP/R1BQKBNR w KQkq - 2 5",
+        "summary": "Bab ini membincangkan 4.f4 Nf6, iaitu Black bertukar ke struktur Austrian Pirc sebagai \"pelan sandaran\" apabila tidak mahu bergantung sepenuhnya pada sistem 4...a6. Penulis dahulu menganggap Nf6 di sini kurang logik, tetapi kini yakin ia sah dan memberi Black permainan Pirc yang lebih \"biasa\". Kelemahannya, Black tidak boleh lagi menampung kekurangan teknik dengan inspirasi semata-mata. Selepas 5.Nf3 O-O, White ada banyak pelan: menyerang segera dengan e4-e5, mengukuhkan d4 dengan Be3, menunggu ...Nc6 sebelum e5, struktur simetri atau tak simetri dengan fxe5, serta langkah jarang seperti 6.Be2 dan 6.a3. Penulis yakin dengan sumber Black dalam hampir semua barisan ini dan gembira bermain Be3 main line pada bila-bila masa.",
+        "keyPoints": [
+          "Selepas 5.Nf3 O-O, Black melepaskan idea ...c5 yang pantas; 5...c5 masih boleh dimainkan tetapi menuntut lebih banyak pengetahuan teori (cth. 6.Bb5+).",
+          "Lawan e4-e5 (Game 17-19): perlu sedikit hafalan, tetapi Black biasanya melawan dengan ...c5 segera dan langkah baik selepas itu datang secara semula jadi.",
+          "Lawan Be3 (Game 20): White mengukuhkan d4 supaya ...Nc6/...e5 kurang menarik; Black menyasarkan e4 dan sering bermain ...b6 serta ...Bb7.",
+          "Bila White menunggu ...Nc6 sebelum e5 (Game 21-23), Black ada lebih daripada satu jalan ke permainan memuaskan; fxe5 (Game 22) memberi struktur tak simetri.",
+          "Langkah jarang 6.Be2 menjemput ...c5 dan 6.a3 menghalang ...c5 yang baik, jadi ...Na6 menjadi balasan logik.",
+          "Penulis memilih Austrian Pirc juga supaya tidak terlalu mudah diramal oleh lawan."
+        ],
+        "pgn": "5. Nf3 ( 5. e5 { Serangan segera di tengah; Black perlu bersedia dengan teori. } ) 5... O-O ( 5... c5 6. Bb5+ { Alternatif biasa tetapi menuntut teori lebih banyak. } ) 6. Be3 { Mengukuhkan d4 supaya pelan ...Nc6/...e5 kurang menarik. } ( 6. Be2 { Langkah jarang yang menjemput ...c5. } ) ( 6. a3 { Menghalang ...c5 yang baik; Black boleh balas ...Na6. } ) ( 6. e5 Nfd7 7. h4 c5 8. h5 { Barisan tajam; Black perlu tepat tetapi langkah baik datang secara semula jadi. } ) ( 6. e5 Nfd7 7. Bc4 ) ( 6. Bd3 Nc6 7. O-O ) ( 6. Bd3 Nc6 7. e5 dxe5 8. dxe5 ) ( 6. Bd3 Nc6 7. e5 dxe5 8. fxe5 Nh5 )"
+      }
+    },
+    {
+      "id": "ch3",
+      "number": 3,
+      "title": "Flexible Dragon Unleashed",
+      "games": [],
+      "pages": [
+        151,
+        200
+      ],
+      "gameIndex": [
+        {
+          "number": 26,
+          "white": "Timofeev",
+          "black": "Hillarp Persson",
+          "page": 153
+        },
+        {
+          "number": 27,
+          "white": "Berg",
+          "black": "Hillarp Persson",
+          "page": 161
+        },
+        {
+          "number": 28,
+          "white": "Olsson",
+          "black": "Hillarp Persson",
+          "page": 169
+        },
+        {
+          "number": 29,
+          "white": "Yagupov",
+          "black": "Hillarp Persson",
+          "page": 174
+        },
+        {
+          "number": 30,
+          "white": "Shabalov",
+          "black": "Benjamin",
+          "page": 180
+        },
+        {
+          "number": 31,
+          "white": "Shytaj",
+          "black": "Hillarp Persson",
+          "page": 184
+        },
+        {
+          "number": 32,
+          "white": "Burrows",
+          "black": "Hillarp Persson",
+          "page": 187
+        },
+        {
+          "number": 33,
+          "white": "Van Delft",
+          "black": "Gurevich, M.",
+          "page": 191
+        },
+        {
+          "number": 34,
+          "white": "Sion Castro",
+          "black": "Hillarp Persson",
+          "page": 197
+        }
+      ],
+      "intro": {
+        "startFen": "rnbqk1nr/1pp1ppbp/p2p2p1/8/3PP3/2N1B3/PPP2PPP/R2QKBNR w KQkq - 0 5",
+        "summary": "Bab 3 membincangkan Flexible Dragon Unleashed, iaitu 1.e4 g6 2.d4 Bg7 3.Nc3 d6 4.Be3 a6. Black sengaja membiarkan knight di g8 dan king di tengah supaya White tidak nampak pelan sebenarnya. Idea utama Black ialah ...b5, ...Nd7 dan ...c5 untuk menukar c-pawn dengan d-pawn White dan sampai ke struktur Sicilian Dragon. White pula mahu kekal fleksibel antara h2-h4 dengan Ng5, f2-f3 dengan Nge2, g4 atau Nf3. Penulis berpendapat 4...a6 ialah satu-satunya langkah yang cukup baik menghadapi semua set-up itu. Dalam bab ini dia kini lebih suka 5.Qd2 b5 berbanding 5...Nd7 yang dicadangkan dalam buku terdahulu. Dia juga menolak 4...c6 kerana terlalu perlahan, terutamanya menghadapi 5.f4.",
+        "keyPoints": [
+          "4...a6 menyediakan struktur pawn a6-d6-g6 seperti belakang naga, dengan Bg7 menekan d4. Black merancang ...b5, ...Nd7 dan ...c5.",
+          "Tujuan utama ialah menukar c-pawn dengan d-pawn White supaya mendapat struktur Sicilian Dragon. Knight g8 dan king dibiarkan dahulu supaya pelan Black tersembunyi.",
+          "Selepas 5.Qd2, penulis kini mengutamakan 5...b5 berbanding 5...Nd7. Dengan 5...b5 Black boleh terus meneruskan pelan di queenside.",
+          "Menentang h2-h4 dan Ng5, Black melambatkan castling, membangunkan queenside perlahan-lahan, dan melepaskan ...c5 hanya bila sudah bersedia. Alternatifnya ialah ...h6 atau ...h5.",
+          "Jika White bermain pantas dengan g4 atau Nge2, Black meneruskan ...b5, ...Bb7, ...Nd7, ...Rc8 dan ...c5. Menentang 6.a4 pula, Black boleh membawa knight ke c6 yang lebih aktif.",
+          "4...c6 dianggap lambat kerana ...c5 memerlukan masa lebih lama. Selepas ...b5 dan ...Nd7, Black mesti melemahkan petak cerah dengan ...b4 atau membuang masa dengan ...a6. Penulis menilai 4...c6 teruk menentang 5.f4."
+        ],
+        "pgn": "5. Qd2 { Langkah paling kerap dimainkan. Ia tidak semestinya yang paling berbahaya, tetapi menyediakan f3 dan h4. } 5... b5 { Pilihan semasa penulis, dengan pelan ...Bb7, ...Nd7 dan ...c5. } ( 5... Nd7 { Cadangan dalam buku terdahulu, tetapi kini bukan keutamaan penulis. } ) 6. h4 { White melancarkan h-pawn dan merancang Nh3-g5 (Game 26 dan 27). } *"
+      }
+    },
+    {
+      "id": "ch4",
+      "number": 4,
+      "title": "Flexible Dragon Restrained",
+      "games": [],
+      "pages": [
+        201,
+        245
+      ],
+      "gameIndex": [
+        {
+          "number": 35,
+          "white": "Manca",
+          "black": "Hillarp Persson",
+          "page": 203
+        },
+        {
+          "number": 36,
+          "white": "Levin, F.",
+          "black": "Rausis",
+          "page": 208
+        },
+        {
+          "number": 37,
+          "white": "Carlsson",
+          "black": "Hillarp Persson",
+          "page": 215
+        },
+        {
+          "number": 38,
+          "white": "Von Bahr",
+          "black": "Hillarp Persson",
+          "page": 220
+        },
+        {
+          "number": 39,
+          "white": "Kolev",
+          "black": "Hillarp Persson",
+          "page": 223
+        },
+        {
+          "number": 40,
+          "white": "Kosten",
+          "black": "Gurevich, M.",
+          "page": 228
+        },
+        {
+          "number": 41,
+          "white": "Ryan",
+          "black": "Ipatov",
+          "page": 234
+        },
+        {
+          "number": 42,
+          "white": "Hirn",
+          "black": "Hillarp Persson",
+          "page": 236
+        },
+        {
+          "number": 43,
+          "white": "Sulava",
+          "black": "Kozakov",
+          "page": 240
+        }
+      ],
+      "intro": {
+        "startFen": "rnbqk1nr/1pp1ppbp/p2p2p1/8/3PP3/2N1BN2/PPP2PPP/R2QKB1R b KQkq - 1 5",
+        "summary": "Bab ini membincangkan Flexible Dragon Restrained, iaitu Modern dengan ...a6 apabila White bermain 5.Nf3 (berbeza daripada versi \"Unleashed\" yang biasanya White castle panjang). White biasanya bermain Bd3, O-O, Qd2 dan a2-a4 untuk menekan b5, manakala Black membalas dengan pelan biasa: ...b5, ...Nd7, ...Bb7 dan ...c5. Selepas 8.a4 b4 9.Ne2 c5 10.c3, Black patut menukar pada c3 dan bermain ...Qc7 sebelum melengkapkan perkembangan sayap raja. Penulis menganggap Game 35 (White main a4 dan c3 tanpa Qd2) sebagai susunan langkah paling kritikal, dan mencadangkan Black bermain tepat; pengorbanan pawn e4-e5 serta Bh6 dianggap menarik tetapi tidak berbahaya sangat jika Black bertindak betul.",
+        "keyPoints": [
+          "Pelan Black yang standard: ...b5, ...Nd7, ...Bb7 dan ...c5, dengan ...b4 untuk menjawab a2-a4.",
+          "Selepas 10.c3, Black patut menukar pada c3 dan bermain ...Qc7 sebelum menyelesaikan perkembangan sayap raja.",
+          "White biasanya main Ng3 dahulu, kemudian memilih antara serangan kingside dengan Qd2 dan Bh6, atau meletakkan rook di b-file untuk menyasar pawn a6.",
+          "Susunan langkah dengan a4 dan c3 tanpa Qd2 (Game 35) dianggap paling kritikal; Black mesti tepat.",
+          "Penulis sedia menerima pawn yang dikorbankan (contoh 11.Bh6 dalam Game 37) tetapi mengingatkan ada alternatif ...h6 bagi yang tidak suka mengambil material.",
+          "Jika White bermain 5.a4 untuk menghalang ...b5, jawapan terbaik ialah 5...Nf6 yang menuju struktur seakan Pirc; susunan 3.Nf3 Bg7 4.Be3 pula dijawab dengan 4...Nf6 5.Nc3 a6, dengan langkah kunci ...b4 dan ...Rb8."
+        ],
+        "pgn": "5... b5 6. Bd3 Bb7 7. O-O Nd7 8. a4 b4 9. Ne2 c5 10. c3"
+      }
+    },
+    {
+      "id": "ch5",
+      "number": 5,
+      "title": "The Hippopotamus",
+      "games": [],
+      "pages": [
+        246,
+        298
+      ],
+      "gameIndex": [
+        {
+          "number": 44,
+          "white": "Yuferov",
+          "black": "Chepukaitis",
+          "page": 249
+        },
+        {
+          "number": 45,
+          "white": "Spoelman",
+          "black": "Hort",
+          "page": 250
+        },
+        {
+          "number": 46,
+          "white": "Drei",
+          "black": "Gofshtein",
+          "page": 253
+        },
+        {
+          "number": 47,
+          "white": "Ivanov, A.V.",
+          "black": "Benjamin",
+          "page": 258
+        },
+        {
+          "number": 48,
+          "white": "Brynell",
+          "black": "Hillarp Persson",
+          "page": 264
+        },
+        {
+          "number": 49,
+          "white": "Shahade",
+          "black": "Hillarp Persson",
+          "page": 270
+        },
+        {
+          "number": 50,
+          "white": "Gabriel",
+          "black": "Bischoff",
+          "page": 273
+        },
+        {
+          "number": 51,
+          "white": "Yagupov",
+          "black": "Shchekachev",
+          "page": 278
+        },
+        {
+          "number": 52,
+          "white": "Bromann",
+          "black": "Hillarp Persson",
+          "page": 282
+        },
+        {
+          "number": 53,
+          "white": "Couso",
+          "black": "Åkesson",
+          "page": 286
+        },
+        {
+          "number": 54,
+          "white": "Bartel",
+          "black": "Krasenkow",
+          "page": 290
+        }
+      ],
+      "intro": {
+        "startFen": "rnbqk1nr/ppppppbp/6p1/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3",
+        "summary": "Bab ini membincangkan Hippopotamus (Hippo), iaitu satu sistem dan bukan variation tetap dalam Modern. Black menyusun pawn di rank ke-6 dan ke-7 (a6, b6, d6, e6, g6, h6) dengan Bb7, Bg7, Nd7 dan Ne7, kelihatan pasif tetapi sangat pejal. White boleh membangunkan buah dengan bebas, namun akhirnya perlu maju di tengah (f4/e5 atau Be3/d5) untuk mendapat inisiatif, sementara Black menunggu detik sesuai untuk pecah dengan ...f5, ...c5, ...d5 atau ...g5. Penulis percaya Hippo jarang dianggap serius, tetapi sebenarnya hebat dan tidak ada yang salah dengannya, malah ia \"binatang buas\" yang boleh menghancurkan lawan yang terlalu rapat.",
+        "keyPoints": [
+          "Hippo boleh dicapai daripada empat susunan Modern: Classical, Flexible Dragon, Bg5 dan varian h3.",
+          "Black membina 'tembok' pawn yang mengawal seluruh rank ke-5, jadi White hanya boleh mencabar dengan menolak satu pawn tengah (e4-e5 atau d4-d5).",
+          "Pilihan White bergantung pada bishop c1: jika ke f4, jangkakan e4-e5; jika ke e3, d4-d5 lebih mungkin.",
+          "Selepas d4-d5, Black biasanya jawab ...e5 (rupa seperti King's Indian Klasik, White main a4-a5 untuk membuka queenside); selepas e4-e5, Black main ...d5 dan ...c5 dengan watak seperti French.",
+          "Counterplay Black: ...f5, ...g5, ...Nb4, serta ...c6 jika White melepaskan kawalan d5; White mesti sentiasa berjaga-jaga terhadap letusan aktiviti ini.",
+          "Pertukaran pada e5 atau d5 jarang baik untuk Black, tetapi kadangkala White sukar mempertahankan pawn e5."
+        ],
+        "pgn": "3. Nc3 d6 4. Nf3 a6 5. a4 b6 6. Bc4 e6 {Black membina struktur Hippo yang pejal dan menunggu White menyerang.} 7. O-O Ne7 8. Be3 Nd7 {Posisi Hippo biasa; White sudah selesai membangunkan buah.} 9. Qd2 h6 10. h3 {White bersedia dengan d4-d5 atau e4-e5 untuk mencari inisiatif, manakala Black menunggu detik untuk ...f5 atau ...c5.}"
+      }
+    },
+    {
+      "id": "ch6",
+      "number": 6,
+      "title": "Classical Variation",
+      "games": [],
+      "pages": [
+        299,
+        337
+      ],
+      "gameIndex": [
+        {
+          "number": 55,
+          "white": "Khalifman",
+          "black": "Popov, V.",
+          "page": 301
+        },
+        {
+          "number": 56,
+          "white": "Vernersson",
+          "black": "Hillarp Persson",
+          "page": 306
+        },
+        {
+          "number": 57,
+          "white": "Zontakh",
+          "black": "Jenetl",
+          "page": 312
+        },
+        {
+          "number": 58,
+          "white": "Azarov",
+          "black": "Hillarp Persson",
+          "page": 317
+        },
+        {
+          "number": 59,
+          "white": "Salgado Lopez",
+          "black": "Hillarp Persson",
+          "page": 322
+        },
+        {
+          "number": 60,
+          "white": "Ilincic",
+          "black": "Todorcevic",
+          "page": 327
+        },
+        {
+          "number": 61,
+          "white": "Frois",
+          "black": "Movsziszian",
+          "page": 332
+        }
+      ],
+      "intro": {
+        "startFen": "rnbqk1nr/ppppppbp/6p1/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3",
+        "summary": "Bab ini membincangkan Classical Variation dalam Modern dengan ...a6: 1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.Nc3 a6. Putih membangunkan secara klasik dengan Be2, O-O dan Re1, dan sasaran pawn b5 menjadi isu utama selepas Black bermain ...b5. Black mahu meneruskan pelan biasa ...b5, ...Nd7, ...Bb7 dan ...c5. Penulis menganggap garisan Be2 + O-O + Re1 sebagai teras bab; 7...c5 dianggap agak berisiko, manakala 7...Bb7 lebih boleh dipercayai. Beliau juga menyediakan jawapan kepada percubaan Putih yang mahu \"mematikan\" ...a6, iaitu 4.Be2, 4.h3 dan 5.Bd3, dengan banyak peluang memindahkan posisi ke struktur Pirc.",
+        "keyPoints": [
+          "Pelan Black yang biasa ialah ...a6, ...b5, ...Nd7, ...Bb7 dan ...c5; ia lebih disukai penulis berbanding 4...Nf6 yang hanya bertukar kepada Pirc.",
+          "Jika Putih bermain 5.a4, Black cukup dengan 5...b6 dan masuk ke set-up Hippo seperti bab sebelumnya.",
+          "Selepas 5.Be2 b5, Putih mempunyai sasaran pada pawn b5; Black perlu berhati-hati dengan susunan langkah (move order), terutamanya antara 6...Bb7 dan 6...Nd7.",
+          "Dalam garisan utama, 7...Bb7 dianggap lebih selamat; 7...c5 dilihat sedikit tidak tepat dan terlalu berisiko.",
+          "Terhadap 3.Nf3 dan 4.Be2, Black boleh pindah ke Pirc dengan 4...Nf6 5.Nc3 O-O 6.O-O, kemudian bermain 6...e6 yang kurang teori tetapi kukuh dan masih ada peluang menang.",
+          "Terhadap 4.h3 Black pindah ke Pirc dan bermain ...a6; terhadap 5.Bd3 (idea Ne2-g3) jawapan terbaik ialah 5...Nc6 yang memindah ke satu versi Pirc."
+        ],
+        "pgn": "3. Nf3 d6 4. Nc3 { Susunan \"Classic Classical\"; langkah ini membenarkan Black meneruskan ...a6. } ( 4. h3 { Putih cuba menamatkan pelan ...a6. } 4... Nf6 5. Nc3 O-O 6. Be3 a6 { Black bermain ...a6 yang aktif dan sah dari segi teori. } ) ( 4. Be2 { Menangguhkan Nc3 supaya ...a6 kurang berkesan. } 4... Nf6 5. Nc3 O-O 6. O-O e6 { Black masuk ke struktur Pirc dengan susunan ala Hippo yang kukuh. } ) 4... a6 5. Be2 { Langkah khas Classical Variation. } ( 5. a4 b6 { Black masuk ke set-up Hippo. } ) ( 5. Bd3 Nc6 { Black memindah ke jenis Pirc apabila Putih bersiap dengan Ne2-g3. } ) 5... b5 6. O-O Bb7 { Susunan langkah ini lebih tepat. } ( 6... Nd7 7. Re1 c5 { Lebih berisiko; pawn b5 menjadi sasaran Putih. } ) 7. Re1 Nd7 8. Bf1 { Putih menyokong e4 dan bersedia menekan pawn b5. } *"
+      }
+    },
+    {
+      "id": "ch7",
+      "number": 7,
+      "title": "4.Bg5 – Into Midair",
+      "games": [],
+      "pages": [
+        338,
+        351
+      ],
+      "gameIndex": [
+        {
+          "number": 62,
+          "white": "Tydecks",
+          "black": "Paehtz, T. (Jr)",
+          "page": 339
+        },
+        {
+          "number": 63,
+          "white": "Short, S.",
+          "black": "Johannesson, I.",
+          "page": 343
+        },
+        {
+          "number": 64,
+          "white": "Videki",
+          "black": "Hillarp Persson",
+          "page": 346
+        }
+      ],
+      "intro": {
+        "startFen": "rnbqk1nr/ppp1ppbp/3p2p1/6B1/3PP3/2N5/PPP2PPP/R2QKBNR b KQkq - 3 4",
+        "summary": "Bab ini membincangkan 4.Bg5 dalam Modern/Pirc selepas 1.e4 g6 2.d4 Bg7 3.Nc3 d6. Penulis menganggap set-up ini sangat berbisa terhadap Pirc, tetapi kurang berkesan terhadap Modern kerana Black belum meletakkan knight di f6, jadi bishop di g5 hanya mencetuskan \"pertembungan renungan\" dengan pawn e7. Black menjawab dengan 4...a6 dan ...b5, dan kemudian cuba menyerang pusat d4 dengan ...c5 yang lebih mudah dicapai kerana bishop g5 tidak menyokong d4. Pelan White biasanya agresif (Qd2, O-O-O, h4-h5 atau e4-e5), serupa dengan Flexible Dragon, tetapi di sini ada lebih sedikit sebab untuk takut. Penulis percaya bishop lebih baik di e3 daripada g5. Bab dibahagi kepada 5.Qd2 (Game 62), 5.f4 (Game 63) dan 5.Nf3 (Game 64).",
+        "keyPoints": [
+          "Bishop di g5 tidak menyerang knight f6 (belum ada), jadi ia hanya menekan pawn e7 dan kurang berbisa berbanding lawan Pirc.",
+          "Black menyerang titik d4 dengan ...c5 (selalunya selepas ...a6 dan ...b5); bishop g5 tidak menyokong d4, jadi ...c5 lebih mudah dicapai.",
+          "White yang tidak sabar mahu Qd2, O-O-O dan serangan sayap raja dengan h4-h5 atau e4-e5, tetapi idea ini kurang menakutkan berbanding Flexible Dragon.",
+          "Kelebihan bishop di g5: lebih aktif secara umum dan e4 boleh dipertahankan kemudian dengan Rе1; namun penulis rasa e3 tempat yang lebih baik.",
+          "Jika bishop berada di e3, White boleh menang pawn dengan dxc5 dalam struktur tertentu; di g5 helah ini tidak berjaya.",
+          "White juga boleh bermain tenang dengan Nf3, Bd3 dan O-O, mirip Flexible Dragon Restrained, tetapi ...c5 tetap memberi Black counterplay.",
+          "Selepas 5.a4 Nc6!? Black menyerang d4; jika 6.d5 Nb4 7.a5 c5 memberi permainan menarik untuk Black."
+        ],
+        "pgn": "4... a6 { Black bersedia untuk ...b5 dan counterplay di sayap queen. } 5. Qd2 { Pilihan paling fleksibel untuk White, menyediakan O-O-O. } ( 5. f4 { Cubaan tajam yang dibincangkan dalam Game 63. } ) ( 5. Nf3 { Pelan lebih tenang, Game 64. } ) ( 5. a4 Nc6 { Logik untuk menyerang pawn d4. } 6. d5 ( 6. Nf3 Bg4 { Selesa untuk Black. } ) 6... Nb4 7. a5 c5 { Black mendapat permainan yang menarik. } ) 5... b5"
+      }
+    },
+    {
+      "id": "ch8",
+      "number": 8,
+      "title": "4.Bc4 – Mad Dog",
+      "games": [],
+      "pages": [
+        352,
+        393
+      ],
+      "gameIndex": [
+        {
+          "number": 65,
+          "white": "Blomström",
+          "black": "Hillarp Persson",
+          "page": 354
+        },
+        {
+          "number": 66,
+          "white": "Schlosser, P.",
+          "black": "Bologan",
+          "page": 360
+        },
+        {
+          "number": 67,
+          "white": "Shamkovich",
+          "black": "Keene",
+          "page": 364
+        },
+        {
+          "number": 68,
+          "white": "Negi",
+          "black": "Hillarp Persson",
+          "page": 368
+        },
+        {
+          "number": 69,
+          "white": "Howell",
+          "black": "Aronian",
+          "page": 371
+        },
+        {
+          "number": 70,
+          "white": "Medina Garcia",
+          "black": "Larsen",
+          "page": 375
+        },
+        {
+          "number": 71,
+          "white": "Votruba",
+          "black": "Motwani",
+          "page": 378
+        },
+        {
+          "number": 72,
+          "white": "Kveinys",
+          "black": "Speelman",
+          "page": 382
+        },
+        {
+          "number": 73,
+          "white": "Kveinys",
+          "black": "Gurevich, M.",
+          "page": 388
+        },
+        {
+          "number": 74,
+          "white": "Petit",
+          "black": "Chatalbashev",
+          "page": 391
+        }
+      ],
+      "intro": {
+        "startFen": "rnbqk1nr/ppppppbp/6p1/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3",
+        "summary": "Bab 8 membincangkan 4.Bc4 (\"Mad Dog\") selepas 1.e4 g6 2.d4 Bg7 3.Nc3 d6 (atau 3.Nf3 d6 4.Bc4). Penulis mencadangkan Black bermain ...d6, ...Nf6 dan ...O-O, dengan idea utama menekan pawn d4 menerusi ...Bg4 dan ...Nc6. White pula mempunyai beberapa set-up: Nf3 dengan Qe2 dan h3, atau menolak e4-e5 awal, atau membangunkan buah tanpa Qe2. Penulis mengaku pada mulanya menyangka bab ini mudah, tetapi akhirnya mendapati ia lebih rumit daripada yang disangka. Beliau juga tidak menyarankan 5...e6 selepas Qf3 kerana ia membawa kepada sistem pembukaan yang besar dan berselirat.",
+        "keyPoints": [
+          "Pelan asas Black: ...d6, ...Nf6, ...O-O, kemudian serang pawn d4 dengan ...Bg4 dan ...Nc6.",
+          "Jika White main h2-h3 untuk halang ...Bg4, Black cuma castle dan sasarkan ...Nxe4 diikuti ...d5 untuk mendapatkan semula buah.",
+          "Dengan Nf3, Bc4 dan Qe2, White dapat bishop pair dan boleh sokong pusat dengan c2-c3, tetapi kehilangan tempo dengan queen; Black dapat permainan pusat yang baik dengan ...Nc6 dan ...e5.",
+          "Jika White main e4-e5 sebelum ...Bg4, Black boleh ambil di e5 dan letak knight di d5 (seakan Alekhine), atau main 6...Ne8 selepas 6.e5.",
+          "Jika Qe2 dan Nc3 digunakan tanpa knight di f3, Black menyerang pusat dengan cepat melalui 5...Nc6; selepas 6.e5, pilihan ialah 6...Nd7 yang solid atau 6...Ng4 yang lebih rumit.",
+          "Perangkap Scholar's Mate-style seperti 4...c6 5.Qf3 tidak digalakkan untuk Black; 3.Bc4 c5 pula ialah cara berprinsip melawan 3.Bc4 awal."
+        ],
+        "pgn": "3. Nc3 d6 4. Bc4 Nf6 ( 4... c6 5. Qf3 e6 6. Nge2 { Sistem besar dan rumit yang tidak disyorkan untuk Black. } ) 5. Nf3 ( 5. Qe2 Nc6 6. e5 { Black menyerang pusat dengan pantas; e5 ialah satu-satunya cara mencabar. } ) 5... O-O 6. h3 Nxe4 { Taktik fork: selepas Nxe4, Black akan main ...d5 untuk dapatkan semula buah. }"
+      }
+    },
+    {
+      "id": "ch9",
+      "number": 9,
+      "title": "Fianchetto (In Excelsis)",
+      "games": [],
+      "pages": [
+        394,
+        420
+      ],
+      "gameIndex": [
+        {
+          "number": 75,
+          "white": "Sermek",
+          "black": "Tkachiev",
+          "page": 397
+        },
+        {
+          "number": 76,
+          "white": "Van der Weide",
+          "black": "Gulko",
+          "page": 402
+        },
+        {
+          "number": 77,
+          "white": "Aseev",
+          "black": "Khalifman",
+          "page": 406
+        },
+        {
+          "number": 78,
+          "white": "Naiditsch",
+          "black": "Hillarp Persson",
+          "page": 409
+        },
+        {
+          "number": 79,
+          "white": "Rasmussen, A.",
+          "black": "Hillarp Persson",
+          "page": 413
+        },
+        {
+          "number": 80,
+          "white": "Marinkovic",
+          "black": "Vujadinovic",
+          "page": 417
+        }
+      ],
+      "intro": {
+        "startFen": "rnbqk1nr/ppppppbp/6p1/8/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 2 3",
+        "summary": "Bab 9 membincangkan Modern/Pirc selepas 1.e4 g6 2.d4 Bg7 3.Nc3 d6, apabila White memilih sistem fianchetto (g3 dan Bg2). Penulis mengesyorkan 4.Nge2 Nd7 dan, selepas 5.g3 c5 6.Bg2 Ngf6 7.O-O O-O 8.h3, ...Rb8 diikuti ...b6 dan ...Bb7. Black mahu struktur pawn gaya Sicilian, bukan struktur Philidor yang lebih pasif, dan menyasarkan permainan queenside dengan ...a6/...b5. White pula cuba g4-g5, Bg5 dengan Nd5, atau menutup tengah papan dengan d4-d5. Penulis berpendapat sistem fianchetto kurang menyusahkan Black berbanding King's Indian, dan Black boleh mendapat permainan yang baik serta tidak berisiko.",
+        "keyPoints": [
+          "Black mahu struktur pawn gaya Sicilian (...c5 dengan ...Nd7 dahulu), bukan Philidor dengan ...e5 dan ...exd4.",
+          "Susunan langkah 4.Nge2 Nd7 5.g3 c5 6.Bg2 Ngf6 menangguhkan ...Nf6 supaya Black fleksibel; ...Nc6 sebelum 4.g3 jadi idea alternatif untuk pemain yang berani.",
+          "Selepas 8.h3, ...Rb8 menyediakan ...b5 atau ...b6 dan ...Bb7; Black tidak perlu tergesa-gesa dengan ...cxd4.",
+          "Jika White main d4-d5, Black patut menyerang dengan ...a5, ...Nc5 dan ...c6 supaya knight White di f3 atau e2 kelihatan kurang sesuai.",
+          "White ada beberapa pelan: g4-g5 (Gulko), Bg5 dengan Nd5 (Khalifman), serta b2-b4 selepas d4-d5; Black ada sumber tindak balas untuk semuanya.",
+          "Dalam 4.Nge2, elakkan ...Nc6 awal kerana White boleh main Be3 atau Bg5 dan knight di c6 menjadi kurang sesuai."
+        ],
+        "pgn": "3... d6 4. Nge2 ( 4. g3 Nc6 { alternatif yang lebih berisiko; sesuai untuk pemain yang suka mencuba } ) 4... Nd7 { ...a6 terlalu awal boleh dijawab a4 dan g3 untuk menyekat queenside } 5. g3 c5 6. Bg2 Ngf6 7. O-O O-O 8. h3 Rb8 { Black bersedia untuk ...b6 dan ...Bb7, atau ...b5 }"
+      }
+    },
+    {
+      "id": "ch10",
+      "number": 10,
+      "title": "Lazy Variation with c2-c3",
+      "games": [],
+      "pages": [
+        421,
+        448
+      ],
+      "gameIndex": [
+        {
+          "number": 81,
+          "white": "Gausel",
+          "black": "Hillarp Persson",
+          "page": 422
+        },
+        {
+          "number": 82,
+          "white": "Rabiega",
+          "black": "Polzin",
+          "page": 428
+        },
+        {
+          "number": 83,
+          "white": "Korchnoi",
+          "black": "Sznapik",
+          "page": 431
+        },
+        {
+          "number": 84,
+          "white": "Korchnoi",
+          "black": "Hansen, Cu.",
+          "page": 434
+        },
+        {
+          "number": 85,
+          "white": "Tyomkin",
+          "black": "Ilincic",
+          "page": 440
+        },
+        {
+          "number": 86,
+          "white": "Denker",
+          "black": "Damjanovic, M.",
+          "page": 444
+        }
+      ],
+      "intro": {
+        "startFen": "rnbq1rk1/ppp1ppbp/3p1np1/8/3PP3/3B1N2/PPP2PPP/RNBQ1RK1 w - - 4 6",
+        "summary": "Bab 10 membincangkan \"Lazy Variation\" dengan c2-c3 dalam Modern Defence, iaitu pelan White yang paling kurang bercita-cita tinggi: White melindungi pawn d4 dan membangunkan buah di belakang pusat tanpa mengambil kisah sangat apa yang Black buat. Pelan biasa White ialah Bd3 dan O-O, manakala Black menyiapkan ...Nf6 dan ...O-O, kemudian memilih set-up dengan ...Nc6 yang sering dimainkan oleh penulis dengan keputusan baik. Black biasanya bermain ...e5 dan ...h6, dan kadangkala pelan agresif ...Nh5, ...Qf6 dan ...Nf4 (hanya dalam keadaan tertentu). Garis-garis penting ialah h3 awal, tidak bermain h3 (Game 82 dengan ...e5 dan ...Bg4 atau ...d5), serta d4-d5 yang menghalau knight (Game 83 dan 84). Penulis menganggap variation ini membosankan tetapi masih penuh peluang, dan juga menyukai ...Qe8 diikuti ...e5 melawan Bg5.",
+        "keyPoints": [
+          "White menyokong pawn d4 dengan c3 supaya boleh membangunkan buah dengan tenang; ini pelan yang selamat tetapi kurang menekan Black.",
+          "Set-up utama Black: ...Nc6 dan ...e5, biasanya dengan ...h6 sebagai langkah fleksibel; ...Nh5, ...Qf6 dan ...Nf4 hanya jika keadaan mengizinkan.",
+          "Jika White menggunakan h2-h3 awal untuk menghalang ...Bg4, Black tetap selesa dan boleh bermain ...e5 atau ...Nb4 untuk menukar bishop d3.",
+          "Jika White tidak bermain h3 dan menghantar knight ke a3, Black patut main ...Bg4, kemudian pilih ...h6 yang tenang atau ...d5 yang aktif.",
+          "Bila White menolak d4-d5, Black mengundurkan knight ke b8 dan bermain pada petak gelap; selepas c4 maka ...Bg4 memberi peluang baik, manakala h3 memaksa Black menukar pelan dengan ...c6 dan/atau ...e6.",
+          "Melawan Bg5, penulis suka ...Qe8 diikuti ...e5 sambil melengahkan pembangunan knight b8 untuk kekal fleksibel."
+        ],
+        "pgn": "6. c3 { Pelan c3 ialah asas bab ini; White mengukuhkan d4 dan membangunkan buah dengan tenang. } ( 6. c4 { Black tidak ada masalah selepas ...Bg4, ...Nc6 dan ...Bd7 dengan niat ...e5. } 6... Bg4 7. Nbd2 Nc6 8. h3 Bd7 ) ( 6. h3 { White menghalang ...Bg4 dengan h3 awal. } 6... Nc6 7. c4 ( 7. d5 { Selepas ...Nb4 Black mendapat permainan yang baik. } 7... Nb4 ) 7... Nb4 { Black menyasarkan bishop d3. } ( 7... Nd7 { Alternatif yang juga mungkin; h3 tidak sesuai dengan set-up White yang lain. } 8. Be3 e5 9. d5 Nd4 ) 8. Nc3 Nxd3 9. Qxd3 a6 10. a4 a5 { Posisi masih tidak jelas. } )"
+      }
+    },
+    {
+      "id": "ch11",
+      "number": 11,
+      "title": "Unusual Lines",
+      "games": [],
+      "pages": [
+        449,
+        475
+      ],
+      "gameIndex": [
+        {
+          "number": 87,
+          "white": "Hillarp Persson",
+          "black": "Andreasen",
+          "page": 450
+        },
+        {
+          "number": 88,
+          "white": "Fleck",
+          "black": "Cuijpers",
+          "page": 454
+        },
+        {
+          "number": 89,
+          "white": "Cori",
+          "black": "Hillarp Persson",
+          "page": 456
+        },
+        {
+          "number": 90,
+          "white": "Rodriguez, And.",
+          "black": "Tkachiev",
+          "page": 459
+        },
+        {
+          "number": 91,
+          "white": "Degraeve",
+          "black": "Bacrot",
+          "page": 464
+        },
+        {
+          "number": 92,
+          "white": "Adams",
+          "black": "Kramnik",
+          "page": 468
+        },
+        {
+          "number": 93,
+          "white": "Carlsen",
+          "black": "Wojtaszek",
+          "page": 472
+        }
+      ],
+      "intro": {
+        "startFen": "rnbqk1nr/ppppppbp/6p1/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3",
+        "summary": "Bab 11 ialah bab \"baki\" yang mengumpulkan sistem sampingan melawan Modern/Tiger yang tidak sesuai di bab lain. Selepas 1.e4 g6 2.d4 Bg7, White cuba mengelak Nc3 biasa dengan 3.f4, 3.Be3 atau 3.Nc3 d6 4.h4; selain itu White boleh mengelak d2-d4 sepenuhnya dengan 2.Nc3 lalu menuju Closed Sicilian. Idea utama Black ialah menyerang pusat dengan ...c5 atau ...d5 ketika White menangguhkan Nc3, kerana pelan ...a6 dan ...b5 tidak ada sasaran tanpa knight di c3. Penulis menegaskan 3.f4 c5! memberi Black permainan yang baik, 3.Be3 dihadapi dengan ...d5!, dan 4.h4 perlu dihadapi dengan 4...Nf6 sambil berhati-hati dengan h4-h5. Untuk garisan tanpa d4, penulis mencadangkan susunan Sicilian dengan ...c5 dan menganggap tiga game terakhir (Closed Sicilian) tidak terlalu membimbangkan Black.",
+        "keyPoints": [
+          "Selepas 3.f4, tindak balas terbaik ialah 3...c5! untuk menyerang pusat; 3...d5?! kurang digemari kerana 4.e5 c5 5.dxc5 memberi White peluang baik.",
+          "Selepas 3.Be3, White merancang c2-c4 jika Black bermain ...c6/...a6, atau Nc3 untuk memancing Black ke struktur Pirc jika ...Nf6; maka 3...d5! ialah jawapan yang tepat (Game 88 dan 89).",
+          "Selepas 3.Nc3 d6 4.h4, mulakan dengan 4...Nf6 dan beri perhatian kepada butiran lanjut, terutamanya cara bertindak balas terhadap h4-h5 dalam situasi berbeza.",
+          "Selepas 3...d6, 4.Bd3 c5 tidak menjadi masalah; 4.a3 mengganggu, jadi Black patut transpose ke Pirc dengan 4...Nf6; 4.Nf3 c5 5.dxc5 Qa5+ memberi Black posisi yang baik.",
+          "Jika White mengelak d2-d4 (Game 91–93), tukar kepada set-up Sicilian dengan ...c5 dan hadapi Closed Sicilian dengan tenang.",
+          "Kekurangan knight di c3 membuat pelan ...a6 dan ...b5 tidak bermakna, jadi Black harus bertindak balas di pusat dahulu."
+        ],
+        "pgn": "3. f4 {White menangguhkan Nc3; Black menyerang pusat dengan ...c5.} ( 3. Be3 d5 {3...d5 ialah jawapan tepat terhadap Be3.} 4. exd5 Qxd5 ) ( 3. Nc3 d6 4. h4 {Garisan pelik tetapi berbisa; Black mulakan dengan ...Nf6.} 4... Nf6 ) 3... c5 {Black mendapat permainan yang baik dengan menyerang pusat.} ( 3... d5 {Kurang digemari oleh penulis.} 4. e5 c5 5. dxc5 ) ( 3... d6 {Alternatif terbaik.} 4. Nf3 c5 5. dxc5 Qa5+ 6. c3 Qxc5 7. Bd3 Nf6 8. Qe2 O-O 9. Be3 Qc7 10. Nbd2 {Black mempunyai posisi yang sangat baik dalam permainan yang disebut.} )"
+      }
+    },
+    {
+      "id": "ch12",
+      "number": 12,
+      "title": "Averbakh Variation",
+      "games": [],
+      "pages": [
+        476,
+        528
+      ],
+      "gameIndex": [
+        {
+          "number": 94,
+          "white": "Dreev",
+          "black": "Azmaiparashvili",
+          "page": 479
+        },
+        {
+          "number": 95,
+          "white": "Karpov",
+          "black": "Seirawan",
+          "page": 482
+        },
+        {
+          "number": 96,
+          "white": "Nikcevic",
+          "black": "Hillarp Persson",
+          "page": 492
+        },
+        {
+          "number": 97,
+          "white": "Adorjan",
+          "black": "Todorcevic",
+          "page": 496
+        },
+        {
+          "number": 98,
+          "white": "Bischoff",
+          "black": "Reinderman",
+          "page": 503
+        },
+        {
+          "number": 99,
+          "white": "Lputian",
+          "black": "Todorcevic",
+          "page": 508
+        },
+        {
+          "number": 100,
+          "white": "Boensch",
+          "black": "Seirawan",
+          "page": 511
+        },
+        {
+          "number": 101,
+          "white": "Weber",
+          "black": "Irzhanov",
+          "page": 518
+        },
+        {
+          "number": 102,
+          "white": "Kolbus",
+          "black": "Siebrecht",
+          "page": 525
+        }
+      ],
+      "intro": {
+        "startFen": "rnbqk1nr/ppp1ppbp/3p2p1/8/2PPP3/8/PP3PPP/RNBQKBNR w KQkq - 0 4",
+        "summary": "Bab ini membincangkan Averbakh Variation dalam Modern Defence (1.e4 g6 2.d4 Bg7 3.c4 d6), iaitu satu pilihan campuran antara Modern dan King's Indian tanpa ...Nf6 awal. Penulis mengakui 3.c4 ialah masalah terbesar Modern dan KID tetap pilihan yang lebih boleh dipercayai, tetapi Averbakh membolehkan Black mengelak banyak teori. Cadangan utamanya ialah 4.Nc3 e5!, memaksa White melepaskan ketegangan di tengah: sama ada dxe5 (Black dapat struktur sedikit lebih baik selepas tukar queen) atau d4-d5 (Black boleh memenangi tempo dengan ...f5 sebelum membangunkan knight). Penulis tidak mengesyorkan 4...Nc6 kerana 5.d5, dan menjelaskan mengapa beberapa line lain kurang menyeronokkan untuk Black.",
+        "keyPoints": [
+          "Idea teras: pada langkah ke-4 Black sentiasa main ...e5 untuk memaksa White menyelesaikan ketegangan di tengah.",
+          "Jika White main dxe5 dan tukar queen, Black ada struktur sedikit lebih baik kerana White lemah di petak d4; Black perlu tahan inisiatif kecil White dan idealnya menukar dark-squared bishop.",
+          "Jika White blok dengan d4-d5, Black boleh main ...f5 sebelum ...Nf6 untuk mendapat tempo berbanding KID biasa; e4 jadi sasaran dan White sukar mengekalkan tengah tertutup.",
+          "Berbanding Petrosian Variation dalam Classical KID, kedudukan Averbakh lebih baik untuk Black kerana e4 diserang.",
+          "Elakkan 4...Nc6 kerana 5.d5; dalam line dengan Nf3 pada d4-d5, Black perlu berhati-hati agar tidak mendapat versi buruk King's Indian (contoh 5...Bg4 6.d5 a5).",
+          "Averbakh ditakrifkan oleh c2-c4 awal yang hampir menghapuskan ...b5, jadi jangan bandingkan dengan line Modern lain yang melibatkan ...a6."
+        ],
+        "pgn": "4. Nc3 e5 ( 4... Nc6 5. d5 {Penulis tidak mengesyorkan 4...Nc6 kerana 5.d5 memberi White ruang dengan mudah.} ) 5. Nf3 ( 5. dxe5 dxe5 6. Qxd8+ Kxd8 {Selepas tukar queen, Black ada struktur sedikit lebih baik kerana petak d4 lemah untuk White.} ) ( 5. d5 f5 6. Nf3 Nf6 7. Be2 O-O 8. O-O Na6 {Black menang tempo berbanding KID biasa dan e4 diserang; White sukar mengekalkan tengah tertutup.} ) 5... Nc6 6. d5 Nd4 {Game 94: White menolak d5 selepas knight Black tiba di c6, dan knight Black melompat ke d4.}"
+      }
     }
   ]
 }

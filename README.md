@@ -34,6 +34,13 @@ npm run ingest -- chapter --pdf ~/Books/modern-tiger.pdf --book modern-tiger \
 npm run validate
 ```
 
+Ringkasan bab sahaja (murah — hanya halaman pengenalan setiap bab). Perlu `pages` dan `gameIndex` setiap bab dalam JSON (nombor halaman **tercetak**; PDF = tercetak + `source.pageOffset`):
+
+```bash
+npm run ingest -- intro --pdf ~/Books/modern-tiger.pdf --book modern-tiger   # semua bab yang belum ada ringkasan
+npm run ingest -- intro --pdf ~/Books/modern-tiger.pdf --book modern-tiger --chapter 3 --force
+```
+
 Setiap game dihantar sebagai imej halaman. Jika chess.js jumpa langkah tidak sah, skrip hantar semula ralat itu kepada model (maksimum 2 kali) untuk dibetulkan. Halaman yang dirender di-cache dalam `.ingest/`.
 
 Model lalai `claude-sonnet-5-5`; tukar dengan `CLAUDE_MODEL=...`.

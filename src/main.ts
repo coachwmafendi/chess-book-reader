@@ -30,12 +30,12 @@ function sectionsOf(ch: Chapter): Section[] {
   return [
     {
       key: 'intro',
-      label: 'Pengenalan',
+      label: 'Ringkasan bab',
       heading: `Bab ${ch.number}: ${ch.title}`,
-      meta: `Hlm. ${ch.pages[0]}–${ch.pages[1]}`,
-      summary: ch.intro.summary,
-      keyPoints: ch.intro.keyPoints.map((text) => ({ text })),
-      root: buildTree(ch.intro.pgn, ch.intro.startFen).root,
+      meta: `Hlm. ${ch.pages[0]}–${ch.pages[1]} · ${ch.gameIndex?.length ?? ch.games.length} game`,
+      summary: ch.intro?.summary ?? 'Ringkasan bab ini belum diproses.',
+      keyPoints: (ch.intro?.keyPoints ?? []).map((text) => ({ text })),
+      root: buildTree(ch.intro?.pgn ?? '', ch.intro?.startFen ?? START_FEN).root,
     },
     ...ch.games.map((g) => ({
       key: g.id,
@@ -59,6 +59,7 @@ let userCounter = 0;
 let engineOn = false;
 let lastInfo: EngineInfo | null = null;
 let tab: 'ringkasan' | 'langkah' = 'ringkasan';
+let firstVisit = false;
 
 const engine = new Engine();
 
@@ -69,7 +70,9 @@ app.innerHTML = `
     <div class="brand"><span class="mark">♞</span> Rak Catur</div>
     <div class="book-title"><em>${book.title}</em> <span class="muted">— ${book.author}</span></div>
     <select id="chapter" aria-label="Pilih bab"></select>
+    <button id="toc-open" class="toc-btn" title="Isi kandungan (t)">☰ Isi Kandungan</button>
   </header>
+  <div class="toc" id="toc" hidden></div>
   <nav class="sections" id="sections"></nav>
   <main class="layout">
     <section class="board-col">
@@ -113,6 +116,8 @@ const ground: Api = Chessground($('board'), {
 // ---------- Helpers ----------
 const FIG: Record<string, string> = { K: '♔', Q: '♕', R: '♖', B: '♗', N: '♘' };
 const fig = (san: string) => san.replace(/^[KQRBN]/, (p) => FIG[p]).replace(/=([QRBN])/, (_, p) => '=' + FIG[p]);
+// Tukar SAN dalam teks biasa (contoh tajuk "4.f4 Nf6") kepada figurine.
+const figText = (s: string) => s.replace(/\b([KQRBN])(x?[a-h][1-8])/g, (_, p, r) => FIG[p] + r);
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
 function fenOf(node: MoveNode | null) {
@@ -193,7 +198,7 @@ function plyOfRoot() {
 // ---------- Render ----------
 function renderChapterSelect() {
   const sel = $<HTMLSelectElement>('chapter');
-  sel.innerHTML = book.chapters.map((c) => `<option value="${c.id}">Bab ${c.number}: ${esc(c.title)}</option>`).join('');
+  sel.innerHTML = book.chapters.map((c) => `<option value="${c.id}">Bab ${c.number}: ${figText(esc(c.title))}</option>`).join('');
   sel.value = chapter.id;
 }
 
@@ -222,8 +227,67 @@ function renderSummary() {
     <h2>${esc(section.heading)}</h2>
     <p class="meta">${esc(section.meta)}</p>
     <p class="summary">${esc(section.summary)}</p>
-    <h3>Point penting</h3>
-    <ol class="kps">${kps}</ol>`;
+    ${kps ? `<h3>Point penting</h3><ol class="kps">${kps}</ol>` : ''}
+    ${section.key === 'intro' ? gameListHtml(chapter) : ''}`;
+}
+
+/** Senarai semua game dalam bab; yang sudah diproses boleh diklik. */
+function gameListHtml(ch: Chapter) {
+  const refs = ch.gameIndex ?? ch.games.map((g) => ({ number: g.number, white: g.white, black: g.black, page: g.pages[0] }));
+  if (!refs.length) return '';
+  const items = refs
+    .map((r) => {
+      const g = ch.games.find((x) => x.number === r.number);
+      const attrs = g ? `class="gl ready" data-goto="${ch.id}:${g.id}"` : 'class="gl"';
+      return `<li ${attrs}><span class="gl-num">${r.number}</span><span class="gl-name">${esc(r.white)} – ${esc(r.black)}</span><span class="gl-page">${r.page}</span></li>`;
+    })
+    .join('');
+  return `<h3>Game dalam bab ini</h3><ol class="games">${items}</ol>`;
+}
+
+function renderToc() {
+  const rows = book.chapters
+    .map((c) => {
+      const total = c.gameIndex?.length ?? c.games.length;
+      const status = [
+        c.intro ? '<span class="badge ok">Ringkasan</span>' : '<span class="badge">Ringkasan belum</span>',
+        `<span class="badge ${c.games.length ? 'ok' : ''}">${c.games.length}/${total} game</span>`,
+      ].join('');
+      return `<li class="toc-ch ${c.id === chapter.id ? 'active' : ''}">
+        <button class="toc-row" data-goto="${c.id}:intro">
+          <span class="toc-num">${c.number}</span>
+          <span class="toc-title">${figText(esc(c.title))}</span>
+          <span class="toc-page">${c.pages[0]}</span>
+        </button>
+        <div class="toc-status">${status}</div>
+      </li>`;
+    })
+    .join('');
+  $('toc').innerHTML = `
+    <div class="toc-card" role="dialog" aria-label="Isi kandungan">
+      <div class="toc-head">
+        <div><h2>Isi Kandungan</h2><p class="muted"><em>${esc(book.title)}</em> — ${esc(book.author)}</p></div>
+        <button class="toc-close" id="toc-close" title="Tutup (Esc)">✕</button>
+      </div>
+      <ol class="toc-list">${rows}</ol>
+    </div>`;
+}
+
+function showToc(on: boolean) {
+  if (on) renderToc();
+  $('toc').hidden = !on;
+}
+
+function openSection(chId: string, key: string) {
+  const ch = book.chapters.find((c) => c.id === chId);
+  if (!ch) return;
+  if (ch !== chapter) {
+    chapter = ch;
+    sections = sectionsOf(ch);
+    $<HTMLSelectElement>('chapter').value = ch.id;
+  }
+  showToc(false);
+  selectSection(key);
 }
 
 function renderMoves() {
@@ -350,6 +414,7 @@ function saveState() {
 function loadState() {
   try {
     const s = JSON.parse(localStorage.getItem('rak-catur') ?? 'null');
+    if (!s) firstVisit = true;
     const ch = book.chapters.find((c) => c.id === s?.ch);
     if (ch) {
       chapter = ch;
@@ -387,6 +452,13 @@ document.addEventListener('click', (e) => {
   }
   const navEl = t.closest<HTMLElement>('[data-nav]');
   if (navEl) return nav(navEl.dataset.nav as 'start');
+  const gotoEl = t.closest<HTMLElement>('[data-goto]');
+  if (gotoEl) {
+    const [chId, key] = gotoEl.dataset.goto!.split(':');
+    return openSection(chId, key);
+  }
+  if (t.closest('#toc-open')) return showToc(true);
+  if (t.closest('#toc-close') || t.id === 'toc') return showToc(false);
   const secEl = t.closest<HTMLElement>('[data-sec]');
   if (secEl) return selectSection(secEl.dataset.sec!);
   const tabEl = t.closest<HTMLElement>('[data-tab]');
@@ -410,6 +482,8 @@ $<HTMLSelectElement>('chapter').addEventListener('change', (e) => {
 
 document.addEventListener('keydown', (e) => {
   if ((e.target as HTMLElement).matches('input, select, textarea')) return;
+  if (e.key === 'Escape' && !$('toc').hidden) return showToc(false);
+  if (e.key === 't') return showToc($('toc').hidden === true);
   const map: Record<string, 'start' | 'prev' | 'next' | 'end'> = {
     ArrowLeft: 'prev',
     ArrowRight: 'next',
@@ -427,3 +501,4 @@ loadState();
 renderChapterSelect();
 renderSections();
 render();
+if (firstVisit) showToc(true);
