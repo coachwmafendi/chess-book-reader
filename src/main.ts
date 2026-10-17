@@ -54,6 +54,20 @@ function sectionsOf(ch: Chapter): Section[] {
   ];
 }
 
+function buildPrefaceSection(book: Book): Section {
+  const p = book.preface!;
+  const startFen = p.startFen ?? START_FEN;
+  return {
+    key: 'preface',
+    label: 'Prakata',
+    heading: p.title ?? 'Prakata',
+    meta: `${book.title} · ${book.author}`,
+    summary: p.summary,
+    keyPoints: (p.keyPoints ?? []).map((text) => ({ text })),
+    root: p.pgn ? buildTree(p.pgn, startFen).root : { fen: startFen, children: [] },
+  };
+}
+
 // Pokok dibina sekali per bab; cache kini di-scope dengan book id.
 const sectionCache = new Map<string, Section[]>();
 function getSections(book: Book, ch: Chapter) {
@@ -359,6 +373,20 @@ function showReader() {
   $('view-reader').hidden = false;
 }
 
+function showPreface(book: Book) {
+  currentBookId = book.id;
+  chapter = null;
+  sections = [buildPrefaceSection(book)];
+  section = sections[0];
+  current = null;
+  lastInfo = null;
+  editingNote = false;
+  showReader();
+  renderChapterSelect();
+  renderSections();
+  render();
+}
+
 function showLibrary() {
   currentBookId = null;
   chapter = null;
@@ -424,8 +452,13 @@ function renderChapterSelect() {
   const b = currentBook();
   const sel = $<HTMLSelectElement>('chapter');
   if (!b) return;
-  sel.innerHTML = b.chapters.map((c) => `<option value="${c.id}">Bab ${c.number}: ${esc(figPlain(c.title))}</option>`).join('');
-  sel.value = chapter!.id;
+  const opts: string[] = [];
+  if (b.preface) {
+    opts.push(`<option value="__preface__" ${chapter === null ? 'selected' : ''}>${esc(b.preface.title ?? 'Prakata')}</option>`);
+  }
+  opts.push(...b.chapters.map((c) => `<option value="${c.id}">Bab ${c.number}: ${esc(figPlain(c.title))}</option>`));
+  sel.innerHTML = opts.join('');
+  sel.value = chapter === null ? '__preface__' : chapter.id;
 }
 
 function renderSections() {
@@ -433,7 +466,7 @@ function renderSections() {
     .map(
       (s) =>
         `<button class="sec ${s === section ? 'active' : ''} ${isRead(secUid()) ? 'read' : ''}" data-sec="${s.key}"><span>${s.label}</span>${
-          s.key === 'intro' ? '' : `<small>${esc(s.heading)}</small>`
+          s.key === 'intro' || s.key === 'preface' ? '' : `<small>${esc(s.heading)}</small>`
         }</button>`,
     )
     .join('');
@@ -452,11 +485,13 @@ function renderSummary() {
   const card = cardOf(secUid());
   const b = currentBook()!;
   const exportBtns =
-    section.key === 'intro'
-      ? `${chapter!.intro ? '<button class="mini" data-act="pgn-section">⬇ PGN ringkasan</button>' : ''}${
-          chapter!.games.length ? '<button class="mini" data-act="pgn-chapter">⬇ PGN seluruh bab</button>' : ''
-        }`
-      : '<button class="mini" data-act="pgn-section">⬇ PGN game</button>';
+    section.key === 'preface'
+      ? `<button class="mini" data-act="start-book">➡ Mula Bab 1</button>`
+      : section.key === 'intro'
+        ? `${chapter!.intro ? '<button class="mini" data-act="pgn-section">⬇ PGN ringkasan</button>' : ''}${
+            chapter!.games.length ? '<button class="mini" data-act="pgn-chapter">⬇ PGN seluruh bab</button>' : ''
+          }`
+        : '<button class="mini" data-act="pgn-section">⬇ PGN game</button>';
   $('panel-ringkasan').innerHTML = `
     <h2>${figText(esc(section.heading))}</h2>
     <p class="meta">${esc(section.meta)}${isRead(secUid()) ? ' · <span class="read-tag">✓ dibaca</span>' : ''}${
@@ -465,7 +500,7 @@ function renderSummary() {
     <div class="actions">${exportBtns}</div>
     <p class="summary">${esc(section.summary)}</p>
     ${kps ? `<h3>Point penting</h3><ol class="kps">${kps}</ol>` : ''}
-    ${section.key === 'intro' ? gameListHtml(b, chapter!) : ''}`;
+    ${section.key === 'intro' && chapter ? gameListHtml(b, chapter) : ''}`;
 }
 
 /** Senarai semua game dalam bab; yang sudah diproses boleh diklik. */
@@ -511,6 +546,15 @@ function overlay(title: string, sub: string, body: string) {
 
 function renderToc() {
   const b = currentBook()!;
+  const prefaceRow = b.preface
+    ? `<li class="toc-ch ${chapter === null ? 'active' : ''}">
+        <button class="toc-row" data-goto="${sectionHref(b.id, 'preface', 'preface')}">
+          <span class="toc-num"></span>
+          <span class="toc-title">${esc(b.preface.title ?? 'Prakata')}</span>
+          <span class="toc-page"></span>
+        </button>
+      </li>`
+    : '';
   const rows = b.chapters
     .map((c) => {
       const total = c.gameIndex?.length ?? c.games.length;
@@ -522,7 +566,7 @@ function renderToc() {
         `<span class="badge ${read === avail.length ? 'done' : read ? 'part' : ''}">Dibaca ${read}/${avail.length}</span>`,
       ].join('');
       const href = sectionHref(b.id, c.id, 'intro');
-      return `<li class="toc-ch ${c.id === chapter!.id ? 'active' : ''}">
+      return `<li class="toc-ch ${c.id === chapter?.id ? 'active' : ''}">
         <button class="toc-row" data-goto="${href}">
           <span class="toc-num">${c.number}</span>
           <span class="toc-title">${figText(esc(c.title))}</span>
@@ -566,7 +610,7 @@ function renderToc() {
   overlay(
     'Isi Kandungan',
     `<em>${esc(b.title)}</em> — ${esc(b.author)} · dibaca ${readAll}/${allSecs}`,
-    `${dueHtml}${notesHtml}<h3 class="toc-sub">Bab</h3><ol class="toc-list">${rows}</ol>`,
+    `${dueHtml}${notesHtml}<h3 class="toc-sub">${b.preface ? esc(b.preface.title ?? 'Prakata') : 'Bab'}</h3><ol class="toc-list">${prefaceRow}${rows}</ol>`,
   );
 }
 
@@ -613,6 +657,7 @@ function runSearch(text: string, scopeBook: Book | null = currentBook()) {
 function openSection(bookId: string, chId: string, secId = 'intro', path?: string, startTrain = false) {
   const b = findBook(bookId);
   if (!b) return showLibrary();
+  if (chId === 'preface' && b.preface) return showPreface(b);
   currentBookId = b.id;
   chapter = b.chapters.find((c) => c.id === chId) ?? b.chapters[0];
   sections = getSections(b, chapter);
@@ -780,7 +825,7 @@ function renderTrainButtons() {
 }
 
 function render() {
-  if (!currentBookId || !chapter) return showLibrary();
+  if (!currentBookId) return showLibrary();
   renderBoard();
   renderMoves();
   renderSummary();
@@ -795,8 +840,8 @@ function render() {
 // ---------- Persist (per pelayar) ----------
 function saveState() {
   try {
-    if (!currentBookId || !chapter || !section) return;
-    const payload = { bookId: currentBookId, chId: chapter.id, secId: section.key };
+    if (!currentBookId || !section) return;
+    const payload = { bookId: currentBookId, chId: chapter?.id ?? 'preface', secId: section.key };
     localStorage.setItem('rak-catur:route', JSON.stringify(payload));
     setHash(payload);
   } catch {
@@ -831,6 +876,9 @@ function startupRoute(): ReturnType<typeof parseHash> {
 
 function applyRoute(route = parseHash()) {
   if (!route.bookId) return showLibrary();
+  const b = findBook(route.bookId);
+  if (!b) return showLibrary();
+  if (!route.chId && b.preface) return showPreface(b);
   openSection(route.bookId, route.chId ?? 'ch1', route.secId ?? 'intro', route.path ?? undefined, route.train);
 }
 
@@ -863,19 +911,27 @@ engine.onInfo = (info) => {
 
 function act(name: string) {
   const b = currentBook();
-  if (!b || !chapter) return;
+  if (!b) return;
   switch (name) {
+    case 'start-book': {
+      const first = b.chapters[0];
+      if (first) return openSection(b.id, first.id, 'intro');
+      return;
+    }
     case 'pgn-section': {
+      if (!chapter) return;
       const g = chapter.games.find((x) => x.id === section.key);
       const text = g ? gamePgn(b, chapter, g) : introPgn(b, chapter);
       return download(`${b.id}-${g ? `game-${g.number}` : `bab-${chapter.number}-ringkasan`}.pgn`, text);
     }
-    case 'pgn-chapter':
+    case 'pgn-chapter': {
+      if (!chapter) return;
       return download(`${b.id}-bab-${chapter.number}.pgn`, chapterPgn(b, chapter));
+    }
     case 'bookmark': {
       if (!current) return;
       const nt = noteOf(noteKey(current));
-      setNote(noteKey(current), `Bab ${chapter.number} · ${section.label} · ${moveLabel(current)}`, { bookmark: !nt?.bookmark });
+      setNote(noteKey(current), `${chapter ? `Bab ${chapter.number} · ` : ''}${section.label} · ${moveLabel(current)}`, { bookmark: !nt?.bookmark });
       return render();
     }
     case 'note':
@@ -895,9 +951,7 @@ document.addEventListener('click', (e) => {
   const gotoEl = t.closest<HTMLElement>('[data-goto]');
   if (gotoEl) {
     e.preventDefault();
-    const route = parseHash(gotoEl.dataset.goto!);
-    if (!route.bookId) return showLibrary();
-    return openSection(route.bookId, route.chId ?? 'ch1', route.secId ?? 'intro', route.path ?? undefined, route.train || !!gotoEl.dataset.train);
+    return applyRoute(parseHash(gotoEl.dataset.goto!));
   }
   const nodeEl = t.closest<HTMLElement>('[data-node]');
   if (nodeEl) {
@@ -929,7 +983,8 @@ document.addEventListener('click', (e) => {
 document.addEventListener('input', (e) => {
   const t = e.target as HTMLElement;
   if (t.id !== 'note-input' || !current) return;
-  setNote(noteKey(current), `Bab ${chapter!.number} · ${section.label} · ${moveLabel(current)}`, { note: (t as HTMLTextAreaElement).value });
+  const chLabel = chapter ? `Bab ${chapter.number} · ` : '';
+  setNote(noteKey(current), `${chLabel}${section.label} · ${moveLabel(current)}`, { note: (t as HTMLTextAreaElement).value });
 });
 document.addEventListener('focusout', (e) => {
   if ((e.target as HTMLElement).id !== 'note-input') return;
@@ -950,7 +1005,12 @@ $<HTMLInputElement>('engine-toggle').addEventListener('change', (e) => {
 $<HTMLSelectElement>('chapter').addEventListener('change', (e) => {
   const b = currentBook();
   if (!b) return;
-  chapter = b.chapters.find((c) => c.id === (e.target as HTMLSelectElement).value)!;
+  const val = (e.target as HTMLSelectElement).value;
+  if (val === '__preface__') {
+    if (b.preface) return showPreface(b);
+    return;
+  }
+  chapter = b.chapters.find((c) => c.id === val)!;
   sections = getSections(b, chapter);
   selectSection(sections[0].key);
 });

@@ -5,6 +5,14 @@
   "year": 2015,
   "description": "Panduan lengkap sistem.Modern Defence dalam catur — setups, strategi middlegame, dan game terpilih.",
   "cover": "/covers/modern-tiger.svg",
+  "preface": {
+    "title": "Prakata",
+    "summary": "(Teks prakata akan dimasukkan di sini. Sila kemas kini medan preface dalam data/modern-tiger.json dengan kandungan sebenar dari buku.)",
+    "keyPoints": [
+      "Buku ini membincangkan sistem Modern Defence dari perspektif praktikal.",
+      "Setiap bab memfokuskan satu variasi utama dengan game terpilih."
+    ]
+  },
   "source": {
     "file": "the-modern-tiger.pdf",
     "pageOffset": 1

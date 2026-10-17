@@ -42,6 +42,14 @@ export interface GameRef {
   page: number; // halaman tercetak
 }
 
+export interface Preface {
+  title?: string;
+  summary: string;
+  keyPoints?: string[];
+  startFen?: string;
+  pgn?: string;
+}
+
 export interface Book {
   id: string;
   title: string;
@@ -49,6 +57,7 @@ export interface Book {
   year?: number;
   description?: string;
   cover?: string;
+  preface?: Preface;
   source?: { file: string; pageOffset: number };
   chapters: Chapter[];
 }
