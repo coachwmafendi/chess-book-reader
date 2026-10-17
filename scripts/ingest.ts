@@ -1,0 +1,254 @@
+// Ingest buku catur PDF → data/<id>.json, menggunakan Claude (vision) + validasi chess.js.
+//
+// Langkah 1 — imbas: cari di halaman mana setiap game bermula.
+//   npm run ingest -- scan --pdf buku.pdf --from 10 --to 98
+// Langkah 2 — extract: proses satu bab (pengenalan + semua game) mengikut peta dari langkah 1.
+//   npm run ingest -- chapter --pdf buku.pdf --book modern-tiger --chapter 1 --title "4.f4 – Austrian Style"
+//
+// Perlu: ANTHROPIC_API_KEY dalam environment.
+// Nombor halaman = nombor halaman PDF (bukan nombor yang tercetak dalam buku).
+
+import Anthropic from '@anthropic-ai/sdk';
+import * as mupdf from 'mupdf';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { parseArgs } from 'node:util';
+import { buildTree, findMainline, START_FEN } from '../src/lib/tree';
+import type { Book, Chapter, Game } from '../src/types';
+
+const MODEL = process.env.CLAUDE_MODEL ?? 'claude-sonnet-5-5';
+const client = new Anthropic();
+
+const { positionals, values: args } = parseArgs({
+  allowPositionals: true,
+  options: {
+    pdf: { type: 'string' },
+    book: { type: 'string', default: 'book' },
+    title: { type: 'string' },
+    author: { type: 'string' },
+    chapter: { type: 'string' },
+    from: { type: 'string' },
+    to: { type: 'string' },
+    scale: { type: 'string', default: '2' },
+  },
+});
+
+const cmd = positionals[0];
+const work = `.ingest/${args.book}`;
+mkdirSync(work, { recursive: true });
+
+// ---------- Render halaman (dengan cache) ----------
+// MuPDF dipilih kerana banyak buku scan simpan diagram sebagai JBIG2 — pdf.js gagal decode format ini.
+let doc: mupdf.Document | null = null;
+async function page(n: number, scale = Number(args.scale)): Promise<string> {
+  const file = `${work}/p${n}@${scale}.png`;
+  if (existsSync(file)) return readFileSync(file).toString('base64');
+  doc ??= mupdf.Document.openDocument(readFileSync(args.pdf!), 'application/pdf');
+  const pix = doc.loadPage(n - 1).toPixmap(mupdf.Matrix.scale(scale, scale), mupdf.ColorSpace.DeviceGray, false, true);
+  const buf = Buffer.from(pix.asPNG());
+  writeFileSync(file, buf);
+  return buf.toString('base64');
+}
+
+const img = (data: string) =>
+  ({ type: 'image', source: { type: 'base64', media_type: 'image/png', data } }) as const;
+
+async function callTool<T>(system: string, content: Anthropic.ContentBlockParam[], tool: Anthropic.Tool): Promise<T> {
+  // Stream + max_tokens besar: thinking adaptive + PGN panjang boleh melebihi 16k token.
+  const res = await client.messages.stream({
+    model: MODEL,
+    max_tokens: 64000,
+    // Model 5.5 tolak tool_choice 'tool'/'any' — guna 'auto' + arahan eksplisit.
+    system: `${system}\n\nPulangkan jawapan dengan memanggil tool "${tool.name}" sekali sahaja. Jangan balas dengan teks biasa.`,
+    tools: [tool],
+    tool_choice: { type: 'auto', disable_parallel_tool_use: true },
+    messages: [{ role: 'user', content }],
+  }).finalMessage();
+  const block = res.content.find((b) => b.type === 'tool_use');
+  if (!block || block.type !== 'tool_use') {
+    const text = res.content.flatMap((b) => (b.type === 'text' ? [b.text] : [])).join(' ').slice(0, 300);
+    throw new Error(`Model tidak memulangkan tool_use (stop_reason: ${res.stop_reason}, out ${res.usage.output_tokens}) ${text}`);
+  }
+  console.log(`   ↳ token: in ${res.usage.input_tokens}, out ${res.usage.output_tokens}`);
+  return block.input as T;
+}
+
+// ---------- Prompt ----------
+const SYSTEM = `Anda membaca halaman buku catur yang diimbas (biasanya dua kolum, notation figurine, diagram papan).
+Tugas anda: tukar kandungan kepada PGN yang TEPAT.
+
+Peraturan PGN:
+- Tukar figurine kepada huruf Inggeris: ♔=K ♕=Q ♖=R ♗=B ♘=N. Castling ditulis O-O / O-O-O.
+- Main line ialah langkah tebal (bold) dalam teks. Analisis dalam perenggan biasa ialah variation: letak dalam ( ).
+- Variation menggantikan langkah yang ia ikut: "13.b4" sebagai alternatif kepada 13.O-O ditulis "13. O-O ( 13. b4 ... ) 13... Rxd8".
+- Buang simbol penilaian (!, ?, !?, ±, +-, N) daripada SAN; sebut maknanya dalam komen jika penting.
+- Komen dalam { } — RINGKAS (1–2 ayat), dalam Bahasa Melayu, diparafrasa dengan kata-kata anda sendiri. Jangan salin ayat buku.
+- Jika teks merujuk kepada posisi dari langkah sebelumnya (contoh "Black is fine after 11.Bxf5 Bb7"), sambungkan variation pada langkah yang betul.
+- Gunakan diagram untuk menyemak posisi. Jika teks dan diagram bercanggah, ikut diagram.
+
+Ringkasan & point penting: Bahasa Melayu, gaya pemain kelab, fokus pada IDEA dan PELAN, bukan senarai langkah.
+Istilah catur (pawn, knight, bishop, rook, queen, king, castling, endgame) boleh kekal dalam Bahasa Inggeris.`;
+
+const gameTool: Anthropic.Tool = {
+  name: 'save_game',
+  description: 'Simpan satu game yang diextract',
+  input_schema: {
+    type: 'object',
+    required: ['white', 'black', 'result', 'summary', 'keyPoints', 'pgn'],
+    properties: {
+      white: { type: 'string' },
+      black: { type: 'string' },
+      event: { type: 'string' },
+      year: { type: 'integer' },
+      result: { type: 'string', enum: ['1-0', '0-1', '1/2-1/2', '*'] },
+      startFen: { type: 'string', description: 'Hanya jika game tidak bermula dari posisi awal' },
+      summary: { type: 'string', description: '2–4 ayat' },
+      keyPoints: {
+        type: 'array',
+        description: '4–8 point. "at" mesti label langkah MAIN LINE yang wujud, contoh "12...Bxd5" atau "10.Nd5".',
+        items: { type: 'object', required: ['at', 'text'], properties: { at: { type: 'string' }, text: { type: 'string' } } },
+      },
+      pgn: { type: 'string', description: 'Movetext sahaja (tanpa tag header), dengan variation dan komen' },
+    },
+  },
+};
+
+const introTool: Anthropic.Tool = {
+  name: 'save_intro',
+  description: 'Simpan pengenalan bab',
+  input_schema: {
+    type: 'object',
+    required: ['startFen', 'summary', 'keyPoints', 'pgn'],
+    properties: {
+      startFen: { type: 'string', description: 'FEN posisi asas bab (contoh selepas 1.e4 g6 2.d4 Bg7 3.Nc3 d6 4.f4)' },
+      summary: { type: 'string' },
+      keyPoints: { type: 'array', items: { type: 'string' } },
+      pgn: { type: 'string', description: 'Langkah-langkah utama yang dibincangkan, bermula dari startFen' },
+    },
+  },
+};
+
+const scanTool: Anthropic.Tool = {
+  name: 'save_map',
+  description: 'Senarai game yang bermula dalam halaman ini',
+  input_schema: {
+    type: 'object',
+    required: ['games'],
+    properties: {
+      games: {
+        type: 'array',
+        items: {
+          type: 'object',
+          required: ['number', 'page', 'white', 'black'],
+          properties: { number: { type: 'integer' }, page: { type: 'integer' }, white: { type: 'string' }, black: { type: 'string' } },
+        },
+      },
+    },
+  },
+};
+
+// ---------- Extract + baiki ----------
+async function extractWithRepair<T extends { pgn: string; startFen?: string; keyPoints?: unknown[] }>(
+  pages: number[],
+  instruction: string,
+  tool: Anthropic.Tool,
+  defaultFen = START_FEN,
+): Promise<T> {
+  const images = await Promise.all(pages.map((p) => page(p)));
+  const content: Anthropic.ContentBlockParam[] = [
+    ...images.flatMap((d, i) => [{ type: 'text' as const, text: `Halaman PDF ${pages[i]}:` }, img(d)]),
+    { type: 'text', text: instruction },
+  ];
+
+  let result = await callTool<T>(SYSTEM, content, tool);
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const { root, errors } = buildTree(result.pgn, result.startFen ?? defaultFen);
+    // keyPoints intro ialah string biasa (tiada `at`) — hanya semak objek { at, text } dari game.
+    const badKps = ((result.keyPoints ?? []) as unknown[]).filter(
+      (k): k is { at: string } => typeof k === 'object' && k !== null && typeof (k as { at?: unknown }).at === 'string' && !findMainline(root, (k as { at: string }).at),
+    );
+    if (!errors.length && !badKps.length) return result;
+
+    const report = [
+      ...errors.map((e) => `- ${e.path}: tidak sah dalam posisi ${e.fen}`),
+      ...badKps.map((k) => `- keyPoint "${k.at}" tiada dalam main line`),
+    ].join('\n');
+    console.log(`   ⚠ cubaan ${attempt}: ${errors.length} langkah tidak sah, ${badKps.length} keyPoint salah — minta pembetulan`);
+    result = await callTool<T>(
+      SYSTEM,
+      [
+        ...content,
+        { type: 'text', text: `Hasil sebelum ini:\n${JSON.stringify(result)}\n\nMasalah yang dikesan oleh chess.js:\n${report}\n\nBaca semula halaman yang berkaitan dan pulangkan versi yang dibetulkan sepenuhnya.` },
+      ],
+      tool,
+    );
+  }
+  const { errors } = buildTree(result.pgn, result.startFen ?? defaultFen);
+  if (errors.length) console.log(`   ✗ masih ada ${errors.length} ralat — line itu akan dipotong dalam reader. Semak manual.`);
+  return result;
+}
+
+// ---------- Commands ----------
+async function scan() {
+  const from = Number(args.from), to = Number(args.to);
+  const found: { number: number; page: number; white: string; black: string }[] = [];
+  for (let s = from; s <= to; s += 10) {
+    const pages = Array.from({ length: Math.min(10, to - s + 1) }, (_, i) => s + i);
+    console.log(`🔎 imbas halaman ${pages[0]}–${pages.at(-1)}`);
+    const imgs = await Promise.all(pages.map((p) => page(p, 0.8)));
+    const res = await callTool<{ games: typeof found }>(
+      'Anda mengenal pasti tajuk game dalam buku catur.',
+      [
+        ...imgs.flatMap((d, i) => [{ type: 'text' as const, text: `Halaman PDF ${pages[i]}:` }, img(d)]),
+        { type: 'text', text: 'Senaraikan setiap tajuk "GAME N" yang muncul, dengan nombor halaman PDF dan nama pemain.' },
+      ],
+      scanTool,
+    );
+    found.push(...res.games);
+  }
+  const map = { from, to, games: found.sort((a, b) => a.page - b.page) };
+  writeFileSync(`${work}/map.json`, JSON.stringify(map, null, 2));
+  console.log(`✅ ${found.length} game ditemui → ${work}/map.json (semak & betulkan jika perlu)`);
+}
+
+async function chapter() {
+  const map = JSON.parse(readFileSync(`${work}/map.json`, 'utf8')) as {
+    from: number;
+    to: number;
+    games: { number: number; page: number; white: string; black: string }[];
+  };
+  const out = `data/${args.book}.json`;
+  const book: Book = existsSync(out)
+    ? JSON.parse(readFileSync(out, 'utf8'))
+    : { id: args.book!, title: args.title ?? args.book!, author: args.author ?? '', chapters: [] };
+
+  const n = Number(args.chapter);
+  const range = (a: number, b: number) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
+
+  console.log(`📘 Bab ${n}: pengenalan (hlm ${map.from}–${map.games[0].page})`);
+  const intro = await extractWithRepair<Chapter['intro']>(
+    range(map.from, map.games[0].page),
+    'Extract PENGENALAN bab sahaja (abaikan game yang bermula di halaman terakhir). Beri ringkasan bab, 4–6 point penting tentang pelan/idea, dan PGN langkah-langkah utama.',
+    introTool,
+  );
+
+  const games: Game[] = [];
+  for (const [i, g] of map.games.entries()) {
+    const end = map.games[i + 1]?.page ?? map.to;
+    console.log(`♟  Game ${g.number}: ${g.white} – ${g.black} (hlm ${g.page}–${end})`);
+    const r = await extractWithRepair<Omit<Game, 'id' | 'number' | 'pages'>>(
+      range(g.page, end),
+      `Extract Game ${g.number} (${g.white} – ${g.black}) SAHAJA — mula dari tajuk game itu, berhenti sebelum game seterusnya.`,
+      gameTool,
+    );
+    games.push({ id: `ch${n}-g${g.number}`, number: g.number, pages: [g.page, end], ...r });
+  }
+
+  const ch: Chapter = { id: `ch${n}`, number: n, title: args.title ?? `Bab ${n}`, pages: [map.from, map.to], intro, games };
+  book.chapters = [...book.chapters.filter((c) => c.number !== n), ch].sort((a, b) => a.number - b.number);
+  writeFileSync(out, JSON.stringify(book, null, 2));
+  console.log(`✅ Disimpan ke ${out}. Jalankan "npm run validate" untuk semakan akhir.`);
+}
+
+if (cmd === 'scan') await scan();
+else if (cmd === 'chapter') await chapter();
+else console.log('Guna: npm run ingest -- scan|chapter --pdf <fail> --book <id> ...');

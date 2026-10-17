@@ -1,0 +1,5 @@
+.env
+.ingest/
+node_modules/
+dist/
+.DS_Store
